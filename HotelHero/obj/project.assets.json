@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Dokumenty\\_ISA\\Code_Masters\\jcszr13-Code_Masters\\MasterBooking\\MasterBooking.csproj",
-      "projectName": "MasterBooking",
-      "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Dokumenty\\_ISA\\Code_Masters\\jcszr13-Code_Masters\\MasterBooking\\MasterBooking.csproj",
+      "projectUniqueName": "C:\\Users\\Lenovo\\OneDrive\\Dokumenty\\_ISA\\Code_Masters\\jcszr13-Code_Masters\\MasterBooking\\HotelHero.csproj",
+      "projectName": "HotelHero",
+      "projectPath": "C:\\Users\\Lenovo\\OneDrive\\Dokumenty\\_ISA\\Code_Masters\\jcszr13-Code_Masters\\MasterBooking\\HotelHero.csproj",
       "packagesPath": "C:\\Users\\Lenovo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Lenovo\\OneDrive\\Dokumenty\\_ISA\\Code_Masters\\jcszr13-Code_Masters\\MasterBooking\\obj\\",
       "projectStyle": "PackageReference",
