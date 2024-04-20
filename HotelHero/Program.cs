@@ -1,4 +1,6 @@
-﻿namespace MasterBooking
+﻿using HotelHero.HotelsDatabase;
+
+namespace MasterBooking
 {
     internal class Program
     {
