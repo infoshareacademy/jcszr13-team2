@@ -38,7 +38,7 @@ namespace HotelHero
                     OfferSearch();
                     break;
                 case 6:
-                    CustomerPanel();
+                    CustomerPanel.Panel();
                     break;
             }
         }
@@ -109,11 +109,5 @@ namespace HotelHero
             Menu();
         }
 
-        static void CustomerPanel()
-        {
-            Console.WriteLine("Padłeś? Powstań! Czas na wakacje ;p");
-            Console.WriteLine();
-            Menu();
-        }
     }
 }
