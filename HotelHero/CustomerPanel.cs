@@ -35,7 +35,7 @@ namespace HotelHero
                     PaymentHistory();
                     break;
                 case 5:
-                    Favorite();
+                    FavoriteMenu.Favorite();
                     break;
                 case 6:
                     UserMenu.Menu();
