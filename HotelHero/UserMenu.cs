@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelHero.UserPanel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -92,14 +93,15 @@ namespace HotelHero
 
         static void UserRegistration()
         {
-            Console.WriteLine("Tu powstanie kreatywna rejestracja");
-            Console.WriteLine();
+            var registration = new UserRegistration();
+            registration.Registaration();
             Menu();
         }
         static void UserLogin()
         {
-            Console.WriteLine("Tu powstanie zwariowane logowanie");
-            Console.WriteLine();
+            var logIn = new UserLogIn();
+            var loggedInUser = logIn.LogIn();
+            Console.WriteLine(loggedInUser.Email);
             Menu();
         }
         static void OfferSearch()

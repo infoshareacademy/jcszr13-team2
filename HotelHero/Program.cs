@@ -13,11 +13,8 @@ namespace MasterBooking
         {
             var usersFile = new CreateUsers();
             usersFile.CreateUsersFile();
-            var registration = new UserRegistration();
-            registration.Registaration();
-            var logIn = new UserLogIn();
-            var loggedInUser = logIn.LogIn();
-            Console.WriteLine(loggedInUser.Email);
+
+            UserMenu.Menu();
         }
     }
 }
