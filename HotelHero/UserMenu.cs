@@ -101,7 +101,8 @@ namespace HotelHero
         {
             var logIn = new UserLogIn();
             var loggedInUser = logIn.LogIn();
-            Console.WriteLine(loggedInUser.Email);
+            Program.loggedUser = loggedInUser;
+            Console.WriteLine(loggedInUser?.Email);
             Menu();
         }
         static void OfferSearch()

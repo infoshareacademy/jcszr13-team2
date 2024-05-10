@@ -12,9 +12,9 @@ namespace HotelHero
     {
         public static void Panel()
         {
-            Console.WriteLine("1. Customer Data");
+            Console.WriteLine("1.Customer Data");
             Console.WriteLine("2.Your reservations");
-            Console.WriteLine("3. History of stays");
+            Console.WriteLine("3.History of stays");
             Console.WriteLine("4.Payment history");
             Console.WriteLine("5.Favorite");
             Console.WriteLine("6.Back to menu");
@@ -23,7 +23,7 @@ namespace HotelHero
             switch (option)
             {
                 case 1:
-                    CustomerData();
+                    CustomerData.CustomerDataMenu();
                     break;
                 case 2:
                     YourReservations();
@@ -41,13 +41,6 @@ namespace HotelHero
                     UserMenu.Menu();
                     break;
             }
-        }
-
-        static void CustomerData()
-        {
-            Console.WriteLine("Tu powstanie kreatyw");
-            Console.WriteLine();
-            Panel();
         }
         static void YourReservations()
         {
