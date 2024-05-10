@@ -36,7 +36,7 @@ namespace HotelHero
                     UserLogin();
                     break;
                 case 5:
-                    OfferSearch();
+                    FiltryOgólne.OfferSearch();
                     break;
                 case 6:
                     CustomerPanel.Panel();
@@ -104,12 +104,5 @@ namespace HotelHero
             Console.WriteLine(loggedInUser.Email);
             Menu();
         }
-        static void OfferSearch()
-        {
-            Console.WriteLine("Tu powstanie zakręcone wyszukiwanie");
-            Console.WriteLine();
-            Menu();
-        }
-
     }
 }

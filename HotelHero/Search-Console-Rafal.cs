@@ -1,8 +1,12 @@
-﻿namespace FiltryWyszukiwania
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace HotelHero
 {
     class FiltryOgólne
     {
-        static void Main(string[] args)
+        public static void OfferSearch()
         {
             Console.WriteLine("Fitr wyszukiwania - wybierz opcje");
 
@@ -20,11 +24,11 @@
 
             var rezerwacje = new List<Rezerwacja>
             {
-                new Rezerwacja("Zakopane", new DateTime(2024, 6, 15), 3),
-                new Rezerwacja("Kraków", new DateTime(2024, 6, 30), 2),
-                new Rezerwacja("Warszawa", new DateTime(2024, 7, 10), 1),
-                new Rezerwacja("Gdańsk", new DateTime(2025, 2, 6), 3),
-                new Rezerwacja("Wrocław", new DateTime(2025, 3, 5), 2),
+                new Rezerwacja("Zakopane", new DateTime(2024, 6, 15), new DateTime(2024, 6, 25), 3),
+                new Rezerwacja("Kraków", new DateTime(2024, 6, 30), new DateTime(2024, 7, 30), 2),
+                new Rezerwacja("Warszawa", new DateTime(2024, 7, 10), new DateTime(2024, 7, 14), 1),
+                new Rezerwacja("Gdańsk", new DateTime(2025, 2, 6), new DateTime(2025, 2, 8), 3),
+                new Rezerwacja("Wrocław", new DateTime(2025, 3, 5), new DateTime(2025, 3, 8),2),
             };
 
             var miejscePobytu = filtry["Dokąd jedziesz?"];
@@ -44,10 +48,10 @@
                 {
                     Console.WriteLine($"Miejsce pobytu: {rezerwacja.MiejscePobytu}, Data przyjazdu: {rezerwacja.DataPrzyjazdu.ToShortDateString()}, Data wyjazdu: {rezerwacja.DataWyjazdu.ToShortDateString()}, Ilość osób: {rezerwacja.IloscOsob}");
                 }
+            }
             else
-                {
-                    Console.WriteLine("\nBrak pasujących rezerwacji");
-                }
+            {
+                Console.WriteLine("\nBrak pasujących rezerwacji");
             }
         }
         class Rezerwacja
