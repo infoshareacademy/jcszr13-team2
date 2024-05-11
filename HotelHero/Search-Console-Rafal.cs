@@ -8,36 +8,45 @@ namespace HotelHero
     {
         public static void OfferSearch()
         {
-            Console.WriteLine("Fitr wyszukiwania - wybierz opcje");
+            Console.WriteLine("Filtr wyszukiwania - wybierz opcje");
 
             var filtry = new Dictionary<string, string>
             {
                 { "Dokąd jedziesz?", "" },
-                { "Podaj daty pobytu", "" },
+                { "Data przyjazdu", "" },
+                { "Data wyjazdu", "" },
                 { "W ile osób podróżujecie?", "" },
             };
-            foreach (var filter in filtry)
+            foreach (var filter in filtry.Keys.ToList())
             {
-                Console.WriteLine($"Podaj wartość dla filtru '{filter.Key}': ");
-                filtry[filter.Key] = Console.ReadLine();
+                Console.WriteLine($"Podaj wartość dla filtru '{filter}': ");
+                filtry[filter] = Console.ReadLine();
             }
 
             var rezerwacje = new List<Rezerwacja>
             {
-                new Rezerwacja("Zakopane", new DateTime(2024, 6, 15), new DateTime(2024, 6, 25), 3),
-                new Rezerwacja("Kraków", new DateTime(2024, 6, 30), new DateTime(2024, 7, 30), 2),
-                new Rezerwacja("Warszawa", new DateTime(2024, 7, 10), new DateTime(2024, 7, 14), 1),
-                new Rezerwacja("Gdańsk", new DateTime(2025, 2, 6), new DateTime(2025, 2, 8), 3),
-                new Rezerwacja("Wrocław", new DateTime(2025, 3, 5), new DateTime(2025, 3, 8),2),
+                new Rezerwacja("Zakopane", new DateTime(2024, 6, 15), new DateTime(2024, 6, 20), 3),
+                new Rezerwacja("Kraków", new DateTime(2024, 6, 30), new DateTime(2024, 7, 5), 2),
+                new Rezerwacja("Warszawa", new DateTime(2024, 7, 10), new DateTime(2024, 7, 15), 1),
+                new Rezerwacja("Gdańsk", new DateTime(2025, 2, 6), new DateTime(2025, 2, 10), 3),
+                new Rezerwacja("Wrocław", new DateTime(2025, 3, 5), new DateTime(2025, 3, 10), 2),
             };
 
             var miejscePobytu = filtry["Dokąd jedziesz?"];
-            var dniPobytu = Convert.ToInt32(filtry["Podaj daty pobytu"]);
-            var iloscOsob = Convert.ToInt32(filtry["W ile osób podróżujecie?"]);
+
+            DateTime dataPrzyjazdu;
+            DateTime.TryParse(filtry["Data przyjazdu DD.MM.YYYY"], out dataPrzyjazdu);
+
+            DateTime dataWyjazdu;
+            DateTime.TryParse(filtry["Data wyjazdu DD.MM.YYYY"], out dataWyjazdu);
+
+            int iloscOsob;
+            int.TryParse(filtry["W ile osób podróżujecie?"], out iloscOsob);
 
             var wyniki = rezerwacje.Where(r =>
             (string.IsNullOrEmpty(miejscePobytu) || r.MiejscePobytu == miejscePobytu) &&
-            (dniPobytu == 0 || (r.DataPrzyjazdu <= DateTime.Today && r.DataWyjazdu >= DateTime.Today.AddDays(dniPobytu))) &&
+            (dataPrzyjazdu == DateTime.MinValue || r.DataPrzyjazdu <= dataPrzyjazdu) &&
+            (dataWyjazdu == DateTime.MinValue || r.DataWyjazdu >= dataWyjazdu) &&
             (iloscOsob == 0 || r.IloscOsob >= iloscOsob)
             ).ToList();
 
@@ -49,25 +58,29 @@ namespace HotelHero
                     Console.WriteLine($"Miejsce pobytu: {rezerwacja.MiejscePobytu}, Data przyjazdu: {rezerwacja.DataPrzyjazdu.ToShortDateString()}, Data wyjazdu: {rezerwacja.DataWyjazdu.ToShortDateString()}, Ilość osób: {rezerwacja.IloscOsob}");
                 }
             }
+
             else
             {
                 Console.WriteLine("\nBrak pasujących rezerwacji");
             }
+
         }
-        class Rezerwacja
+    }
+
+    class Rezerwacja
+    {
+        public string MiejscePobytu { get; }
+        public DateTime DataPrzyjazdu { get; }
+        public DateTime DataWyjazdu { get; }
+        public int IloscOsob { get; }
+        public Rezerwacja(string miejscePobytu, DateTime dataPrzyjazdu, DateTime dataWyjazdu, int iloscOsob)
         {
-            public string MiejscePobytu { get; }
-            public DateTime DataPrzyjazdu { get; }
-            public DateTime DataWyjazdu { get; }
-            public int IloscOsob { get; }
-            public Rezerwacja(string miejscePobytu, DateTime dataPrzyjazdu, DateTime dataWyjazdu, int iloscOsob)
-            {
-                MiejscePobytu = miejscePobytu;
-                DataPrzyjazdu = dataPrzyjazdu;
-                DataWyjazdu = dataWyjazdu;
-                IloscOsob = iloscOsob;
-            }
+            MiejscePobytu = miejscePobytu;
+            DataPrzyjazdu = dataPrzyjazdu;
+            DataWyjazdu = dataWyjazdu;
+            IloscOsob = iloscOsob;
         }
     }
 }
-            
+
+
