@@ -8,7 +8,7 @@ namespace HotelHero
 {
     internal class Program
     {
-        public static User loggedUser;
+        public static User? loggedUser;
         static void Main(string[] args)
         {
             //var usersFile = new CreateUsers();
