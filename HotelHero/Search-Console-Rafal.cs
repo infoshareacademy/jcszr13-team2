@@ -21,10 +21,10 @@ namespace HotelHero
 
             var filtry = new Dictionary<string, string>
             {
-                { "Dokąd jedziesz?", "" },
-                { "Data przyjazdu dd.MM.yyyy", "" },
-                { "Data wyjazdu dd.MM.yyyy", "" },
-                { "W ile osób podróżujecie?", "" },
+                { "1.Dokąd jedziesz?", "" },
+                { "2.Data przyjazdu dd.MM.yyyy", "" },
+                { "3.Data wyjazdu dd.MM.yyyy", "" },
+                { "4.W ile osób podróżujecie?", "" },
             };
             foreach (var filter in filtry.Keys.ToList())
             {
@@ -41,16 +41,16 @@ namespace HotelHero
                 new Rezerwacja(hotelsRepository.GetHotel(1), new DateTime(2025, 3, 5), new DateTime(2025, 3, 10), 2),
             };
 
-            var miejscePobytu = filtry["Dokąd jedziesz?"];
+            var miejscePobytu = filtry["1.Dokąd jedziesz?"];
 
             DateTime dataPrzyjazdu;
-            DateTime.TryParse(filtry["Data przyjazdu dd.MM.yyyy"], out dataPrzyjazdu);
+            DateTime.TryParse(filtry["2.Data przyjazdu dd.MM.yyyy"], out dataPrzyjazdu);
 
             DateTime dataWyjazdu;
-            DateTime.TryParse(filtry["Data wyjazdu dd.MM.yyyy"], out dataWyjazdu);
+            DateTime.TryParse(filtry["3.Data wyjazdu dd.MM.yyyy"], out dataWyjazdu);
 
             int iloscOsob;
-            int.TryParse(filtry["W ile osób podróżujecie?"], out iloscOsob);
+            int.TryParse(filtry["4.W ile osób podróżujecie?"], out iloscOsob);
 
             var wyniki = rezerwacje.Where(r =>
             (string.IsNullOrEmpty(miejscePobytu) || r.MiejscePobytu.City == miejscePobytu) &&
@@ -64,14 +64,15 @@ namespace HotelHero
                 Console.WriteLine("\nZnalezione rezerwacje hotelowe:");
                 foreach (var rezerwacja in wyniki)
                 {
-                    Console.WriteLine($"Miejsce pobytu: {rezerwacja.MiejscePobytu}");
-                    Console.WriteLine($"Data przyjazdu: {rezerwacja.DataPrzyjazdu.ToShortDateString()}, Data wyjazdu: {rezerwacja.DataWyjazdu.ToShortDateString()}, Ilość osób: {rezerwacja.IloscOsob}");
+                    Console.WriteLine($"1.Miejsce pobytu: {rezerwacja.MiejscePobytu}");
+                    Console.WriteLine($"2.Data przyjazdu: {rezerwacja.DataPrzyjazdu.ToShortDateString()}, Data wyjazdu: {rezerwacja.DataWyjazdu.ToShortDateString()}, Ilość osób: {rezerwacja.IloscOsob}");
                 }
             }
 
             else
             {
                 Console.WriteLine("\nBrak pasujących rezerwacji");
+                UserMenu.Menu();
             }
 
         }
