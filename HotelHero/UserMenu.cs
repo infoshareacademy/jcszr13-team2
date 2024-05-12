@@ -13,8 +13,8 @@ namespace HotelHero
         public static void Menu()
         {
             Console.WriteLine("Select an item from the list");
-            Console.WriteLine("1.Language selection");
-            Console.WriteLine("2.Currency selection");
+            Console.WriteLine("1.Language selection (Coming soon)");
+            Console.WriteLine("2.Currency selection (Coming soon)");
             Console.WriteLine("3.User registration");
             Console.WriteLine("4.User login");
             Console.WriteLine("5.Offer search");

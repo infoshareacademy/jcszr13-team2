@@ -15,8 +15,8 @@ namespace HotelHero
             Console.WriteLine("1.Customer Data");
             Console.WriteLine("2.Your reservations");
             Console.WriteLine("3.History of stays");
-            Console.WriteLine("4.Payment history");
-            Console.WriteLine("5.Favorite");
+            Console.WriteLine("4.Payment history (Coming soon)");
+            Console.WriteLine("5.Favorite (Coming soon)");
             Console.WriteLine("6.Back to menu");
 
             int option = Convert.ToInt32(Console.ReadLine());

@@ -6,7 +6,8 @@
     "City": "Warszawa",
     "Description": "Hotel w Warszawie",
     "Stars": 4,
-    "Rating": 4.5
+    "Rating": 4.5,
+    "Cost": 250
   },
   {
     "Id": 2,
@@ -15,7 +16,8 @@
     "City": "Warszawa",
     "Description": "Najlepszy hotel w Warszawie",
     "Stars": 5,
-    "Rating": 5.0
+    "Rating": 5.0,
+    "Cost": 600
   },
   {
     "Id": 3,
@@ -24,7 +26,8 @@
     "City": "Kraków",
     "Description": "Hotel w Krakowie",
     "Stars": 3,
-    "Rating": 3.7
+    "Rating": 3.7,
+    "Cost":  180
   },
   {
     "Id": 4,
@@ -33,6 +36,7 @@
     "City": "Poznań",
     "Description": "Hotel w Poznaniu",
     "Stars": 5,
-    "Rating": 4.7
+    "Rating": 4.7,
+    "Cost": 1900
   }
 ]
