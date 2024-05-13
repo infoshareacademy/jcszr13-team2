@@ -19,10 +19,10 @@ namespace HotelHero.HotelsDatabase
 
         public override string ToString()
         {
-            return $"Hotel: {Name} \nLiczba gwiazdek: {numberOfStars(Stars)} \nAdres: {Address}, {City} \nOpis: {Description} \nOcena: {Rating} \nKoszt: {Cost} PLN ";
+            return $"Hotel name: {Name} \nStar rating: {_numberOfStars(Stars)} \nAddress: {Address}, {City} \nDEscription: {Description} \nRating: {Rating} \nCost: {Cost} PLN ";
         }
 
-        private string numberOfStars(int number)
+        private string _numberOfStars(int number)
         {
             string stars = null;
             for (int i = 0; i < number; i++)
