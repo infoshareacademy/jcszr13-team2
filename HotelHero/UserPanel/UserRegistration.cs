@@ -33,7 +33,7 @@ namespace HotelHero.UserPanel
             }
 
             Console.WriteLine("Enter password");
-            var password = Console.ReadLine();
+            var password = User.MaskedInput();
 
             newUser = new User(email, password);
 

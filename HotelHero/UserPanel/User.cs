@@ -16,5 +16,26 @@ namespace HotelHero.UserPanel
             Email = email;
             Password = password;
         }
+        public static string MaskedInput()
+        {
+            string input = "";
+            ConsoleKeyInfo key;
+            do
+            {
+                key = Console.ReadKey(true);
+                if (key.Key != ConsoleKey.Backspace && key.Key != ConsoleKey.Enter)
+                {
+                    input += key.KeyChar;
+                    Console.Write("*"); // Display "*" instead of the actual character
+                }
+                else if (key.Key == ConsoleKey.Backspace && input.Length > 0)
+                {
+                    input = input.Remove(input.Length - 1);
+                    Console.Write("\b \b"); // Move cursor back, erase character, move cursor back again
+                }
+            } while (key.Key != ConsoleKey.Enter);
+
+            return input;
+        }
     }
 }
