@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "Name": "Najlepszy hotel",
+    "Address": "Słowackiego 1",
+    "City": "Warszawa",
+    "Description": "Hotel w Warszawie",
+    "Stars": 4,
+    "Rating": 4.5,
+    "Cost": 250
+  },
+  {
+    "Id": 2,
+    "Name": "Hotel Kamil",
+    "Address": "Sienkiewicza 3",
+    "City": "Warszawa",
+    "Description": "Najlepszy hotel w Warszawie",
+    "Stars": 5,
+    "Rating": 5.0,
+    "Cost": 600
+  },
+  {
+    "Id": 3,
+    "Name": "Hotel Scout",
+    "Address": "Mickiewicza 45",
+    "City": "Kraków",
+    "Description": "Hotel w Krakowie",
+    "Stars": 3,
+    "Rating": 3.7,
+    "Cost":  180
+  },
+  {
+    "Id": 4,
+    "Name": "Hotel Ibis",
+    "Address": "Fredry 36",
+    "City": "Poznań",
+    "Description": "Hotel w Poznaniu",
+    "Stars": 5,
+    "Rating": 4.7,
+    "Cost": 1900
+  }
+]
