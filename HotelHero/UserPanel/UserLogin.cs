@@ -18,7 +18,7 @@ namespace HotelHero.UserPanel
             Console.WriteLine("\nEnter Email");
             var loginEmail = Console.ReadLine();
             Console.WriteLine("\nEnter Password");
-            var loginPassword = Console.ReadLine();
+            var loginPassword = User.MaskedInput();
 
             User loggedUser = null;
             foreach (User user in users)

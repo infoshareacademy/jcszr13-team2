@@ -11,8 +11,8 @@ namespace HotelHero
         public static User? loggedUser;
         static void Main(string[] args)
         {
-            //var usersFile = new CreateUsers();
-            //usersFile.CreateUsersFile();
+            var usersFile = new CreateUsers();
+            usersFile.CreateUsersFile();
 
             UserMenu.Menu();
         }

@@ -38,6 +38,7 @@ namespace HotelHero
                 case 5:
                     SearchPanel filtryOgólne = new SearchPanel();
                     filtryOgólne.OfferSearch();
+                    Menu();
                     break;
                 case 6:
                     CustomerPanel.Panel();
