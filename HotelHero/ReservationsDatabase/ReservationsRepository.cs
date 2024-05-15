@@ -22,8 +22,9 @@ namespace HotelHero.ResrevationsDatabase
 
         public ReservationsRepository()
         {
-            _loadReservationsRepository();
             hotelsRepository = new HotelsRepository();
+            Save();
+            _loadReservationsRepository();
         }
 
         public List<Reservation> GetReservations()
