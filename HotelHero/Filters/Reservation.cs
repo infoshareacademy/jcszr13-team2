@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,12 +14,15 @@ namespace HotelHero.Filters
         public DateTime ChecInDate { get; }
         public DateTime CheckOutDate { get; }
         public int AmountOfPeople { get; }
-        public Reservation(Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople)
+        public int CostPerNight { get; }
+        public Reservation(Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, int costPerNight)
         {
             Hotel = hotel;
             ChecInDate = checkInDate;
             CheckOutDate = checkOutDate;
             AmountOfPeople = amountOfPeople;
+            CostPerNight = costPerNight;
+
         }
     }
 }

@@ -3,6 +3,7 @@ using HotelHero.HotelsDatabase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ConstrainedExecution;
 
 namespace HotelHero
 {
@@ -25,6 +26,7 @@ namespace HotelHero
                 { "Check-on date dd.MM.yyyy: ", "" },
                 { "Check-out date dd.MM.yyyy: ", "" },
                 { "Amount of people: ", "" },
+                { "Cost per night: ", "" }
             };
             foreach (var filter in filters.Keys.ToList())
             {
@@ -34,11 +36,11 @@ namespace HotelHero
 
             var reservation = new List<Reservation>
             {
-                new Reservation(hotelsRepository.GetHotel(3), new DateTime(2024, 6, 15), new DateTime(2024, 6, 20), 3),
-                new Reservation(hotelsRepository.GetHotel(2), new DateTime(2024, 6, 30), new DateTime(2024, 7, 5), 2),
-                new Reservation(hotelsRepository.GetHotel(3), new DateTime(2024, 7, 10), new DateTime(2024, 7, 15), 1),
-                new Reservation(hotelsRepository.GetHotel(4), new DateTime(2025, 2, 6), new DateTime(2025, 2, 10), 3),
-                new Reservation(hotelsRepository.GetHotel(1), new DateTime(2025, 3, 5), new DateTime(2025, 3, 10), 2),
+                new Reservation(hotelsRepository.GetHotel(3), new DateTime(2024, 6, 15), new DateTime(2024, 6, 20), 3, 250),
+                new Reservation(hotelsRepository.GetHotel(2), new DateTime(2024, 6, 30), new DateTime(2024, 7, 5), 2, 420),
+                new Reservation(hotelsRepository.GetHotel(3), new DateTime(2024, 7, 10), new DateTime(2024, 7, 15), 1, 370),
+                new Reservation(hotelsRepository.GetHotel(4), new DateTime(2025, 2, 6), new DateTime(2025, 2, 10), 3, 680),
+                new Reservation(hotelsRepository.GetHotel(1), new DateTime(2025, 3, 5), new DateTime(2025, 3, 10), 2, 330),
             };
 
             var searchCity = filters["Destination: "];
@@ -65,7 +67,7 @@ namespace HotelHero
                 foreach (var result in results)
                 {
                     Console.WriteLine($"{result.Hotel}");
-                    Console.WriteLine($"Check-in date: {result.ChecInDate.ToShortDateString()}, Check-out date: {result.CheckOutDate.ToShortDateString()}, Amount of people: {result.AmountOfPeople}");
+                    Console.WriteLine($"Check-in date: {result.ChecInDate.ToShortDateString()}, Check-out date: {result.CheckOutDate.ToShortDateString()}, Amount of people: {result.AmountOfPeople}, Cost per night: {result.CostPerNight } ") ;
                 }
             }
 

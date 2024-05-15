@@ -15,11 +15,10 @@ namespace HotelHero.HotelsDatabase
         public string Description { get; set; }
         public int Stars { get; set; }
         public float Rating { get; set; }
-        public int Cost {  get; set; } 
 
         public override string ToString()
         {
-            return $"Hotel name: {Name} \nStar rating: {_numberOfStars(Stars)} \nAddress: {Address}, {City} \nDEscription: {Description} \nRating: {Rating} \nCost: {Cost} PLN ";
+            return $"Hotel name: {Name} \nStar rating: {_numberOfStars(Stars)} \nAddress: {Address}, {City} \nDescription: {Description} \nRating: {Rating}";
         }
 
         private string _numberOfStars(int number)
