@@ -20,7 +20,8 @@ namespace HotelHero
                 Console.WriteLine("3.User registration");
                 Console.WriteLine("4.User login");
                 Console.WriteLine("5.Offer search");
-                Console.WriteLine("6.Customer panel");
+                Console.WriteLine("6.First/Last Minute Offer search");
+                Console.WriteLine("7.Customer panel");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -37,11 +38,14 @@ namespace HotelHero
                         UserLogin();
                         break;
                     case 5:
-                        SearchPanel filtryOgólne = new SearchPanel();
-                        filtryOgólne.OfferSearch();
+                        SearchPanel searchPanel = new SearchPanel();
+                        searchPanel.OfferSearch();
                         Menu();
                         break;
                     case 6:
+                        CustomerPanel.Panel();
+                        break;
+                    case 7:
                         CustomerPanel.Panel();
                         break;
                 }

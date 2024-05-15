@@ -1,17 +1,17 @@
-﻿using HotelHero.ReservationsDatabase;
+﻿using HotelHero.HotelsDatabase;
+using HotelHero.ReservationsDatabase;
 using HotelHero.ResrevationsDatabase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.ConstrainedExecution;
 
 namespace HotelHero
 {
-    class SearchPanel
+    class FirstLastMinuteSearchPanel
     {
         ReservationsRepository reservationsRepository;
 
-        public SearchPanel()
+        public FirstLastMinuteSearchPanel()
         {
             reservationsRepository = new ReservationsRepository();
         }
@@ -26,7 +26,7 @@ namespace HotelHero
                 { "Check-on date dd.MM.yyyy: ", "" },
                 { "Check-out date dd.MM.yyyy: ", "" },
                 { "Amount of people: ", "" },
-                { "Cost per night: ", "" }
+                { "Max price: ", "" },
             };
             foreach (var filter in filters.Keys.ToList())
             {
@@ -65,7 +65,6 @@ namespace HotelHero
                         $" Amount of people: {result.AmountOfPeople}");
                 }
             }
-
             else
             {
                 Console.WriteLine("\nNo reservations");

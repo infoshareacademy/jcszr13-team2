@@ -6,7 +6,7 @@ using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HotelHero.Filters
+namespace HotelHero.ReservationsDatabase
 {
     internal class Reservation
     {
