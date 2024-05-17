@@ -10,6 +10,7 @@ namespace HotelHero.UserPanel
     {
         public string Email { get; set; }
         public string Password { get; set; }
+        public bool IsAdmin { get; set; }
 
         public User(string email, string password)
         {
