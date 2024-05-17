@@ -13,12 +13,12 @@ namespace HotelHero.UserPanel
         public void SerializeFile(List<User> users)
         {
             var json = JsonConvert.SerializeObject(users);
-            File.WriteAllText("users.txt", json);
+            File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/../../../Users/users.txt", json);
         }
 
         public List<User> DeserializeFile()
         {
-            var jsonUsers = File.ReadAllText("users.txt");
+            var jsonUsers = File.ReadAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/../../../Users/users.txt");
             var users = JsonConvert.DeserializeObject<List<User>>(jsonUsers);
 
             return users;

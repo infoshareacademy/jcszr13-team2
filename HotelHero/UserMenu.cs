@@ -1,5 +1,6 @@
 ﻿using HotelHero.UserPanel;
 using System;
+using System.IO;
 
 namespace HotelHero
 {
@@ -97,7 +98,7 @@ namespace HotelHero
         static void UserRegistration()
         {
             var registration = new UserRegistration();
-            registration.Registaration();
+            registration.Registration();
             Menu();
         }
         static void UserLogin()

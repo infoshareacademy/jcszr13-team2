@@ -11,7 +11,7 @@ namespace HotelHero.UserPanel
 {
     internal class UserRegistration
     {
-        public void Registaration()
+        public void Registration()
         {
             var email = "";
             var duplicatedEmail = true;
