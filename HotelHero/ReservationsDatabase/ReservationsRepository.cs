@@ -43,9 +43,9 @@ namespace HotelHero.ResrevationsDatabase
                 new Reservation(hotelsRepository.GetHotel(1), new DateTime(2025, 3, 5), new DateTime(2025, 3, 10), 2),
             };
 
-            var hotelsAsJson = JsonConvert.SerializeObject(_reservations, Formatting.Indented);
+            var reservationsAsJson = JsonConvert.SerializeObject(_reservations, Formatting.Indented);
 
-            File.WriteAllText(_reservationsFilePath, hotelsAsJson);
+            File.WriteAllText(_reservationsFilePath, reservationsAsJson);
         }
 
         private void _loadReservationsRepository()
@@ -56,9 +56,9 @@ namespace HotelHero.ResrevationsDatabase
                 {
                     _reservations =  new List<Reservation>();
                 }
-                var usersJson = File.ReadAllText(_reservationsFilePath);
+                var resrvationJson = File.ReadAllText(_reservationsFilePath);
 
-                _reservations = JsonConvert.DeserializeObject<List<Reservation>>(usersJson);
+                _reservations = JsonConvert.DeserializeObject<List<Reservation>>(resrvationJson);
             }
             catch (Exception ex)
             {

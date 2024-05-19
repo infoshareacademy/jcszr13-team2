@@ -10,7 +10,7 @@
       "Rating": 3.7,
       "Cost": 180
     },
-    "ChecInDate": "2024-06-15T00:00:00",
+    "CheckInDate": "2024-06-15T00:00:00",
     "CheckOutDate": "2024-06-20T00:00:00",
     "AmountOfPeople": 3
   },
@@ -25,7 +25,7 @@
       "Rating": 5.0,
       "Cost": 600
     },
-    "ChecInDate": "2024-06-30T00:00:00",
+    "CheckInDate": "2024-06-30T00:00:00",
     "CheckOutDate": "2024-07-05T00:00:00",
     "AmountOfPeople": 2
   },
@@ -40,7 +40,7 @@
       "Rating": 3.7,
       "Cost": 180
     },
-    "ChecInDate": "2024-07-10T00:00:00",
+    "CheckInDate": "2024-07-10T00:00:00",
     "CheckOutDate": "2024-07-15T00:00:00",
     "AmountOfPeople": 1
   },
@@ -55,7 +55,7 @@
       "Rating": 4.7,
       "Cost": 1900
     },
-    "ChecInDate": "2025-02-06T00:00:00",
+    "CheckInDate": "2025-02-06T00:00:00",
     "CheckOutDate": "2025-02-10T00:00:00",
     "AmountOfPeople": 3
   },
@@ -70,7 +70,7 @@
       "Rating": 4.5,
       "Cost": 250
     },
-    "ChecInDate": "2025-03-05T00:00:00",
+    "CheckInDate": "2025-03-05T00:00:00",
     "CheckOutDate": "2025-03-10T00:00:00",
     "AmountOfPeople": 2
   }

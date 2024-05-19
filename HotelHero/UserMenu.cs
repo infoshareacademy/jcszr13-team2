@@ -43,7 +43,8 @@ namespace HotelHero
                         Menu();
                         break;
                     case 6:
-                        CustomerPanel.Panel();
+                        FirstLastMinuteSearchPanel lastMinuteSearchPanel = new FirstLastMinuteSearchPanel();
+                        lastMinuteSearchPanel.LastMinuteOfferSearch();
                         break;
                     case 7:
                         CustomerPanel.Panel();

@@ -11,14 +11,14 @@ namespace HotelHero.ReservationsDatabase
     internal class Reservation
     {
         public Hotel Hotel { get; }
-        public DateTime ChecInDate { get; }
+        public DateTime CheckInDate { get; }
         public DateTime CheckOutDate { get; }
         public int AmountOfPeople { get; }
         public int CostPerNight { get; }
         public Reservation(Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, int costPerNight)
         {
             Hotel = hotel;
-            ChecInDate = checkInDate;
+            CheckInDate = checkInDate;
             CheckOutDate = checkOutDate;
             AmountOfPeople = amountOfPeople;
             CostPerNight = costPerNight;

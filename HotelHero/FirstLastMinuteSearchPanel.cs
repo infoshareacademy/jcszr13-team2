@@ -16,7 +16,7 @@ namespace HotelHero
             reservationsRepository = new ReservationsRepository();
         }
 
-        public void OfferSearch()
+        public void LastMinuteOfferSearch()
         {
             Console.WriteLine("Search - choose option");
 
@@ -49,7 +49,7 @@ namespace HotelHero
 
             var results = reservation.Where(r =>
             (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
-            (searchCheckInDate == DateTime.MinValue || r.ChecInDate <= searchCheckInDate) &&
+            (searchCheckInDate == DateTime.MinValue || r.CheckInDate <= searchCheckInDate) &&
             (searchCheckOutDate == DateTime.MinValue || r.CheckOutDate >= searchCheckOutDate) &&
             (searchAmountOfPeople == 0 || r.AmountOfPeople >= searchAmountOfPeople)
             ).ToList();
@@ -60,7 +60,7 @@ namespace HotelHero
                 foreach (var result in results)
                 {
                     Console.WriteLine($"{result.Hotel}");
-                    Console.WriteLine($"Check-in date: {result.ChecInDate.ToShortDateString()}," +
+                    Console.WriteLine($"Check-in date: {result.CheckInDate.ToShortDateString()}," +
                         $" Check-out date: {result.CheckOutDate.ToShortDateString()}," +
                         $" Amount of people: {result.AmountOfPeople}");
                 }

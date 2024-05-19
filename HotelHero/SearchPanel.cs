@@ -1,5 +1,4 @@
-﻿using HotelHero.ReservationsDatabase;
-using HotelHero.ResrevationsDatabase;
+﻿using HotelHero.ResrevationsDatabase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +22,7 @@ namespace HotelHero
             var filters = new Dictionary<string, string>
             {
                 { "Destination: ", "" },
-                { "Check-on date dd.MM.yyyy: ", "" },
+                { "Check-in date dd.MM.yyyy: ", "" },
                 { "Check-out date dd.MM.yyyy: ", "" },
                 { "Amount of people: ", "" },
                 { "Cost per night: ", "" }
@@ -39,7 +38,7 @@ namespace HotelHero
             var searchCity = filters["Destination: "];
 
             DateTime searchCheckInDate;
-            DateTime.TryParse(filters["Check-on date dd.MM.yyyy: "], out searchCheckInDate);
+            DateTime.TryParse(filters["Check-in date dd.MM.yyyy: "], out searchCheckInDate);
 
             DateTime searchCheckOutDate;
             DateTime.TryParse(filters["Check-out date dd.MM.yyyy: "], out searchCheckOutDate);
@@ -49,7 +48,7 @@ namespace HotelHero
 
             var results = reservation.Where(r =>
             (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
-            (searchCheckInDate == DateTime.MinValue || r.ChecInDate <= searchCheckInDate) &&
+            (searchCheckInDate == DateTime.MinValue || r.CheckInDate <= searchCheckInDate) &&
             (searchCheckOutDate == DateTime.MinValue || r.CheckOutDate >= searchCheckOutDate) &&
             (searchAmountOfPeople == 0 || r.AmountOfPeople >= searchAmountOfPeople)
             ).ToList();
@@ -60,7 +59,7 @@ namespace HotelHero
                 foreach (var result in results)
                 {
                     Console.WriteLine($"{result.Hotel}");
-                    Console.WriteLine($"Check-in date: {result.ChecInDate.ToShortDateString()}," +
+                    Console.WriteLine($"Check-in date: {result.CheckInDate.ToShortDateString()}," +
                         $" Check-out date: {result.CheckOutDate.ToShortDateString()}," +
                         $" Amount of people: {result.AmountOfPeople}");
                 }
