@@ -7,12 +7,12 @@
       "City": "Kraków",
       "Description": "Hotel w Krakowie",
       "Stars": 3,
-      "Rating": 3.7,
-      "Cost": 180
+      "Rating": 3.7
     },
     "CheckInDate": "2024-06-15T00:00:00",
     "CheckOutDate": "2024-06-20T00:00:00",
-    "AmountOfPeople": 3
+    "AmountOfPeople": 3,
+    "CostPerNight": 300
   },
   {
     "Hotel": {
@@ -22,12 +22,12 @@
       "City": "Warszawa",
       "Description": "Najlepszy hotel w Warszawie",
       "Stars": 5,
-      "Rating": 5.0,
-      "Cost": 600
+      "Rating": 5.0
     },
     "CheckInDate": "2024-06-30T00:00:00",
     "CheckOutDate": "2024-07-05T00:00:00",
-    "AmountOfPeople": 2
+    "AmountOfPeople": 2,
+    "CostPerNight": 500
   },
   {
     "Hotel": {
@@ -37,12 +37,12 @@
       "City": "Kraków",
       "Description": "Hotel w Krakowie",
       "Stars": 3,
-      "Rating": 3.7,
-      "Cost": 180
+      "Rating": 3.7
     },
     "CheckInDate": "2024-07-10T00:00:00",
     "CheckOutDate": "2024-07-15T00:00:00",
-    "AmountOfPeople": 1
+    "AmountOfPeople": 1,
+    "CostPerNight": 400
   },
   {
     "Hotel": {
@@ -52,12 +52,12 @@
       "City": "Poznań",
       "Description": "Hotel w Poznaniu",
       "Stars": 5,
-      "Rating": 4.7,
-      "Cost": 1900
+      "Rating": 4.7
     },
     "CheckInDate": "2025-02-06T00:00:00",
     "CheckOutDate": "2025-02-10T00:00:00",
-    "AmountOfPeople": 3
+    "AmountOfPeople": 3,
+    "CostPerNight": 800
   },
   {
     "Hotel": {
@@ -67,11 +67,11 @@
       "City": "Warszawa",
       "Description": "Hotel w Warszawie",
       "Stars": 4,
-      "Rating": 4.5,
-      "Cost": 250
+      "Rating": 4.5
     },
     "CheckInDate": "2025-03-05T00:00:00",
     "CheckOutDate": "2025-03-10T00:00:00",
-    "AmountOfPeople": 2
+    "AmountOfPeople": 2,
+    "CostPerNight": 600
   }
 ]
