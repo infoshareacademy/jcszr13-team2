@@ -12,11 +12,14 @@ namespace HotelHero
     {
         ReservationsRepository reservationsRepository;
 
+        private User _loggedUser;
+
         private List<Reservation> _searchedReservations;
-        public SearchPanel()
+        public SearchPanel(User loggedUser)
         {
             reservationsRepository = new ReservationsRepository();
             _searchedReservations = new List<Reservation>();
+            _loggedUser = loggedUser;
         }
 
         public void OfferSearch()
@@ -83,20 +86,20 @@ namespace HotelHero
 
         private void CreateReservation()
         {
-            if(Program.loggedUser == null)
+            if(_loggedUser == null)
             {
-                Console.WriteLine("W celu złożenia rezerwcji musisz sięzalogować");
+                Console.WriteLine("To make a reservation you must log in");
                 Console.WriteLine();
             }
             else
             {
-                Console.WriteLine("Jeżeli chcesz dokonaćrezerwacji wybierz numer rezerwacji. Aby zrezygnować wciśnij 0:");
+                Console.WriteLine("If you want to make a reservation, select the reservation number. To cancel, press 0: ");
                 bool isActionOK = Int32.TryParse(Console.ReadLine(), out int result);
 
                 if(result > 0 && result <= _searchedReservations.Count)
                 {
-                    Program.loggedUser.MakeReservation(_searchedReservations.ElementAt(result - 1));
-                    Console.WriteLine("Dokonano rezerwacji");
+                    _loggedUser.MakeReservation(_searchedReservations.ElementAt(result - 1));
+                    Console.WriteLine("Reservation complete");
                     Console.WriteLine();
                 }
 

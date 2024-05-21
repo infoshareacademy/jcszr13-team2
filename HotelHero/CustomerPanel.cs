@@ -44,7 +44,7 @@ namespace HotelHero
         }
         static void YourReservations()      
         {
-            Console.WriteLine("To są twoje rezerwacje ");
+            Console.WriteLine("Your reservations: ");
             foreach (var item in Program.loggedUser.Reservations)
             {
                 Console.WriteLine(item.ToString());    

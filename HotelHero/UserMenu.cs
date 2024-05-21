@@ -39,7 +39,7 @@ namespace HotelHero
                         UserLogin();
                         break;
                     case 5:
-                        SearchPanel searchPanel = new SearchPanel();
+                        SearchPanel searchPanel = new SearchPanel(Program.loggedUser);
                         searchPanel.OfferSearch();
                         Menu();
                         break;
