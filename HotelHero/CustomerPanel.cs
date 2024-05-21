@@ -42,9 +42,14 @@ namespace HotelHero
                     break;
             }
         }
-        static void YourReservations()
+        static void YourReservations()      
         {
-            Console.WriteLine("Tu powstanie zwariowane ");
+            Console.WriteLine("To są twoje rezerwacje ");
+            foreach (var item in Program.loggedUser.Reservations)
+            {
+                Console.WriteLine(item.ToString());    
+            }
+
             Console.WriteLine();
             Panel();
         }

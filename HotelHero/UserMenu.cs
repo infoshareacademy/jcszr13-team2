@@ -6,6 +6,7 @@ namespace HotelHero
 {
     internal class UserMenu
     {
+
         public static void Menu()
         {
             if (Program.loggedUser != null && Program.loggedUser.IsAdmin == true)
@@ -110,7 +111,7 @@ namespace HotelHero
         {
             var logIn = new UserLogIn();
             Program.loggedUser = logIn.LogIn();
-            Console.WriteLine(Program.loggedUser?.Email);
+            Console.WriteLine(Program.loggedUser.Email);
             Menu();
         }
     }

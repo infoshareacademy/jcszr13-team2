@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.FileIO;
+﻿using HotelHero.ReservationsDatabase;
+using Microsoft.VisualBasic.FileIO;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace HotelHero.UserPanel
             Console.WriteLine("Enter password");
             var password = User.MaskedInput();
 
-            newUser = new User(email, password);
+            newUser = new User(email, password, new List<Reservation>());
 
             users.Add(newUser);
 

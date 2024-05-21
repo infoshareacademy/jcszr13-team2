@@ -24,5 +24,15 @@ namespace HotelHero.ReservationsDatabase
             CostPerNight = costPerNight;
 
         }
+
+        public override string ToString()
+        {
+            string result = "";
+            result+= Hotel.ToString();
+            result+= "\nCheck-in date: " + CheckInDate.ToString();
+            result += "\nCheck-out date: " + CheckOutDate.ToString();
+            result += "\nAmount of people:" + AmountOfPeople;
+            return result;
+        }
     }
 }

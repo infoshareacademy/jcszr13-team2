@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HotelHero.ReservationsDatabase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,11 +12,14 @@ namespace HotelHero.UserPanel
         public string Email { get; set; }
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
+        public List<Reservation> Reservations { get; set; }
 
-        public User(string email, string password)
+        public User(string email, string password, List<Reservation> reservations)
         {
             Email = email;
             Password = password;
+            Reservations = reservations;
+
         }
         public static string MaskedInput()
         {
@@ -37,6 +41,11 @@ namespace HotelHero.UserPanel
             } while (key.Key != ConsoleKey.Enter);
 
             return input;
+        }
+
+        public void MakeReservation(Reservation newReservation)
+        {
+            Reservations.Add(newReservation);
         }
     }
 }

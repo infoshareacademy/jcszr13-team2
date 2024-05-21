@@ -1,4 +1,6 @@
-﻿using HotelHero.ResrevationsDatabase;
+﻿using HotelHero.ReservationsDatabase;
+using HotelHero.ResrevationsDatabase;
+using HotelHero.UserPanel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,11 @@ namespace HotelHero
     {
         ReservationsRepository reservationsRepository;
 
+        private List<Reservation> _searchedReservations;
         public SearchPanel()
         {
             reservationsRepository = new ReservationsRepository();
+            _searchedReservations = new List<Reservation>();
         }
 
         public void OfferSearch()
@@ -46,23 +50,27 @@ namespace HotelHero
             int searchAmountOfPeople;
             int.TryParse(filters["Amount of people: "], out searchAmountOfPeople);
 
-            var results = reservation.Where(r =>
+            _searchedReservations = reservation.Where(r =>
             (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
             (searchCheckInDate == DateTime.MinValue || r.CheckInDate <= searchCheckInDate) &&
             (searchCheckOutDate == DateTime.MinValue || r.CheckOutDate >= searchCheckOutDate) &&
             (searchAmountOfPeople == 0 || r.AmountOfPeople >= searchAmountOfPeople)
             ).ToList();
 
-            if (results.Any())
+            if (_searchedReservations.Any())
             {
+                int index = 1;
                 Console.WriteLine("\nReservations found:");
-                foreach (var result in results)
+                foreach (var result in _searchedReservations)
                 {
-                    Console.WriteLine($"{result.Hotel}");
+                    Console.Write($"{index}.");
+                    Console.WriteLine($"{result.Hotel.ToString()}");
                     Console.WriteLine($"Check-in date: {result.CheckInDate.ToShortDateString()}," +
                         $" Check-out date: {result.CheckOutDate.ToShortDateString()}," +
                         $" Amount of people: {result.AmountOfPeople}");
+                    index++;
                 }
+                CreateReservation();
             }
 
             else
@@ -72,6 +80,29 @@ namespace HotelHero
             }
 
         }
+
+        private void CreateReservation()
+        {
+            if(Program.loggedUser == null)
+            {
+                Console.WriteLine("W celu złożenia rezerwcji musisz sięzalogować");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine("Jeżeli chcesz dokonaćrezerwacji wybierz numer rezerwacji. Aby zrezygnować wciśnij 0:");
+                bool isActionOK = Int32.TryParse(Console.ReadLine(), out int result);
+
+                if(result > 0 && result <= _searchedReservations.Count)
+                {
+                    Program.loggedUser.MakeReservation(_searchedReservations.ElementAt(result - 1));
+                    Console.WriteLine("Dokonano rezerwacji");
+                    Console.WriteLine();
+                }
+
+            }
+        }
+
     }
 }
 
