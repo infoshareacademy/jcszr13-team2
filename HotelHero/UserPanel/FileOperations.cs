@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HotelHero.UserPanel
 {
-    internal class FileOperations
+    public class FileOperations
     {
         public void SerializeFile(List<User> users)
         {

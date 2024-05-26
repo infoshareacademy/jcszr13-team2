@@ -1,29 +1,19 @@
-﻿using Microsoft.VisualBasic.FileIO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using HotelHero.UserPanel;
 
-namespace HotelHero.UserPanel
+namespace HotelHero.WebMVC.Services
 {
-    public class UserLogIn
+    public class LogInService
     {
-        public User? LogIn()
+        public User? LogIn(User logInUser)
         {
             FileOperations fileOperations = new FileOperations();
-
             var users = fileOperations.DeserializeFile();
-            Console.WriteLine("\nLog In");
-            Console.WriteLine("\nEnter Email");
-            var loginEmail = Console.ReadLine();
-            Console.WriteLine("\nEnter Password");
-            var loginPassword = User.MaskedInput();
+               
 
             User loggedUser = null;
             foreach (User user in users)
             {
-                if (user.Email == loginEmail && user.Password == loginPassword)
+                if (user.Email == logInUser.Email && user.Password == logInUser.Password)
                 {
                     loggedUser = user;
                     break;
@@ -40,5 +30,6 @@ namespace HotelHero.UserPanel
                 return null;
             };
         }
+        
     }
 }
