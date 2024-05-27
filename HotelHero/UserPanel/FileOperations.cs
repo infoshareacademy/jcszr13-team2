@@ -9,16 +9,28 @@ using System.Threading.Tasks;
 namespace HotelHero.UserPanel
 {
     public class FileOperations
+
     {
+        private string PathMVC()
+        {
+            var path = @$"{AppDomain.CurrentDomain.BaseDirectory}/../../../Users/users.txt";
+            string newPath = path;
+            if (path.Contains(".WebMVC"))
+            {
+                newPath = path.Replace(".WebMVC", "");
+            }
+            return newPath;
+        }
+
         public void SerializeFile(List<User> users)
         {
             var json = JsonConvert.SerializeObject(users);
-            File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/../../../Users/users.txt", json);
+            File.WriteAllText(PathMVC(), json);
         }
 
         public List<User> DeserializeFile()
         {
-            var jsonUsers = File.ReadAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/../../../Users/users.txt");
+            var jsonUsers = File.ReadAllText(PathMVC());
             var users = JsonConvert.DeserializeObject<List<User>>(jsonUsers);
 
             return users;

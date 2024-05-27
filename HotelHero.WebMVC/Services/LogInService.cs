@@ -1,4 +1,5 @@
-﻿using HotelHero.UserPanel;
+﻿using HotelHero.ReservationsDatabase;
+using HotelHero.UserPanel;
 
 namespace HotelHero.WebMVC.Services
 {
@@ -30,6 +31,16 @@ namespace HotelHero.WebMVC.Services
                 return null;
             };
         }
-        
+
+        public void Register(User registerUser)
+        {
+            FileOperations fileOperations = new FileOperations();
+            var users = fileOperations.DeserializeFile();
+
+            var newUser = new User(registerUser.Email, registerUser.Password, new List<Reservation>());
+            users.Add(newUser);
+            fileOperations.SerializeFile(users);
+        }
+
     }
 }

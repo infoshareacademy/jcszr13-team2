@@ -8,14 +8,12 @@ namespace HotelHero.WebMVC.Controllers
 {
     public class LogInController : Controller
     {
-        private readonly ILogger<LogInController> _logger;
-        private LogInService _logInService;
+        private readonly LogInService _logInService;
 
-        public LogInController(ILogger<LogInController> logger)
+        public LogInController()
         {
-            _logger = logger;
+            _logInService = new LogInService();
         }
-
         public IActionResult LogIn()
         {
             return View();
@@ -32,7 +30,31 @@ namespace HotelHero.WebMVC.Controllers
                     return View(user);
                 }
                 _logInService.LogIn(user);
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
+            catch
+            {
+                return View();
+            }
+        }
+
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(User user)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View(user);
+                }
+                _logInService.Register(user);
+                return RedirectToAction("Index","Home");
             }
             catch
             {
