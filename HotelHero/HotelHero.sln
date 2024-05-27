@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHero", "HotelHero.csproj", "{ED26AD64-44B1-483D-947B-4687574DE89B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelHero.WebMVC", "..\HotelHero.WebMVC\HotelHero.WebMVC.csproj", "{16FFA368-8998-45DC-A5AF-D25B61E37226}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHero.WebMVC", "..\HotelHero.WebMVC\HotelHero.WebMVC.csproj", "{16FFA368-8998-45DC-A5AF-D25B61E37226}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
