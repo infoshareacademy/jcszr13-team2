@@ -7,12 +7,17 @@ using System.Threading.Tasks;
 
 namespace HotelHero.UserPanel
 {
-    internal class User
+    public class User
     {
         public string Email { get; set; }
         public string Password { get; set; }
         public bool IsAdmin { get; set; }
         public List<Reservation> Reservations { get; set; }
+
+        public User()
+        {
+            Reservations = new List<Reservation>();
+        }
 
         public User(string email, string password, List<Reservation> reservations)
         {

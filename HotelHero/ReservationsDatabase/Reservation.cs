@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HotelHero.ReservationsDatabase
 {
-    internal class Reservation
+    public class Reservation
     {
         public Hotel Hotel { get; }
         public DateTime CheckInDate { get; }
