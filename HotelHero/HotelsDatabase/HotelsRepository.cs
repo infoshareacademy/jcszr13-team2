@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace HotelHero.HotelsDatabase
 {
-    internal class HotelsRepository
+    public class HotelsRepository
     {
         private List<Hotel> _hotels;
 
@@ -51,6 +51,7 @@ namespace HotelHero.HotelsDatabase
         {
             try
             {
+                __hotelsFilePath = pathMVC(__hotelsFilePath);
                 if (!File.Exists(__hotelsFilePath))
                 {
                     _hotels =  new List<Hotel>();
@@ -65,6 +66,16 @@ namespace HotelHero.HotelsDatabase
                 _hotels = new List<Hotel>();
             }
 
+        }
+
+        private string pathMVC(string path)
+        {
+            string newPath = path;
+            if (path.Contains(".WebMVC"))
+            {
+                newPath = path.Replace(".WebMVC", "");
+            }
+            return newPath;
         }
     }
 }

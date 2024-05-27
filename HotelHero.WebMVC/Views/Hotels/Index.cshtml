@@ -1,0 +1,60 @@
+﻿@model IEnumerable<HotelHero.HotelsDatabase.Hotel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Hotels</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label asp-for="First().Name"></label>
+            </th>
+            <th>
+                <label asp-for="First().Address"></label>
+            </th>
+            <th>
+                <label asp-for="First().City"></label>
+            </th>
+            <th>
+                <label asp-for="First().Description"></label>
+            </th>
+            <th>
+                <label asp-for="First().Stars"></label>
+            </th>
+            <th>
+                <label asp-for="First().Rating"></label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stars)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new {  id=item.Id })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
