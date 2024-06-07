@@ -1,0 +1,37 @@
+﻿@model HotelHero.WebMVC.Models.CustomerData
+
+@{
+    ViewData["Title"] = "Customer Panel";
+}
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-auto">
+                <div class="children">
+                    <a class="btn" asp-action="CustomerData">Customer Data</a>
+                </div>
+
+                <div class="children">
+                    <a class="btn" asp-area="" asp-controller="CustomerPanel" asp-action="">Your reservations</a>
+                </div>
+
+                <div class="children">
+                    <a class="btn" asp-area="" asp-controller="CustomerPanel" asp-action="">History of stays</a>
+                </div>
+
+                <div class="children">
+                    <a class="btn" asp-area="" asp-controller="CustomerPanel" asp-action="">Payment history (coming soon)</a>
+                </div>
+
+                <div class="children">
+                    <a class="btn" asp-area="" asp-controller="CustomerPanel" asp-action="">Favorite (coming soon)</a>
+                </div>
+
+                <div class="children">
+                    <a class="btn" asp-area="" asp-controller="CustomerPanel" asp-action="">Back to menu</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

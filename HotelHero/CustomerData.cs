@@ -6,16 +6,17 @@ using System.Text.Json;
 
 namespace HotelHero
 {
-    internal class CustomerData
+    public class CustomerData
     {
-        string email;
-        string lastName;
-        string firstName;
-        string dateOfBirth;
-        string address;
-        string phone;
-        string rodo;
-        string newsletter;
+        public string Email { get; set; }
+        public string LastName { get; set; }
+        public string FirstName { get; set; }
+        public string DateOfBirth { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public bool Rodo { get; set; }
+        public bool Newsletter { get; set; }
+
 
         public static void CustomerDataMenu()
         {
@@ -47,49 +48,64 @@ namespace HotelHero
 
             }
         }
-        private static void InputData()
+        public static void InputData()
         {
             CustomerData cd = new CustomerData();
-            cd.email = Program.loggedUser.Email;
+            cd.Email = Program.loggedUser.Email;
 
             Console.WriteLine("Please enter you data.");
             Console.WriteLine("Do you accept RODO?");
-            cd.rodo = Console.ReadLine();
+            cd.Rodo = bool.Parse(Console.ReadLine());
             Console.WriteLine("Last Name");
-            cd.lastName = Console.ReadLine();
+            cd.LastName = Console.ReadLine();
             Console.WriteLine("First Name");
-            cd.firstName = Console.ReadLine();
+            cd.FirstName = Console.ReadLine();
             Console.WriteLine("Date of Birth");
-            cd.dateOfBirth = Console.ReadLine();
+            cd.DateOfBirth = Console.ReadLine();
             Console.WriteLine("Address");
-            cd.address = Console.ReadLine();
+            cd.Address = Console.ReadLine();
             Console.WriteLine("Phone");
-            cd.phone = Console.ReadLine();
+            cd.Phone = Console.ReadLine();
             Console.WriteLine("Do you want to receive newsletter?");
-            cd.newsletter = Console.ReadLine();
+            cd.Newsletter = bool.Parse(Console.ReadLine());
 
-            var customerData = new List<string>
-            {
-                cd.email,
-                cd.rodo,
-                cd.lastName,
-                cd.firstName,
-                cd.dateOfBirth,
-                cd.address,
-                cd.phone,
-                cd.newsletter
-            };
+            //var customerData = new List<string>
+            //{
+            //    cd.Email,
+            //    cd.Rodo,
+            //    cd.LastName,
+            //    cd.FirstName,
+            //    cd.DateOfBirth,
+            //    cd.Address,
+            //    cd.Phone,
+            //    cd.Newsletter
+            //};
 
-            var json = JsonSerializer.Serialize(customerData);
-            File.WriteAllText(cd.email + ".txt", json);
+            var json = JsonSerializer.Serialize(cd);
+            File.WriteAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/../../../CustomerFiles/" + cd.Email + ".txt", json);
             CustomerDataMenu();
         }
-        private static void ReadData()
+        public void InputData(CustomerData customer)
+        {
+            var json = JsonSerializer.Serialize(customer);
+            File.WriteAllText(PathMVC(), json);
+        }
+        private string PathMVC()
+        {
+            var path = @$"{AppDomain.CurrentDomain.BaseDirectory}/../../../Users/users.txt";
+            string newPath = path;
+            if (path.Contains(".WebMVC"))
+            {
+                newPath = path.Replace(".WebMVC", "");
+            }
+            return newPath;
+        }
+        public static void ReadData()
         {
             CustomerData cd = new CustomerData();
-            cd.email = Program.loggedUser.Email;
+            cd.Email = Program.loggedUser.Email;
 
-            var outputString = File.ReadAllText(cd.email + ".txt");
+            var outputString = File.ReadAllText(@$"{AppDomain.CurrentDomain.BaseDirectory}/../../../CustomerFiles/" + cd.Email + ".txt");
 
             var customerData = JsonSerializer.Deserialize<List<string>>(outputString);
             var joinString = string.Join(",", customerData);
