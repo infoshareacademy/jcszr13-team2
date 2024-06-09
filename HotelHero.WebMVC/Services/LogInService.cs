@@ -1,16 +1,17 @@
 ﻿using HotelHero.ReservationsDatabase;
 using HotelHero.UserPanel;
+using HotelHero.WebMVC.Interface;
 
 namespace HotelHero.WebMVC.Services
 {
-    public class LogInService
+    public class LogInService : ILogInService
     {
         public User? LogIn(User logInUser)
         {
             FileOperations fileOperations = new FileOperations();
             var users = fileOperations.DeserializeFile();
                
-
+            
             User loggedUser = null;
             foreach (User user in users)
             {

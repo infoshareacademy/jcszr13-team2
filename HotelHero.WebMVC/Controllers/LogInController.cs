@@ -1,4 +1,5 @@
 using HotelHero.UserPanel;
+using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -8,11 +9,11 @@ namespace HotelHero.WebMVC.Controllers
 {
     public class LogInController : Controller
     {
-        private readonly LogInService _logInService;
+        private readonly ILogInService _logInService;
 
-        public LogInController()
+        public LogInController(ILogInService logService)
         {
-            _logInService = new LogInService();
+            _logInService = logService;
         }
         public IActionResult LogIn()
         {

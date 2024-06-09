@@ -1,3 +1,6 @@
+using HotelHero.WebMVC.Interface;
+using HotelHero.WebMVC.Services;
+
 namespace HotelHero.WebMVC
 {
     public class Program
@@ -8,6 +11,7 @@ namespace HotelHero.WebMVC
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddTransient<ILogInService, LogInService>();
 
             var app = builder.Build();
 
