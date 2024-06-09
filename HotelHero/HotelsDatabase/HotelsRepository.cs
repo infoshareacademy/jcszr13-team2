@@ -15,7 +15,7 @@ namespace HotelHero.HotelsDatabase
         private List<Hotel> _hotels;
 
         private static string _fileName = "hotels.json";
-        private static string __hotelsFilePath = @$"{AppDomain.CurrentDomain.BaseDirectory}/../../../HotelsDatabase/{_fileName}";
+        private static string __hotelsFilePath = @$"{AppDomain.CurrentDomain.BaseDirectory}/../HotelHero/{_fileName}";
 
         public HotelsRepository()
         {

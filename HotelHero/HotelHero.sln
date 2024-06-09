@@ -7,6 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHero", "HotelHero.cspr
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelHero.WebMVC", "..\HotelHero.WebMVC\HotelHero.WebMVC.csproj", "{16FFA368-8998-45DC-A5AF-D25B61E37226}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Files", "Files", "{7C690CC0-CFB8-48A4-AA64-C0A569A0855A}"
+	ProjectSection(SolutionItems) = preProject
+		hotels.json = hotels.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
