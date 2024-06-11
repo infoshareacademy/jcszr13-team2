@@ -1,9 +1,8 @@
 ﻿using HotelHero.ReservationsDatabase;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using HotelHero.UserPanel.Enums;
 
 namespace HotelHero.UserPanel
 {
@@ -11,7 +10,7 @@ namespace HotelHero.UserPanel
     {
         public string Email { get; set; }
         public string Password { get; set; }
-        public bool IsAdmin { get; set; }
+        public UserRole UserRole { get; set; }
         public List<Reservation> Reservations { get; set; }
 
         public User()
@@ -19,10 +18,11 @@ namespace HotelHero.UserPanel
             Reservations = new List<Reservation>();
         }
 
-        public User(string email, string password, List<Reservation> reservations)
+        public User(string email, string password,UserRole userRole, List<Reservation> reservations)
         {
             Email = email;
             Password = password;
+            UserRole = userRole;
             Reservations = reservations;
 
         }

@@ -1,5 +1,6 @@
 ﻿using HotelHero.ReservationsDatabase;
 using HotelHero.UserPanel;
+using HotelHero.UserPanel.Enums;
 using HotelHero.WebMVC.Interface;
 
 namespace HotelHero.WebMVC.Services
@@ -38,7 +39,8 @@ namespace HotelHero.WebMVC.Services
             FileOperations fileOperations = new FileOperations();
             var users = fileOperations.DeserializeFile();
 
-            var newUser = new User(registerUser.Email, registerUser.Password, new List<Reservation>());
+            var newUser = new User(registerUser.Email, registerUser.Password, UserRole.UnloggedUser,
+                new List<Reservation>());
             users.Add(newUser);
             fileOperations.SerializeFile(users);
         }

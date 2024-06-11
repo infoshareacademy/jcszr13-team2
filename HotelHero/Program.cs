@@ -12,7 +12,7 @@ namespace HotelHero
         static void Main(string[] args)
         {
             var usersFile = new CreateUsers();
-            //usersFile.CreateUsersFile();
+            usersFile.CreateUsersFile();
 
             UserMenu.Menu();
         }
