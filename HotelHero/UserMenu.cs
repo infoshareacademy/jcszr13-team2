@@ -1,4 +1,5 @@
 ﻿using HotelHero.UserPanel;
+using HotelHero.UserPanel.Enums;
 using System;
 using System.IO;
 
@@ -9,7 +10,7 @@ namespace HotelHero
 
         public static void Menu()
         {
-            if (Program.loggedUser != null && Program.loggedUser.IsAdmin == true)
+            if (Program.loggedUser != null && Program.loggedUser.UserRole == UserRole.Admin)
             {
                 AdministratorPanel.AdministratorPanel.PanelAd();
             }
