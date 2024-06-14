@@ -17,15 +17,11 @@ namespace HotelHero.WebMVC.Controllers
         public ActionResult CustomerPanel()
         {
             return View();
-        }public ActionResult CustomerData()
+        }
+        public ActionResult CustomerData()
         {
             var customerData = _customerDataService.GetCustomerData(_customerEmail);
             return View(customerData);
-        }
-        // GET: CustomerPanelController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
         }
 
         // GET: CustomerPanelController/Edit/5
@@ -50,26 +46,17 @@ namespace HotelHero.WebMVC.Controllers
                 return View();
             }
         }
-
-        // GET: CustomerPanelController/Delete/5
-        public ActionResult Delete(int id)
+        public ActionResult Reservations()
         {
             return View();
         }
-
-        // POST: CustomerPanelController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult StaysHistory()
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return View();
+        }
+        public ActionResult Favourites()
+        {
+            return View();
         }
     }
 }

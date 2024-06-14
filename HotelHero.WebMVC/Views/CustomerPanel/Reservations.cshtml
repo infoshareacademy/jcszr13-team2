@@ -1,9 +1,10 @@
-﻿@model HotelHero.WebMVC.Models.CustomerData
-
+﻿
 @{
-    ViewData["Title"] = "Customer Panel";
+    ViewData["Title"] = "Reservations";
 }
-<body>
+
+<h1>Reservations</h1>
+
     <div class="container">
         <div class="row">
             <div class="col-md-auto">
@@ -12,7 +13,7 @@
                 </div>
 
                 <div class="children">
-                    <a class="btn" asp-action="Reservations">Your reservations</a>
+                    <a class="btn-dark" asp-action="Reservations">Your reservations</a>
                 </div>
 
                 <div class="children">
@@ -30,4 +31,3 @@
             </div>
         </div>
     </div>
-</body>
