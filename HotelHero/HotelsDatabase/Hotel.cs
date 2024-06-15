@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +29,11 @@ namespace HotelHero.HotelsDatabase
             for (int i = 0; i < number; i++)
                 stars += "*";
             return stars;
+        }
+
+        public string CreateStars()
+        {
+           return new System.String('\u2605', Stars);
         }
     }
 }
