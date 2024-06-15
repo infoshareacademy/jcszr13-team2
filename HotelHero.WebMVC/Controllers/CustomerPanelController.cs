@@ -5,13 +5,14 @@ using Microsoft.CodeAnalysis.Scripting;
 using HotelHero.UserPanel;
 using Newtonsoft.Json;
 using HotelHero.WebMVC.Services;
+using HotelHero.WebMVC.Models;
 
 namespace HotelHero.WebMVC.Controllers
 {
     public class CustomerPanelController : Controller
     {
         private readonly CustomerDataService _customerDataService = new CustomerDataService();
-        private readonly string _customerEmail = "admin";
+        private readonly string _customerEmail = UserContext.GetUser()?.Email;
 
         // GET: CustomerPanelController
         public ActionResult CustomerPanel()

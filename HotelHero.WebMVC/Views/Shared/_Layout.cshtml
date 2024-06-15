@@ -35,10 +35,16 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="CustomerPanel" asp-action="CustomerPanel">Customer Panel</a>
                         </li>
                         
-                        
+                        @if(UserContext.GetUser()?.UserRole == HotelHero.UserPanel.Enums.UserRole.Admin)
+                        {
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="AdminPanel" asp-action="Index">Administrator Panel</a>
                             </li>
+                        }
+                        <div class="float-right">
+                            <span>Zalogowany jako: @UserContext.GetUser()?.Email </span>
+                        </div>
+
                         
                     </ul>
                 </div>
