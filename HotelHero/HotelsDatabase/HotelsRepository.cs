@@ -12,14 +12,17 @@ namespace HotelHero.HotelsDatabase
 {
     public class HotelsRepository
     {
-        private List<Hotel> _hotels;
+        private static List<Hotel> _hotels;
+
+        private static int _idCounter;
 
         private static string _fileName = "hotels.json";
-        private static string __hotelsFilePath = @$"{AppDomain.CurrentDomain.BaseDirectory}/../../../HotelsDatabase/{_fileName}";
+        private static string _hotelsFilePath = @$"{AppDomain.CurrentDomain.BaseDirectory}/../../../HotelsDatabase/{_fileName}";
 
         public HotelsRepository()
         {
             _loadHotelsRepository();
+            _idCounter = _hotels.Count();
         }
 
         public List<Hotel> GetHotels()
@@ -30,6 +33,29 @@ namespace HotelHero.HotelsDatabase
         public Hotel GetHotel(int id)
         {
             return _hotels.SingleOrDefault(h => h.Id == id);
+        }
+
+        public void Create(Hotel hotel)
+        {
+            hotel.Id = GetNextId();
+            _hotels.Add(hotel);
+        }
+
+        public void Update(Hotel model)
+        {
+            var hotel = GetHotel(model.Id);
+
+            hotel.Name = model.Name;
+            hotel.Address = model.Address;
+            hotel.City = model.City;
+            hotel.Description = model.Description;
+            hotel.Stars = model.Stars;
+            hotel.Rating = model.Rating;
+        }
+
+        public void Delete(int id)
+        {
+            _hotels.Remove(GetHotel(id));
         }
 
         private void Save()
@@ -44,19 +70,19 @@ namespace HotelHero.HotelsDatabase
 
             var hotelsAsJson = JsonConvert.SerializeObject(_hotels, Formatting.Indented);
 
-            File.WriteAllText(__hotelsFilePath, hotelsAsJson);
+            File.WriteAllText(_hotelsFilePath, hotelsAsJson);
         }
 
         private void _loadHotelsRepository()
         {
             try
             {
-                __hotelsFilePath = pathMVC(__hotelsFilePath);
-                if (!File.Exists(__hotelsFilePath))
+                _hotelsFilePath = pathMVC(_hotelsFilePath);
+                if (!File.Exists(_hotelsFilePath))
                 {
                     _hotels =  new List<Hotel>();
                 }
-                var usersJson = File.ReadAllText(__hotelsFilePath);
+                var usersJson = File.ReadAllText(_hotelsFilePath);
 
                 _hotels = JsonConvert.DeserializeObject<List<Hotel>>(usersJson);
             }
@@ -76,6 +102,11 @@ namespace HotelHero.HotelsDatabase
                 newPath = path.Replace(".WebMVC", "");
             }
             return newPath;
+        }
+        private int GetNextId()
+        {
+            _idCounter++;
+            return _idCounter;
         }
     }
 }

@@ -36,10 +36,15 @@ namespace HotelHero.WebMVC.Controllers
         // POST: HotelsController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Hotel model)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return View(model);
+                }
+                _hotelsRepository.Create(model);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -51,16 +56,23 @@ namespace HotelHero.WebMVC.Controllers
         // GET: HotelsController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var model = _hotelsRepository.GetHotel(id);
+            return View(model);
         }
 
         // POST: HotelsController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, Hotel model)
         {
             try
             {
+                if (!ModelState.IsValid)
+                {
+                    return View(model);
+                }
+
+                _hotelsRepository.Update(model);
                 return RedirectToAction(nameof(Index));
             }
             catch
@@ -72,7 +84,8 @@ namespace HotelHero.WebMVC.Controllers
         // GET: HotelsController/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var model = _hotelsRepository.GetHotel(id);
+            return View(model);
         }
 
         // POST: HotelsController/Delete/5
@@ -82,6 +95,7 @@ namespace HotelHero.WebMVC.Controllers
         {
             try
             {
+                _hotelsRepository.Delete(id);
                 return RedirectToAction(nameof(Index));
             }
             catch
