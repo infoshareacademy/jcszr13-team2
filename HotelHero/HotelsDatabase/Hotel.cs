@@ -17,6 +17,10 @@ namespace HotelHero.HotelsDatabase
         public string Description { get; set; }
         public int Stars { get; set; }
         public float Rating { get; set; }
+        public bool IsFreeWiFi { get; set; }
+        public bool IsPrivateParking { get; set; }
+        public bool IsRestaurant { get; set; }
+        public bool IsBar {  get; set; }
 
         public override string ToString()
         {

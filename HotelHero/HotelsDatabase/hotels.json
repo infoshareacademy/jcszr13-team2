@@ -6,7 +6,11 @@
     "City": "Warszawa",
     "Description": "Hotel w Warszawie",
     "Stars": 4,
-    "Rating": 4.5
+    "Rating": 4.5,
+    "IsFreeWiFi": true,
+    "IsPrivateParking": true,
+    "IsRestaurant": false,
+    "IsBar": false
   },
   {
     "Id": 2,
@@ -15,7 +19,11 @@
     "City": "Warszawa",
     "Description": "Najlepszy hotel w Warszawie",
     "Stars": 5,
-    "Rating": 5.0
+    "Rating": 5.0,
+    "IsFreeWiFi": false,
+    "IsPrivateParking": true,
+    "IsRestaurant": true,
+    "IsBar": false
   },
   {
     "Id": 3,
@@ -24,7 +32,11 @@
     "City": "Kraków",
     "Description": "Hotel w Krakowie",
     "Stars": 3,
-    "Rating": 3.7
+    "Rating": 3.7,
+    "IsFreeWiFi": false,
+    "IsPrivateParking": false,
+    "IsRestaurant": true,
+    "IsBar": true
   },
   {
     "Id": 4,
@@ -33,6 +45,10 @@
     "City": "Poznań",
     "Description": "Hotel w Poznaniu",
     "Stars": 5,
-    "Rating": 4.7
+    "Rating": 4.7,
+    "IsFreeWiFi": false,
+    "IsPrivateParking": true,
+    "IsRestaurant": false,
+    "IsBar": true
   }
 ]

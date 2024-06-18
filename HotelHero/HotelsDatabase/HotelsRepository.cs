@@ -52,6 +52,10 @@ namespace HotelHero.HotelsDatabase
             hotel.Description = model.Description;
             hotel.Stars = model.Stars;
             hotel.Rating = model.Rating;
+            hotel.IsFreeWiFi = model.IsFreeWiFi;
+            hotel.IsPrivateParking = model.IsPrivateParking;
+            hotel.IsRestaurant = model.IsRestaurant;
+            hotel.IsBar = model.IsBar;
         }
 
         public void Delete(int id)
@@ -63,10 +67,10 @@ namespace HotelHero.HotelsDatabase
         {
             _hotels = new List<Hotel>()
             {
-                new Hotel(){ Id = 1, Name = "Hotel 1",Address = "Słowackiego 1", City = "Warszawa", Description = "Hotel in Warsaw", Stars = 4, Rating = 4.5f },
-                new Hotel(){ Id = 2, Name = "Hotel 2",Address = "Sienkiewicza 3", City = "Warszawa", Description = "The best hotel in Warsaw", Stars = 5, Rating = 5.0f },
-                new Hotel(){ Id = 3, Name = "Hotel 3",Address = "Mickiewicza 45", City = "Kraków", Description = "Hotel in Cracow", Stars = 3, Rating = 3.7f },
-                new Hotel(){ Id = 4, Name = "Hotel 4",Address = "Fredry 36", City = "Poznań", Description = "Hotel in Poznań", Stars = 5, Rating = 4.7f },
+                new Hotel(){ Id = 1, Name = "Hotel 1",Address = "Słowackiego 1", City = "Warszawa", Description = "Hotel in Warsaw", Stars = 4, Rating = 4.5f, IsFreeWiFi = true, IsPrivateParking = true, IsRestaurant = false, IsBar = false },
+                new Hotel(){ Id = 2, Name = "Hotel 2",Address = "Sienkiewicza 3", City = "Warszawa", Description = "The best hotel in Warsaw", Stars = 5, Rating = 5.0f, IsFreeWiFi = true, IsPrivateParking = false, IsRestaurant = false, IsBar = true },
+                new Hotel(){ Id = 3, Name = "Hotel 3",Address = "Mickiewicza 45", City = "Kraków", Description = "Hotel in Cracow", Stars = 3, Rating = 3.7f, IsFreeWiFi = false, IsPrivateParking = false, IsRestaurant = true, IsBar = true },
+                new Hotel(){ Id = 4, Name = "Hotel 4",Address = "Fredry 36", City = "Poznań", Description = "Hotel in Poznań", Stars = 5, Rating = 4.7f, IsFreeWiFi = false, IsPrivateParking = false, IsRestaurant = false, IsBar = false },
             };
 
             var hotelsAsJson = JsonConvert.SerializeObject(_hotels, Formatting.Indented);

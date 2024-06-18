@@ -4,7 +4,6 @@
     ViewData["Title"] = "Details";
 }
 
-
 <div>
     <h2>@Model.Name</h2>
     <dl class="row">
@@ -33,6 +32,32 @@
             @Model.Rating
         </dd>
     </dl>
+</div>
+<div>
+    @if (Model.IsFreeWiFi)
+    {
+        <dd class="col-sm-2">
+            Darmowe Wifi
+        </dd>
+    }
+    @if (Model.IsPrivateParking)
+    {
+        <dd class="col-sm-2">
+            Prywatny parking
+        </dd>
+    }
+    @if (Model.IsRestaurant)
+    {
+        <dd class="col-sm-2">
+            Restauracja czynna od 8.00 do 22.00
+        </dd>
+    }
+    @if (Model.IsBar)
+    {
+        <dd class="col-sm-2">
+            Bar otwarty całą dobę
+        </dd>
+    }
 </div>
 <div>
     <a asp-action="Index">Back to List</a>
