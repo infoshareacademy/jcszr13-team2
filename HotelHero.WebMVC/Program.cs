@@ -1,3 +1,5 @@
+using HotelHero.HotelsDatabase;
+using HotelHero.Interfaces;
 using HotelHero.WebMVC.Controllers;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Services;
@@ -13,6 +15,7 @@ namespace HotelHero.WebMVC
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddTransient<ILogInService, LogInService>();
+            builder.Services.AddSingleton<IHotelsRepository, HotelsRepository>();
 
             var app = builder.Build();
 

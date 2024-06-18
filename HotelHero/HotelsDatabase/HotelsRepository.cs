@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using HotelHero.Interfaces;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace HotelHero.HotelsDatabase
 {
-    public class HotelsRepository
+    public class HotelsRepository : IHotelsRepository
     {
-        private static List<Hotel> _hotels;
+        private List<Hotel> _hotels;
 
         private static int _idCounter;
 
@@ -80,7 +81,7 @@ namespace HotelHero.HotelsDatabase
                 _hotelsFilePath = pathMVC(_hotelsFilePath);
                 if (!File.Exists(_hotelsFilePath))
                 {
-                    _hotels =  new List<Hotel>();
+                    _hotels = new List<Hotel>();
                 }
                 var usersJson = File.ReadAllText(_hotelsFilePath);
 

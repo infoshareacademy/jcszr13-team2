@@ -1,16 +1,17 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using HotelHero.HotelsDatabase;
+using HotelHero.Interfaces;
 
 namespace HotelHero.WebMVC.Controllers
 {
     public class HotelsController : Controller
     {
-        private readonly HotelsRepository _hotelsRepository;
+        private readonly IHotelsRepository _hotelsRepository;
 
-        public HotelsController() 
-        { 
-            _hotelsRepository = new HotelsRepository();
+        public HotelsController(IHotelsRepository hotelsRepository) 
+        {
+            _hotelsRepository = hotelsRepository;
         }
 
 
