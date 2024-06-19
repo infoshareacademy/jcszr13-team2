@@ -1,7 +1,10 @@
-﻿@model IEnumerable<HotelHero.HotelsDatabase.Hotel>
+﻿@using HotelHero.WebMVC.Interface
+@model IEnumerable<HotelHero.HotelsDatabase.Hotel>
+@inject ICustomerDataService customerDataService;
 
 @{
     ViewData["Title"] = "Index";
+    var customerData = customerDataService.GetCustomerData();
 }
 
 <h1>Hotels</h1>
@@ -61,6 +64,15 @@
                 <td>
 
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+
+                    @if (customerData.Favourites.Contains(item.Id))
+                    {
+                        <a asp-action="Unfavourite" asp-route-id="@item.Id">Unfavourite</a>
+                    }
+                    else
+                    {
+                        <a asp-action="Favourite" asp-route-id="@item.Id">Favourite</a>
+                    }
 
                     @if (UserContext.GetUser()?.UserRole == HotelHero.UserPanel.Enums.UserRole.Admin)
                     {

@@ -1,16 +1,19 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HotelHero.HotelsDatabase;
-using HotelHero.WebMVC.Interfaces;
+using HotelHero.WebMVC.Interface;
+using HotelHero.WebMVC.Models;
 
 namespace HotelHero.WebMVC.Controllers
 {
     public class HotelsController : Controller
     {
         private readonly IHotelService _hotelsRepository;
+        private readonly ICustomerDataService _customerDataService;
 
-        public HotelsController(IHotelService hotelsRepository) 
+        public HotelsController(IHotelService hotelsRepository, ICustomerDataService customerData)
         {
             _hotelsRepository = hotelsRepository;
+            _customerDataService = customerData;
         }
 
 
@@ -25,6 +28,43 @@ namespace HotelHero.WebMVC.Controllers
         {
             var model = _hotelsRepository.GetHotel(id);
             return View(model);
+        }
+
+        public ActionResult Favourite(int id)
+        {
+            try
+            {
+                var customerData = _customerDataService.GetCustomerData();
+                if (customerData.Favourites == null)
+                {
+                    customerData.Favourites = new List<int> { };
+                }
+                customerData.Favourites.Add(id);
+                _customerDataService.Save(customerData);
+            }
+            catch
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
+        }
+        public ActionResult Unfavourite(int id)
+        {
+            try
+            {
+                var customerData = _customerDataService.GetCustomerData();
+                if (customerData.Favourites == null)
+                {
+                    customerData.Favourites = new List<int> { };
+                }
+                customerData.Favourites.Remove(id);
+                _customerDataService.Save(customerData);
+            }
+            catch
+            {
+                return RedirectToAction(nameof(Index));
+            }
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: HotelsController/Create

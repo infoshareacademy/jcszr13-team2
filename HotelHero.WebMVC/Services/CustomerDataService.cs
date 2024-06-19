@@ -3,27 +3,23 @@ using HotelHero.WebMVC.Models;
 using HotelHero.HotelsDatabase;
 using HotelHero.UserPanel;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+using HotelHero.WebMVC.Interface;
 
 namespace HotelHero.WebMVC.Services
 {
-    public class CustomerDataService
+    public class CustomerDataService : ICustomerDataService
     {
         private Models.CustomerData customerData = new();
 
-        public Models.CustomerData GetCustomerData(string email)
+        public Models.CustomerData GetCustomerData()
         {
-            customerData.Email = email;
             try
             {
                 var customerDataPath = PathMVC();
-                if (!File.Exists(customerDataPath))
-                {
-                    customerData = new Models.CustomerData();
-                }
                 var customerJson = File.ReadAllText(customerDataPath);
                 customerData = JsonConvert.DeserializeObject<Models.CustomerData>(customerJson);
             }
-            catch (Exception ex)
+            catch
             {
                 customerData = new Models.CustomerData();
             }
@@ -37,7 +33,8 @@ namespace HotelHero.WebMVC.Services
         }
         private string PathMVC()
         {
-            var path = @$"{AppDomain.CurrentDomain.BaseDirectory}/../../../CustomerFiles/{customerData.Email}.json";
+            var email = UserContext.GetUser().Email;
+            var path = @$"{AppDomain.CurrentDomain.BaseDirectory}/../../../CustomerFiles/{email}.json";
             string newPath = path;
             if (path.Contains(".WebMVC"))
             {

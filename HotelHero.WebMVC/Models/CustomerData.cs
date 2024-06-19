@@ -13,6 +13,7 @@ namespace HotelHero.WebMVC.Models
         public string DateOfBirth { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        public List<int> Favourites { get; set; }
         public bool Rodo { get; set; }
         public bool Newsletter { get; set; }
     }

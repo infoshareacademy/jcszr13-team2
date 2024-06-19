@@ -1,5 +1,5 @@
 ﻿using HotelHero.HotelsDatabase;
-using HotelHero.WebMVC.Interfaces;
+using HotelHero.WebMVC.Interface;
 using Newtonsoft.Json;
 
 

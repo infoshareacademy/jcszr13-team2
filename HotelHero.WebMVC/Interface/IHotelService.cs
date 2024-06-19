@@ -1,6 +1,6 @@
 ﻿using HotelHero.HotelsDatabase;
 
-namespace HotelHero.WebMVC.Interfaces
+namespace HotelHero.WebMVC.Interface
 {
     public interface IHotelService
     {

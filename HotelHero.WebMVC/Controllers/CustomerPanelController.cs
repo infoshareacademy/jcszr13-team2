@@ -6,13 +6,22 @@ using HotelHero.UserPanel;
 using Newtonsoft.Json;
 using HotelHero.WebMVC.Services;
 using HotelHero.WebMVC.Models;
+using HotelHero.WebMVC.Interface;
+using HotelHero.HotelsDatabase;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HotelHero.WebMVC.Controllers
 {
     public class CustomerPanelController : Controller
     {
-        private readonly CustomerDataService _customerDataService = new CustomerDataService();
-        private readonly string _customerEmail = UserContext.GetUser()?.Email;
+        private readonly IHotelService _hotelsRepository;
+        private readonly ICustomerDataService _customerDataService;
+
+        public CustomerPanelController(IHotelService hotelsRepository, ICustomerDataService customerData)
+        {
+            _hotelsRepository = hotelsRepository;
+            _customerDataService = customerData;
+        }
 
         // GET: CustomerPanelController
         public ActionResult CustomerPanel()
@@ -21,7 +30,7 @@ namespace HotelHero.WebMVC.Controllers
         }
         public ActionResult CustomerData()
         {
-            var customerData = _customerDataService.GetCustomerData(_customerEmail);
+            var customerData = _customerDataService.GetCustomerData();
             return View(customerData);
         }
 
@@ -36,7 +45,6 @@ namespace HotelHero.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult CustomerDataEdit(Models.CustomerData data)
         {
-            data.Email = _customerEmail;
             try
             {
                 _customerDataService.Save(data);
@@ -57,7 +65,27 @@ namespace HotelHero.WebMVC.Controllers
         }
         public ActionResult Favourites()
         {
-            return View();
+            var customerData = _customerDataService.GetCustomerData();
+            List<Hotel> favourites = new();
+            foreach (var item in customerData.Favourites)
+            {
+                var hotel = _hotelsRepository.GetHotel(item);
+                favourites.Add(hotel);
+
+            }
+            return View(favourites);
+        }
+        public ActionResult Unfavourite(int id)
+        {
+            var customerData = _customerDataService.GetCustomerData();
+            customerData.Favourites.Remove(id);
+            _customerDataService.Save(customerData);
+            return RedirectToAction(nameof(Favourites));
+        }
+        public ActionResult FavouriteDetails(int id)
+        {
+            var model = _hotelsRepository.GetHotel(id);
+            return View(model);
         }
     }
 }

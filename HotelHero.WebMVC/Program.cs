@@ -1,5 +1,4 @@
 using HotelHero.WebMVC.Interface;
-using HotelHero.WebMVC.Interfaces;
 using HotelHero.WebMVC.Services;
 namespace HotelHero.WebMVC
 {
@@ -13,6 +12,7 @@ namespace HotelHero.WebMVC
             builder.Services.AddControllersWithViews();
             builder.Services.AddTransient<ILogInService, LogInService>();
             builder.Services.AddSingleton<IHotelService, HotelService>();
+            builder.Services.AddSingleton<ICustomerDataService, CustomerDataService>();
 
             var app = builder.Build();
 
