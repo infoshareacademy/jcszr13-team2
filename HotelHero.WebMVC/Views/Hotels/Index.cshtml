@@ -4,7 +4,11 @@
 
 @{
     ViewData["Title"] = "Index";
-    var customerData = customerDataService.GetCustomerData();
+    CustomerData customerData = new();
+    if (UserContext.GetUser() != null)
+    {
+        customerData = customerDataService.GetCustomerData();
+    }
 }
 
 <h1>Hotels</h1>
@@ -65,15 +69,17 @@
 
                     <a asp-action="Details" asp-route-id="@item.Id">Details</a>
 
-                    @if (customerData.Favourites.Contains(item.Id))
+                    @if (UserContext.GetUser() != null)
                     {
-                        <a asp-action="Unfavourite" asp-route-id="@item.Id">Unfavourite</a>
+                        if (customerData.Favourites.Contains(item.Id))
+                        {
+                            <a asp-action="Unfavourite" asp-route-id="@item.Id">Unfavourite</a>
+                        }
+                        else
+                        {
+                            <a asp-action="Favourite" asp-route-id="@item.Id">Favourite</a>
+                        }
                     }
-                    else
-                    {
-                        <a asp-action="Favourite" asp-route-id="@item.Id">Favourite</a>
-                    }
-
                     @if (UserContext.GetUser()?.UserRole == HotelHero.UserPanel.Enums.UserRole.Admin)
                     {
                         <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
