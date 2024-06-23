@@ -5,6 +5,7 @@
   "DateOfBirth": "fds",
   "Address": "fsd",
   "Phone": "fs",
+  "Favourites": [],
   "Rodo": true,
   "Newsletter": true
 }

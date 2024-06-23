@@ -1,0 +1,11 @@
+{
+  "Email": null,
+  "LastName": null,
+  "FirstName": null,
+  "DateOfBirth": null,
+  "Address": null,
+  "Phone": null,
+  "Favourites": null,
+  "Rodo": false,
+  "Newsletter": false
+}

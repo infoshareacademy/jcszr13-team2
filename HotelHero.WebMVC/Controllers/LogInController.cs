@@ -10,10 +10,12 @@ namespace HotelHero.WebMVC.Controllers
     public class LogInController : Controller
     {
         private readonly ILogInService _logInService;
+        private readonly ICustomerDataService _customerDataService;
 
-        public LogInController(ILogInService logService)
+        public LogInController(ILogInService logService, ICustomerDataService customerDataService)
         {
             _logInService = logService;
+            _customerDataService = customerDataService;
         }
         public IActionResult LogIn()
         {
@@ -55,6 +57,9 @@ namespace HotelHero.WebMVC.Controllers
                     return View(user);
                 }
                 _logInService.Register(user);
+                UserContext.SetUser(_logInService.LogIn(user));
+                var data = new Models.CustomerData(user.Email, "", "", "", "", "", new List<int>(), false, false);
+                _customerDataService.Save(data);
                 return RedirectToAction("Index","Home");
             }
             catch
