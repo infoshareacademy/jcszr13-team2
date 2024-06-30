@@ -13,35 +13,35 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Email)
+                <label asp-for="First().Email"></label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Password)
+                <label asp-for="First().Password"></label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.UserRole)
+                <label asp-for="First().UserRole"></label>
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Password)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UserRole)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Password
+                </td>
+                <td>
+                    @item.UserRole
+                </td>
+                <td>
+                    <a asp-action="UserEdit" asp-route-id="@item.Email">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.Email">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
