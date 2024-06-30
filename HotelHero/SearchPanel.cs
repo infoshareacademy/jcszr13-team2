@@ -1,4 +1,5 @@
-﻿using HotelHero.ReservationsDatabase;
+﻿using HotelHero.HotelsDatabase;
+using HotelHero.ReservationsDatabase;
 using HotelHero.ResrevationsDatabase;
 using HotelHero.UserPanel;
 using System;
@@ -11,6 +12,7 @@ namespace HotelHero
     class SearchPanel
     {
         ReservationsRepository reservationsRepository;
+        HotelsRepository hotelsRepository;
 
         public void SurpriseMe()
         {
@@ -92,7 +94,7 @@ namespace HotelHero
             UserMenu.Menu();
         }
 
-        public SearchPanel()
+        //public SearchPanel()
         private User _loggedUser;
 
         private List<Reservation> _searchedReservations;
@@ -152,10 +154,10 @@ namespace HotelHero
 
             var results = reservation.Where(r =>
                 (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
-                (searchCheckInDate == DateTime.MinValue || r.ChecInDate >= searchCheckInDate) &&
+                (searchCheckInDate == DateTime.MinValue || r.CheckInDate >= searchCheckInDate) &&
                 (searchCheckOutDate == DateTime.MinValue || r.CheckOutDate <= searchCheckOutDate) &&
                 (searchAmountOfPeople == 0 || r.AmountOfPeople >= searchAmountOfPeople) &&
-                (maxCostPerNight == 0 || r.CostPerNight <= maxCostPerNight)
+                (maxCostPerNight == 0 || r.CostPerNight <= maxCostPerNight)).ToList();
 
             _searchedReservations = reservation.Where(r =>
             (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
@@ -171,7 +173,7 @@ namespace HotelHero
                 foreach (var result in _searchedReservations)
                 {
                     Console.WriteLine($"{result.Hotel}");
-                    Console.WriteLine($"Check-in date: {result.ChecInDate.ToShortDateString()}, Check-out date: {result.CheckOutDate.ToShortDateString()}, Amount of people: {result.AmountOfPeople}, Cost per night: {result.CostPerNight} ");
+                    Console.WriteLine($"Check-in date: {result.CheckInDate.ToShortDateString()}, Check-out date: {result.CheckOutDate.ToShortDateString()}, Amount of people: {result.AmountOfPeople}, Cost per night: {result.CostPerNight} ");
                     Console.Write($"{index}.");
                     Console.WriteLine($"{result.Hotel.ToString()}");
                     Console.WriteLine($"Check-in date: {result.CheckInDate.ToShortDateString()}," +
