@@ -1,0 +1,12 @@
+﻿@{
+    ViewData["Title"] = "Search panel";
+}
+
+<h1>Search panel</h1>
+
+<form method="post" asp-action="Results">
+    <div class="form-group">
+        <input type="text" class="form-control" id="query" name="query" />
+    </div>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>

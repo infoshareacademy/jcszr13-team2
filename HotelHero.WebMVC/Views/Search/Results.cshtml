@@ -1,0 +1,14 @@
+﻿@model List<string>
+
+@{
+    ViewData["Title"] = "Search results";
+}
+
+<h1>Search results</h1>
+
+<ul>
+    @foreach (var result in Model)
+    {
+        <li>@result</li>
+    }
+</ul>
