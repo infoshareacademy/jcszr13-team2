@@ -1,4 +1,5 @@
 ﻿using HotelHero.WebMVC.Services;
+using HotelHero.WebMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -20,10 +21,10 @@ namespace HotelHero.WebMVC.Controllers
         }
 
         [HttpPost]
-        public IActionResult Results(string query)
+        public IActionResult Results(SearchViewModel vm)
         {
-            List<string> results = _searchService.Search(query);
-            return View(results);
+           // List<string> results = _searchService.Search(query);
+            return RedirectToAction("","");
         }
     }
 }

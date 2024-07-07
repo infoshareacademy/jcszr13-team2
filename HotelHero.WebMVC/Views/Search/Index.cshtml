@@ -1,4 +1,7 @@
-﻿@{
+﻿@using HotelHero.WebMVC.ViewModels
+@model SearchViewModel;
+
+@{
     ViewData["Title"] = "Search panel";
 }
 
@@ -6,7 +9,20 @@
 
 <form method="post" asp-action="Results">
     <div class="form-group">
-        <input type="text" class="form-control" id="query" name="query" />
+        <label asp-for="City" class="control-label"></label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="StartDate" class="control-label"></label>
+        <input asp-for="StartDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="EndDate" class="control-label"></label>
+        <input asp-for="EndDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PeopleAmount" class="control-label"></label>
+        <input asp-for="PeopleAmount" class="form-control" />
     </div>
     <button type="submit" class="btn btn-primary">Search</button>
 </form>

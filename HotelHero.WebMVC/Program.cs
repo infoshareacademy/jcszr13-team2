@@ -33,7 +33,7 @@ namespace HotelHero.WebMVC
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Search}/{action=Index}/{id?}");
 
             app.Run();
         }
