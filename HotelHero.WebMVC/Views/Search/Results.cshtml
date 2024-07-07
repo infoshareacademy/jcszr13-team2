@@ -1,4 +1,6 @@
-﻿@model List<string>
+﻿@using HotelHero.ReservationsDatabase
+
+@model IEnumerable<Reservation>
 
 @{
     ViewData["Title"] = "Search results";
@@ -9,6 +11,6 @@
 <ul>
     @foreach (var result in Model)
     {
-        <li>@result</li>
+        <li>@result.Hotel.CreateStars()</li>
     }
 </ul>

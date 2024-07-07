@@ -12,6 +12,7 @@ namespace HotelHero.WebMVC
             builder.Services.AddControllersWithViews();
             builder.Services.AddTransient<ILogInService, LogInService>();
             builder.Services.AddSingleton<IHotelService, HotelService>();
+            builder.Services.AddSingleton<IReservationService, ReservationService>();
             builder.Services.AddSingleton<ICustomerDataService, CustomerDataService>();
 
             var app = builder.Build();

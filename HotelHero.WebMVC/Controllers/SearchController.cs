@@ -1,4 +1,6 @@
-﻿using HotelHero.WebMVC.Services;
+﻿using HotelHero.ReservationsDatabase;
+using HotelHero.WebMVC.Interface;
+using HotelHero.WebMVC.Services;
 using HotelHero.WebMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -8,9 +10,11 @@ namespace HotelHero.WebMVC.Controllers
     public class SearchController : Controller
     {
         private readonly SearchPanel _searchService;
+        private readonly IReservationService _reservationService;
 
-        public SearchController()
+        public SearchController(IReservationService reservationService)
         {
+            _reservationService = reservationService;
             _searchService = new SearchPanel();
         }
 
@@ -23,8 +27,10 @@ namespace HotelHero.WebMVC.Controllers
         [HttpPost]
         public IActionResult Results(SearchViewModel vm)
         {
-           // List<string> results = _searchService.Search(query);
-            return RedirectToAction("","");
+            var reservation = _reservationService.GetReservation(vm.City, vm.StartDate, vm.EndDate, vm.PeopleAmount);
+            var items = new List<Reservation>();
+            items.Add(reservation);
+            return View(items);
         }
     }
 }

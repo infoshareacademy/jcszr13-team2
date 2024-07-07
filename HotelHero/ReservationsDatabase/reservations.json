@@ -7,7 +7,11 @@
       "City": "Kraków",
       "Description": "Hotel w Krakowie",
       "Stars": 3,
-      "Rating": 3.7
+      "Rating": 3.7,
+      "IsFreeWiFi": false,
+      "IsPrivateParking": false,
+      "IsRestaurant": true,
+      "IsBar": true
     },
     "CheckInDate": "2024-06-15T00:00:00",
     "CheckOutDate": "2024-06-20T00:00:00",
@@ -22,7 +26,11 @@
       "City": "Warszawa",
       "Description": "Najlepszy hotel w Warszawie",
       "Stars": 5,
-      "Rating": 5.0
+      "Rating": 5.0,
+      "IsFreeWiFi": false,
+      "IsPrivateParking": true,
+      "IsRestaurant": true,
+      "IsBar": false
     },
     "CheckInDate": "2024-06-30T00:00:00",
     "CheckOutDate": "2024-07-05T00:00:00",
@@ -37,7 +45,11 @@
       "City": "Kraków",
       "Description": "Hotel w Krakowie",
       "Stars": 3,
-      "Rating": 3.7
+      "Rating": 3.7,
+      "IsFreeWiFi": false,
+      "IsPrivateParking": false,
+      "IsRestaurant": true,
+      "IsBar": true
     },
     "CheckInDate": "2024-07-10T00:00:00",
     "CheckOutDate": "2024-07-15T00:00:00",
@@ -52,7 +64,11 @@
       "City": "Poznań",
       "Description": "Hotel w Poznaniu",
       "Stars": 5,
-      "Rating": 4.7
+      "Rating": 4.7,
+      "IsFreeWiFi": false,
+      "IsPrivateParking": true,
+      "IsRestaurant": false,
+      "IsBar": true
     },
     "CheckInDate": "2025-02-06T00:00:00",
     "CheckOutDate": "2025-02-10T00:00:00",
@@ -67,7 +83,11 @@
       "City": "Warszawa",
       "Description": "Hotel w Warszawie",
       "Stars": 4,
-      "Rating": 4.5
+      "Rating": 4.5,
+      "IsFreeWiFi": true,
+      "IsPrivateParking": true,
+      "IsRestaurant": false,
+      "IsBar": false
     },
     "CheckInDate": "2025-03-05T00:00:00",
     "CheckOutDate": "2025-03-10T00:00:00",
