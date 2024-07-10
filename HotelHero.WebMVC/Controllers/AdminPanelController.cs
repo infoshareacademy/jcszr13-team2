@@ -24,11 +24,8 @@ namespace HotelHero.WebMVC.Controllers
         }
 
         // GET: AdminPanelController/Edit
-        public ActionResult UserEdit(string email)
+        public ActionResult UserEdit(User user)
         {
-            FileOperations fileOperations = new FileOperations();
-            var users = fileOperations.DeserializeFile();
-            User user = users.Find(delegate (User user) { return user.Email == email; });
             return View(user);
         }
 
