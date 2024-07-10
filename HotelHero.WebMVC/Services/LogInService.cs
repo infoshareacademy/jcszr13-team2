@@ -1,5 +1,4 @@
 ﻿using HotelHero.ReservationsDatabase;
-using HotelHero.UserPanel;
 using HotelHero.UserPanel.Enums;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
@@ -8,12 +7,15 @@ namespace HotelHero.WebMVC.Services
 {
     public class LogInService : ILogInService
     {
+        private IFileOperationService _fileOperationService;
+        public LogInService(IFileOperationService fileOperationService)
+        {
+            _fileOperationService = fileOperationService;   
+        }
         public User? LogIn(User logInUser)
         {
-            FileOperations fileOperations = new FileOperations();
-            var users = fileOperations.DeserializeFile();
+            var users = _fileOperationService.DeserializeFile();
                
-            
             User loggedUser = null;
             foreach (User user in users)
             {
@@ -37,13 +39,11 @@ namespace HotelHero.WebMVC.Services
 
         public void Register(User registerUser)
         {
-            FileOperations fileOperations = new FileOperations();
-            var users = fileOperations.DeserializeFile();
+            var users = _fileOperationService.DeserializeFile();
 
-            var newUser = new User(registerUser.Email, registerUser.Password, UserRole.UnloggedUser,
-                new List<Reservation>());
+            var newUser = new User(registerUser.Email, registerUser.Password, UserRole.UnloggedUser, new List<Reservation>());
             users.Add(newUser);
-            fileOperations.SerializeFile(users);
+            _fileOperationService.SerializeFile(users);
         }
     }
 }

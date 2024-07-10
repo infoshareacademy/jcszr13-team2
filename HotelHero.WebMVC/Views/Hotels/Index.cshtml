@@ -8,6 +8,10 @@
     if (UserContext.GetUser() != null)
     {
         customerData = customerDataService.GetCustomerData();
+        if (customerData.Favourites == null)
+        {
+            customerData.Favourites = new List<int>();
+        }
     }
 }
 

@@ -1,10 +1,9 @@
-﻿
+﻿@model CustomerData
+
 @{
-    ViewData["Title"] = "Reservations";
+    ViewData["Title"] = "Customer Panel";
 }
-
-<h1>Reservations</h1>
-
+<body>
     <div class="container">
         <div class="row">
             <div class="col-md-auto">
@@ -13,7 +12,7 @@
                 </div>
 
                 <div class="children">
-                    <a class="btn-dark" asp-action="Reservations">Your reservations</a>
+                    <a class="btn" asp-action="Reservations">Your reservations</a>
                 </div>
 
                 <div class="children">
@@ -21,7 +20,7 @@
                 </div>
 
                 <div class="children">
-                <a class="btn" asp-action="Wallet">Your wallet</a>
+                    <a class="btn-dark" asp-action="Wallet">Your wallet</a>
                 </div>
 
                 <div class="children">
@@ -29,5 +28,11 @@
                 </div>
 
             </div>
+            <div class="col">
+                Your wallet balance: @Model.Balance PLN
+                <a class="btn" asp-action="AddBalance" asp-route-id="@Model">Add balance</a>
+            </div>
         </div>
     </div>
+</body>
+

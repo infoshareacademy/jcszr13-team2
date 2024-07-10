@@ -1,6 +1,4 @@
-﻿using HotelHero.UserPanel;
-
-namespace HotelHero.WebMVC.Models
+﻿namespace HotelHero.WebMVC.Models
 {
     public static class UserContext
     {

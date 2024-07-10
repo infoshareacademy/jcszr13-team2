@@ -1,11 +1,14 @@
 {
-  "Email": "eee",
-  "LastName": "",
-  "FirstName": "",
-  "DateOfBirth": "",
-  "Address": "",
-  "Phone": "",
-  "Favourites": [],
-  "Rodo": false,
-  "Newsletter": false
+  "Email": null,
+  "LastName": "qqq",
+  "FirstName": "qqq",
+  "DateOfBirth": "qqq",
+  "Address": "qqq",
+  "Phone": "qqq",
+  "Favourites": [
+    1
+  ],
+  "Rodo": true,
+  "Newsletter": true,
+  "Balance": 0.0
 }

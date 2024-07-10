@@ -1,11 +1,10 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using HotelHero.WebMVC.Interface;
+using HotelHero.WebMVC.Models;
+using Newtonsoft.Json;
 
-namespace HotelHero.UserPanel
+namespace HotelHero.WebMVC.Services
 {
-    public class FileOperations
+    public class FileOperationService : IFileOperationService
     {
         private string PathMVC()
         {
@@ -28,7 +27,6 @@ namespace HotelHero.UserPanel
         {
             var jsonUsers = File.ReadAllText(PathMVC());
             var users = JsonConvert.DeserializeObject<List<User>>(jsonUsers);
-
             return users;
         }
     }

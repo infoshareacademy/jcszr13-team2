@@ -1,9 +1,7 @@
-using HotelHero.UserPanel;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Services;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace HotelHero.WebMVC.Controllers
 {
@@ -28,10 +26,10 @@ namespace HotelHero.WebMVC.Controllers
         {
             try
             {
-                if (!ModelState.IsValid)
-                {
-                    return View(user);
-                }
+                //if (!ModelState.IsValid)
+                //{
+                //    return View(user);
+                //}
                 UserContext.SetUser(_logInService.LogIn(user));
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
@@ -58,7 +56,7 @@ namespace HotelHero.WebMVC.Controllers
                 }
                 _logInService.Register(user);
                 UserContext.SetUser(_logInService.LogIn(user));
-                var data = new Models.CustomerData(user.Email, "", "", "", "", "", new List<int>(), false, false);
+                var data = new Models.CustomerData(user.Email, "", "", "", "", "", new List<int>(), false, false, 0m);
                 _customerDataService.Save(data);
                 return RedirectToAction("Index","Home");
             }

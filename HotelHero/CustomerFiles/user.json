@@ -8,8 +8,10 @@
   "Favourites": [
     4,
     2,
-    3
+    3,
+    1
   ],
   "Rodo": true,
-  "Newsletter": true
+  "Newsletter": true,
+  "Balance": 5.05
 }

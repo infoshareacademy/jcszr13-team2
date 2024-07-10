@@ -1,14 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.CodeAnalysis.Scripting;
-using HotelHero.UserPanel;
-using Newtonsoft.Json;
-using HotelHero.WebMVC.Services;
-using HotelHero.WebMVC.Models;
+﻿using Microsoft.AspNetCore.Mvc;
 using HotelHero.WebMVC.Interface;
 using HotelHero.HotelsDatabase;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HotelHero.WebMVC.Controllers
 {
@@ -86,6 +78,27 @@ namespace HotelHero.WebMVC.Controllers
         {
             var model = _hotelsRepository.GetHotel(id);
             return View(model);
+        }
+        public ActionResult Wallet()
+        {
+            var data = _customerDataService.GetCustomerData();
+            return View(data);
+        }
+        public ActionResult AddBalance()
+        {
+            var data = _customerDataService.GetCustomerData();
+            return View(data);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddBalance(float amount)
+        {
+            var customerData = _customerDataService.GetCustomerData();
+
+            //customerData.Balance += decimal.Parse(amount);
+            customerData.Balance += (decimal)amount;
+            _customerDataService.Save(customerData);
+            return RedirectToAction(nameof(Wallet));
         }
     }
 }
