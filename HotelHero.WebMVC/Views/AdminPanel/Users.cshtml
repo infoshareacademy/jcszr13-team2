@@ -1,0 +1,47 @@
+﻿@model IEnumerable<HotelHero.UserPanel.User>
+
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h1>Users</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <label asp-for="First().Email"></label>
+            </th>
+            <th>
+                <label asp-for="First().Password"></label>
+            </th>
+            <th>
+                <label asp-for="First().UserRole"></label>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Email
+                </td>
+                <td>
+                    @item.Password
+                </td>
+                <td>
+                    @item.UserRole
+                </td>
+                <td>
+                    <a asp-action="UserEdit" asp-route-id="@item">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -2,6 +2,7 @@
 using HotelHero.UserPanel;
 using HotelHero.UserPanel.Enums;
 using HotelHero.WebMVC.Interface;
+using HotelHero.WebMVC.Models;
 
 namespace HotelHero.WebMVC.Services
 {
@@ -44,6 +45,5 @@ namespace HotelHero.WebMVC.Services
             users.Add(newUser);
             fileOperations.SerializeFile(users);
         }
-
     }
 }

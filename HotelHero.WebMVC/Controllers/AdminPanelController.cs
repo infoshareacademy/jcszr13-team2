@@ -1,5 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using HotelHero.ReservationsDatabase;
+using HotelHero.UserPanel;
+using HotelHero.UserPanel.Enums;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using static System.Net.WebRequestMethods;
 
 namespace HotelHero.WebMVC.Controllers
 {
@@ -11,73 +15,33 @@ namespace HotelHero.WebMVC.Controllers
             return View();
         }
 
-        // GET: AdminPanelController/Details/5
-        public ActionResult Details(int id)
+        // GET: AdminPanelController/Users
+        public ActionResult Users()
         {
-            return View();
+            FileOperations fileOperations = new FileOperations();
+            var model = fileOperations.DeserializeFile();
+            return View(model);
         }
 
-        // GET: AdminPanelController/Create
-        public ActionResult Create()
+        // GET: AdminPanelController/Edit
+        public ActionResult UserEdit(User user)
         {
-            return View();
-        }
-
-        // POST: AdminPanelController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: AdminPanelController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
+            return View(user);
         }
 
         // POST: AdminPanelController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult UserEdit(string email, User user)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: AdminPanelController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: AdminPanelController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            FileOperations fileOperations = new FileOperations();
+            var users = fileOperations.DeserializeFile();
+            var index = users.FindIndex(delegate (User user) { return user.Email == email; });
+            users.Remove(users[index]);
+            var editUser = new User(user.Email, user.Password, user.UserRole, new List<Reservation> ());
+            users.Insert(index, editUser);
+            fileOperations.SerializeFile(users);
+            return RedirectToAction("Users");
         }
     }
 }

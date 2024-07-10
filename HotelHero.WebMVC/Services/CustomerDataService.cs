@@ -21,7 +21,7 @@ namespace HotelHero.WebMVC.Services
             }
             catch
             {
-                customerData = new Models.CustomerData();
+                customerData = new();
             }
             return customerData;
         }
