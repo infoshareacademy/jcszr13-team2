@@ -1,33 +1,77 @@
-﻿
+﻿@model IEnumerable<HotelHero.ReservationsDatabase.Reservation>
 @{
     ViewData["Title"] = "Reservations";
 }
 
 <h1>Reservations</h1>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-auto">
-                <div class="children">
-                    <a class="btn" asp-action="CustomerData">Customer Data</a>
-                </div>
-
-                <div class="children">
-                    <a class="btn-dark" asp-action="Reservations">Your reservations</a>
-                </div>
-
-                <div class="children">
-                    <a class="btn" asp-action="StaysHistory">History of stays</a>
-                </div>
-
-                <div class="children">
-                <a class="btn" asp-action="Wallet">Your wallet</a>
-                </div>
-
-                <div class="children">
-                    <a class="btn" asp-action="Favourites">Favourites</a>
-                </div>
-
+<div class="container">
+    <div class="row">
+        <div class="col-md-auto">
+            <div class="children">
+                <a class="btn" asp-action="CustomerData">Customer Data</a>
             </div>
+
+            <div class="children">
+                <a class="btn-dark" asp-action="Reservations">Your reservations</a>
+            </div>
+
+            <div class="children">
+                <a class="btn" asp-action="StaysHistory">History of stays</a>
+            </div>
+
+            <div class="children">
+                <a class="btn" asp-action="Wallet">Your wallet</a>
+            </div>
+
+            <div class="children">
+                <a class="btn" asp-action="Favourites">Favourites</a>
+            </div>
+
+        </div>
+        <div class="col">
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <ul>
+                            <li>
+                                Hotel: @item.Hotel.Name
+                            </li>
+                            <li>
+                                Stars: @item.Hotel.CreateStars()
+                            </li>
+                            <li>
+                                Address: @item.Hotel.Address
+                            </li>
+                            <li>
+                                Description: @item.Hotel.Description
+                            </li>
+                            <li>
+                                Rating: @item.Hotel.Rating
+                            </li>
+                            <li>
+                                Check in: @item.CheckInDate
+                            </li>
+                            <li>
+                                Check out: @item.CheckOutDate
+                            </li>
+                            <li>
+                                People: @item.AmountOfPeople
+                            </li>
+                            <li>
+                                Cost per night: @item.CostPerNight
+                            </li>
+                            <li>
+                                Status: @item.Status
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <a asp-action="CancelReservation" asp-route-id="@item.Id">Cancel reservation</a>
+                    </td>
+                </tr>
+            }
         </div>
     </div>
+</div>

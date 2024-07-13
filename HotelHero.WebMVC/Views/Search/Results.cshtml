@@ -11,7 +11,36 @@
 <ul>
     @foreach (var result in Model)
     {
-        <li>@result.Hotel.CreateStars()</li>
+            <li>
+                Hotel: @result.Hotel.Name
+            </li>
+            <li>
+                Stars: @result.Hotel.CreateStars()
+            </li>
+            <li>
+                Address: @result.Hotel.Address
+            </li>
+            <li>
+                Description: @result.Hotel.Description
+            </li>
+            <li>
+                Rating: @result.Hotel.Rating
+            </li>
+            <li>
+                Check in: @result.CheckInDate
+            </li>
+            <li>
+                Check out: @result.CheckOutDate
+            </li>
+            <li>
+                People: @result.AmountOfPeople
+            </li>
+            <li>
+                Cost per night: @result.CostPerNight
+            </li>
+            <li>
+                Status: @result.Status
+            </li>
 
             <a asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a>
 

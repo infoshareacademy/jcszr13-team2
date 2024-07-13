@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HotelHero.WebMVC.Interface;
 using HotelHero.HotelsDatabase;
+using HotelHero.WebMVC.Models;
+using HotelHero.ReservationsDatabase;
 
 namespace HotelHero.WebMVC.Controllers
 {
@@ -8,11 +10,13 @@ namespace HotelHero.WebMVC.Controllers
     {
         private readonly IHotelService _hotelsRepository;
         private readonly ICustomerDataService _customerDataService;
+        private readonly IReservationService _reservationService;
 
-        public CustomerPanelController(IHotelService hotelsRepository, ICustomerDataService customerData)
+        public CustomerPanelController(IHotelService hotelsRepository, ICustomerDataService customerData, IReservationService reservationService)
         {
             _hotelsRepository = hotelsRepository;
             _customerDataService = customerData;
+            _reservationService = reservationService;
         }
 
         // GET: CustomerPanelController
@@ -51,6 +55,12 @@ namespace HotelHero.WebMVC.Controllers
         {
             var model = UserContext.GetReservation();
             return View(model);
+        }
+        public ActionResult CancelReservation(int id)
+        {
+            var model = _reservationService.GetReservationById(id);
+            UserContext.CancelReservation(model);
+            return RedirectToAction("Reservations");
         }
         public ActionResult StaysHistory()
         {

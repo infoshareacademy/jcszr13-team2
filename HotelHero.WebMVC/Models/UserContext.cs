@@ -25,5 +25,9 @@ namespace HotelHero.WebMVC.Models
         {
             loggedUser.Reservations.Add(newReservation);
         }
+        public static void CancelReservation(Reservation newReservation)
+        {
+            loggedUser.Reservations.Remove(newReservation);
+        }
     }
 }

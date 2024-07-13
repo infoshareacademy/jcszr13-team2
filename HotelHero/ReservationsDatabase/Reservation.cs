@@ -3,6 +3,7 @@ using HotelHero.ReservationsDatabase.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,6 +19,11 @@ namespace HotelHero.ReservationsDatabase
         public int AmountOfPeople { get; }
         public int CostPerNight { get; }
         public ReservationStatus Status { get; set; }
+
+        //public Reservation()
+        //{
+            
+        //}
         public Reservation(int id, Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, int costPerNight)
         {
             Id = id;
@@ -42,6 +48,15 @@ namespace HotelHero.ReservationsDatabase
             result += "\nCheck-out date: " + CheckOutDate.ToString();
             result += "\nAmount of people:" + AmountOfPeople;
             return result;
+        }
+        public decimal GetReservationCost()
+        {
+            var from = CheckInDate < CheckOutDate ? CheckInDate : CheckOutDate;
+            var to = CheckInDate < CheckOutDate ? CheckOutDate : CheckInDate;
+            var totalDays = (int)(to - from).TotalDays;
+            totalDays = totalDays > 1 ? totalDays : 1;
+            var reservationCost = CostPerNight * totalDays;
+            return reservationCost;
         }
     }
 }
