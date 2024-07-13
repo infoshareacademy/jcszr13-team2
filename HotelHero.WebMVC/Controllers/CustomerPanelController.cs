@@ -91,14 +91,20 @@ namespace HotelHero.WebMVC.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AddBalance(float amount)
+        public ActionResult AddBalance(string amount)
         {
             var customerData = _customerDataService.GetCustomerData();
-
-            //customerData.Balance += decimal.Parse(amount);
-            customerData.Balance += (decimal)amount;
-            _customerDataService.Save(customerData);
-            return RedirectToAction(nameof(Wallet));
+            var parsed = decimal.TryParse(amount, out var balance);
+            if (parsed)
+            {
+                customerData.Balance += balance;
+                _customerDataService.Save(customerData);
+                return RedirectToAction(nameof(Wallet));
+            }
+            else
+            {
+                return RedirectToAction(nameof(AddBalance));
+            }
         }
     }
 }
