@@ -1,11 +1,14 @@
 {
   "Email": "admin",
-  "LastName": "efsd",
-  "FirstName": "fsd",
-  "DateOfBirth": "fds",
-  "Address": "fsd",
-  "Phone": "fs",
-  "Favourites": [],
+  "LastName": "aaaa",
+  "FirstName": "aaaa",
+  "DateOfBirth": "dddd",
+  "Address": "xxx",
+  "Phone": "sikw",
+  "Favourites": [
+    1
+  ],
   "Rodo": true,
-  "Newsletter": true
+  "Newsletter": true,
+  "Balance": 578.00
 }

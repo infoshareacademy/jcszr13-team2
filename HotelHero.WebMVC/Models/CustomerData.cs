@@ -16,8 +16,12 @@ namespace HotelHero.WebMVC.Models
         public List<int> Favourites { get; set; }
         public bool Rodo { get; set; }
         public bool Newsletter { get; set; }
+        public decimal Balance { get; set; }
 
-        public CustomerData(string email, string lastName, string firstName, string dateOfBirth, string address, string phone, List<int> favourites, bool rodo, bool newsletter)
+        public CustomerData()
+        {
+        }
+        public CustomerData(string email, string lastName, string firstName, string dateOfBirth, string address, string phone, List<int> favourites, bool rodo, bool newsletter, decimal balance)
         {
             Email = email;
             LastName = lastName;
@@ -26,12 +30,10 @@ namespace HotelHero.WebMVC.Models
             Address = address;
             Phone = phone;
             Favourites = favourites;
-            Rodo = rodo;
             Newsletter = newsletter;
+            Rodo = rodo;
+            Balance = balance;
         }
 
-        public CustomerData()
-        {
-        }
     }
 }
