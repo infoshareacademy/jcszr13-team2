@@ -43,19 +43,5 @@ namespace HotelHero.WebMVC.Controllers
             UserContext.MakeReservation(model);
             return RedirectToAction(nameof(Index));
         }
-
-        //[HttpPost]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult MakeReservation(int id, Reservation reservation)
-        //{
-        //    try
-        //    {
-        //        return RedirectToAction(nameof(Index));
-        //    }
-        //    catch
-        //    {
-        //        return View();
-        //    }
-        //}
     }
 }

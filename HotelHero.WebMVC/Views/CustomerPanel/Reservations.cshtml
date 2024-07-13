@@ -4,62 +4,49 @@
     ViewData["Title"] = "Reservations";
 }
 
-<h1>Reservations</h1>
+<h1>My reservations</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Id)
+                <label asp-for="First().CheckInDate"></label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CheckInDate)
+                <label asp-for="First().CheckOutDate"></label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CheckOutDate)
+                <label asp-for="First().AmountOfPeople"></label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.AmountOfPeople)
+                <label asp-for="First().Hotel.Name"></label>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.CostPerNight)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Status)
+                <label asp-for="First().Status"></label>
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CheckInDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CheckOutDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AmountOfPeople)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CostPerNight)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.CheckInDate
+                </td>
+                <td>
+                    @item.CheckOutDate
+                </td>
+                <td>
+                    @item.AmountOfPeople
+                </td>
+                <td>
+                    @item.Hotel.Name, @item.Hotel.City
+                </td>
+                <td>
+                    @item.Status
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
