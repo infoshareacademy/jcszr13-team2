@@ -1,5 +1,6 @@
 [
   {
+    "Id": 1,
     "Hotel": {
       "Id": 3,
       "Name": "Hotel Scout",
@@ -19,6 +20,7 @@
     "CostPerNight": 300
   },
   {
+    "Id": 2,
     "Hotel": {
       "Id": 2,
       "Name": "Hotel Kamil",
@@ -38,6 +40,7 @@
     "CostPerNight": 500
   },
   {
+    "Id": 3,
     "Hotel": {
       "Id": 3,
       "Name": "Hotel Scout",
@@ -57,6 +60,7 @@
     "CostPerNight": 400
   },
   {
+    "Id": 4,
     "Hotel": {
       "Id": 4,
       "Name": "Hotel Ibis",
@@ -76,6 +80,7 @@
     "CostPerNight": 800
   },
   {
+    "Id": 5,
     "Hotel": {
       "Id": 1,
       "Name": "Najlepszy hotel",

@@ -1,4 +1,5 @@
 ﻿using HotelHero.HotelsDatabase;
+using HotelHero.ReservationsDatabase.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,19 +11,27 @@ namespace HotelHero.ReservationsDatabase
 {
     public class Reservation
     {
+        public int Id { get; }
         public Hotel Hotel { get; }
         public DateTime CheckInDate { get; }
         public DateTime CheckOutDate { get; }
         public int AmountOfPeople { get; }
         public int CostPerNight { get; }
-        public Reservation(Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, int costPerNight)
+        public ReservationStatus Status { get; set; }
+        public Reservation(int id, Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, int costPerNight)
         {
+            Id = id;
             Hotel = hotel;
             CheckInDate = checkInDate;
             CheckOutDate = checkOutDate;
             AmountOfPeople = amountOfPeople;
             CostPerNight = costPerNight;
+            Status = ReservationStatus.Free;
+        }
 
+        public void UpdateReservationStatus(ReservationStatus status)
+        {
+            Status = status;
         }
 
         public override string ToString()

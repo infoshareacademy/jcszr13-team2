@@ -1,33 +1,65 @@
-﻿
+﻿@model IEnumerable<HotelHero.ReservationsDatabase.Reservation>
+
 @{
     ViewData["Title"] = "Reservations";
 }
 
 <h1>Reservations</h1>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-auto">
-                <div class="children">
-                    <a class="btn" asp-action="CustomerData">Customer Data</a>
-                </div>
-
-                <div class="children">
-                    <a class="btn-dark" asp-action="Reservations">Your reservations</a>
-                </div>
-
-                <div class="children">
-                    <a class="btn" asp-action="StaysHistory">History of stays</a>
-                </div>
-
-                <div class="children">
-                    <a class="btn" asp-action="">Payment history (coming soon)</a>
-                </div>
-
-                <div class="children">
-                    <a class="btn" asp-action="Favourites">Favourites</a>
-                </div>
-
-            </div>
-        </div>
-    </div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckInDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CheckOutDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AmountOfPeople)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostPerNight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckInDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CheckOutDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AmountOfPeople)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostPerNight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

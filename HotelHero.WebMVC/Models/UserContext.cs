@@ -1,4 +1,5 @@
-﻿using HotelHero.UserPanel;
+﻿using HotelHero.ReservationsDatabase;
+using HotelHero.UserPanel;
 
 namespace HotelHero.WebMVC.Models
 {
@@ -14,6 +15,15 @@ namespace HotelHero.WebMVC.Models
         public static void SetUser(User user)
         {
             loggedUser = user;
+        }
+
+        public static List<Reservation> GetReservation()
+        {
+            return loggedUser.Reservations;
+        }
+        public static void MakeReservation(Reservation newReservation)
+        {
+            loggedUser.Reservations.Add(newReservation);
         }
     }
 }

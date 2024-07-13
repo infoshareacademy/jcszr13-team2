@@ -1,5 +1,8 @@
-﻿using HotelHero.ReservationsDatabase;
+﻿using HotelHero.HotelsDatabase;
+using HotelHero.ReservationsDatabase;
+using HotelHero.ReservationsDatabase.Enums;
 using HotelHero.WebMVC.Interface;
+using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Services;
 using HotelHero.WebMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -32,5 +35,27 @@ namespace HotelHero.WebMVC.Controllers
             items.Add(reservation);
             return View(items);
         }
+
+        public ActionResult MakeReservation(int id)
+        {
+            var model = _reservationService.GetReservationById(id);
+            model.UpdateReservationStatus(ReservationStatus.Reserved);
+            UserContext.MakeReservation(model);
+            return RedirectToAction(nameof(Index));
+        }
+
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult MakeReservation(int id, Reservation reservation)
+        //{
+        //    try
+        //    {
+        //        return RedirectToAction(nameof(Index));
+        //    }
+        //    catch
+        //    {
+        //        return View();
+        //    }
+        //}
     }
 }

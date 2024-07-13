@@ -12,5 +12,9 @@
     @foreach (var result in Model)
     {
         <li>@result.Hotel.CreateStars()</li>
+
+            <a asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a>
+
+
     }
 </ul>

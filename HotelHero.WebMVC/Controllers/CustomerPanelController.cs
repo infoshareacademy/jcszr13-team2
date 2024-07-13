@@ -57,7 +57,8 @@ namespace HotelHero.WebMVC.Controllers
         }
         public ActionResult Reservations()
         {
-            return View();
+            var model = UserContext.GetReservation();
+            return View(model);
         }
         public ActionResult StaysHistory()
         {
