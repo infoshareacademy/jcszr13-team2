@@ -29,14 +29,14 @@ namespace HotelHero.WebMVC.Services
             return _reservations;
         }
 
-        public Reservation GetReservation(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople)
+        public List<Reservation> GetReservation(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople)
         {
             return _reservations.Where(r =>
                 (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
                 (searchCheckInDate == DateTime.MinValue || r.CheckInDate.Date >= searchCheckInDate.Value.Date) &&   //r.CheckInDate => r.CheckInDate.Date
                 (searchCheckOutDate == DateTime.MinValue || r.CheckOutDate.Date <= searchCheckOutDate.Value.Date) &&
                 (searchAmountOfPeople == 0 || r.AmountOfPeople >= searchAmountOfPeople)
-                ).FirstOrDefault();
+                ).ToList();
         }
 
         public Reservation GetReservationById(int id)

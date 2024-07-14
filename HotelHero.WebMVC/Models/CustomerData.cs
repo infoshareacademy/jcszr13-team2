@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Text.Json;
 
@@ -16,6 +18,10 @@ namespace HotelHero.WebMVC.Models
         public List<int> Favourites { get; set; }
         public bool Rodo { get; set; }
         public bool Newsletter { get; set; }
+
+        [Range(1, 100)]
+        [DataType(DataType.Currency)]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Balance { get; set; }
 
         public CustomerData()

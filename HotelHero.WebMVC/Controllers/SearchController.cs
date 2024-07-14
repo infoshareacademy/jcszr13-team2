@@ -32,9 +32,10 @@ namespace HotelHero.WebMVC.Controllers
         [HttpPost]
         public IActionResult Results(SearchViewModel vm)
         {
-            var reservation = _reservationService.GetReservation(vm.City, vm.StartDate, vm.EndDate, vm.PeopleAmount);
+
             var items = new List<Reservation>();
-            items.Add(reservation);
+             items = _reservationService.GetReservation(vm.City, vm.StartDate, vm.EndDate, vm.PeopleAmount);
+            //items.Add(reservation);
             return View(items);
         }
 

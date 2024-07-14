@@ -98,5 +98,25 @@
     "CheckOutDate": "2025-03-10T00:00:00",
     "AmountOfPeople": 2,
     "CostPerNight": 600
+  },
+  {
+    "Id": 6,
+    "Hotel": {
+      "Id": 1,
+      "Name": "Najlepszy hotel",
+      "Address": "Słowackiego 2",
+      "City": "Warszawa",
+      "Description": "Hotel w Warszawie",
+      "Stars": 4,
+      "Rating": 4.5,
+      "IsFreeWiFi": true,
+      "IsPrivateParking": true,
+      "IsRestaurant": false,
+      "IsBar": false
+    },
+    "CheckInDate": "2025-03-05T00:00:00",
+    "CheckOutDate": "2025-03-10T00:00:00",
+    "AmountOfPeople": 2,
+    "CostPerNight": 300
   }
 ]
