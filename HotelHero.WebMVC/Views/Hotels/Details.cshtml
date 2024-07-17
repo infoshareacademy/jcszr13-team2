@@ -6,12 +6,11 @@
 
 <div>
     <h2>@Model.Name</h2>
+    <picture>
+        <img src="@Model.Image" height="200" width="200" />
+    </picture>
+
     <dl class="row">
-        <dt class="col-sm-2">
-            <picture>
-                <img src="@Model.Image" />
-            </picture>
-        </dt>
         <dt class="col-sm-2">
             <label asp-for="Address"></label>
         </dt>

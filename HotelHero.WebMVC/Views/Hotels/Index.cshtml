@@ -1,96 +1,18 @@
-﻿@using HotelHero.WebMVC.Interface
-@model IEnumerable<HotelHero.HotelsDatabase.Hotel>
-@inject ICustomerDataService customerDataService;
-
-@{
-    ViewData["Title"] = "Index";
-    CustomerData customerData = new();
-    if (UserContext.GetUser() != null)
-    {
-        customerData = customerDataService.GetCustomerData();
-        if (customerData.Favourites == null)
-        {
-            customerData.Favourites = new List<int>();
-        }
-    }
-}
+﻿@model IEnumerable<HotelHero.HotelsDatabase.Hotel>
 
 <h1>Hotels</h1>
 
 @if (UserContext.GetUser()?.UserRole == HotelHero.UserPanel.Enums.UserRole.Admin)
 {
     <p>
-        <a asp-action="Create">Add new hotel</a>
+        <a class="btn btn-primary" asp-action="Create">Add new hotel</a>
     </p>
 }
 <table class="table">
-    <thead>
-        <tr>
-            <th>
-                <label asp-for="First().Name"></label>
-            </th>
-            <th>
-                <label asp-for="First().Address"></label>
-            </th>
-            <th>
-                <label asp-for="First().City"></label>
-            </th>
-            <th>
-                <label asp-for="First().Description"></label>
-            </th>
-            <th>
-                <label asp-for="First().Stars"></label>
-            </th>
-            <th>
-                <label asp-for="First().Rating"></label>
-            </th>
-            <th></th>
-        </tr>
-    </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.Address
-                </td>
-                <td>
-                    @item.City
-                </td>
-                <td>
-                    @item.Description
-                </td>
-                <td>
-                    @item.CreateStars()
-                </td>
-                <td>
-                    @item.Rating
-                </td>
-                <td>
-
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a>
-
-                    @if (UserContext.GetUser() != null)
-                    {
-                        if (customerData.Favourites.Contains(item.Id))
-                        {
-                            <a asp-action="Unfavourite" asp-route-id="@item.Id">Unfavourite</a>
-                        }
-                        else
-                        {
-                            <a asp-action="Favourite" asp-route-id="@item.Id">Favourite</a>
-                        }
-                    }
-                    @if (UserContext.GetUser()?.UserRole == HotelHero.UserPanel.Enums.UserRole.Admin)
-                    {
-                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
-                        <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-                    }
-                </td>
-            </tr>
+            <partial name="_HotelCard" , model="item" />
         }
     </tbody>
 </table>

@@ -17,6 +17,10 @@ namespace HotelHero.WebMVC
             builder.Services.AddSingleton<IFileOperationService, FileOperationService>();
             builder.Services.AddSingleton<IPaymentService, PaymentService>();
 
+            // Add services to the container.
+            builder.Services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
