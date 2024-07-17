@@ -41,7 +41,7 @@ namespace HotelHero.WebMVC.Services
         {
             var users = _fileOperationService.DeserializeFile();
 
-            var newUser = new User(registerUser.Email, registerUser.Password, UserRole.UnloggedUser, new List<Reservation>());
+            var newUser = new User(registerUser.Email, registerUser.Password, UserRole.UnloggedUser);
             users.Add(newUser);
             _fileOperationService.SerializeFile(users);
         }

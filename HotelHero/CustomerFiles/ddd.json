@@ -5,6 +5,7 @@
   "DateOfBirth": null,
   "Address": null,
   "Phone": null,
+  "Reservations": null,
   "Favourites": null,
   "Rodo": false,
   "Newsletter": false

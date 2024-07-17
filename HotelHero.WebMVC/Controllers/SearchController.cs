@@ -14,11 +14,13 @@ namespace HotelHero.WebMVC.Controllers
     {
         private readonly SearchPanel _searchService;
         private readonly IReservationService _reservationService;
+        private readonly ICustomerDataService _customerDataService;
         private readonly IPaymentService _paymentService;
 
-        public SearchController(IReservationService reservationService, IPaymentService paymentService)
+        public SearchController(IReservationService reservationService, ICustomerDataService customerDataService,IPaymentService paymentService)
         {
             _reservationService = reservationService;
+            _customerDataService = customerDataService;
             _searchService = new SearchPanel();
             _paymentService = paymentService;
         }
@@ -43,7 +45,7 @@ namespace HotelHero.WebMVC.Controllers
         {
             var model = _reservationService.GetReservationById(id);
             model.UpdateReservationStatus(ReservationStatus.Reserved);
-            UserContext.MakeReservation(model);
+            _customerDataService.MakeReservation(model);
             _paymentService.ProcessPayment(model);
             return RedirectToAction("Index", "Payment");
         }

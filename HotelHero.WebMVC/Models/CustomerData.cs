@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Text.Json;
+using HotelHero.ReservationsDatabase;
 
 namespace HotelHero.WebMVC.Models
 {
@@ -15,6 +16,7 @@ namespace HotelHero.WebMVC.Models
         public string DateOfBirth { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        public List<Reservation> Reservations { get; set; }
         public List<int> Favourites { get; set; }
         public bool Rodo { get; set; }
         public bool Newsletter { get; set; }
@@ -27,7 +29,7 @@ namespace HotelHero.WebMVC.Models
         public CustomerData()
         {
         }
-        public CustomerData(string email, string lastName, string firstName, string dateOfBirth, string address, string phone, List<int> favourites, bool rodo, bool newsletter, decimal balance)
+        public CustomerData(string email, string lastName, string firstName, string dateOfBirth, string address, string phone, List<Reservation> reservations, List<int> favourites, bool rodo, bool newsletter, decimal balance)
         {
             Email = email;
             LastName = lastName;
@@ -35,6 +37,7 @@ namespace HotelHero.WebMVC.Models
             DateOfBirth = dateOfBirth;
             Address = address;
             Phone = phone;
+            Reservations = reservations;
             Favourites = favourites;
             Newsletter = newsletter;
             Rodo = rodo;

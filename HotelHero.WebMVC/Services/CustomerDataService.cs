@@ -4,6 +4,7 @@ using HotelHero.HotelsDatabase;
 using HotelHero.UserPanel;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using HotelHero.WebMVC.Interface;
+using HotelHero.ReservationsDatabase;
 
 namespace HotelHero.WebMVC.Services
 {
@@ -41,6 +42,20 @@ namespace HotelHero.WebMVC.Services
                 newPath = path.Replace(".WebMVC", "");
             }
             return newPath;
+        }
+
+        public List<Reservation> GetReservation()
+        {
+            return customerData.Reservations;
+        }
+        public void MakeReservation(Reservation newReservation)
+        {
+            customerData.Reservations.Add(newReservation);
+            Save(customerData);
+        }
+        public void CancelReservation(Reservation newReservation)
+        {
+            customerData.Reservations.Remove(newReservation);
         }
     }
 }

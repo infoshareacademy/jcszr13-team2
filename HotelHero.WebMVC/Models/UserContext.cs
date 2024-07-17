@@ -16,18 +16,5 @@ namespace HotelHero.WebMVC.Models
         {
             loggedUser = user;
         }
-
-        public static List<Reservation> GetReservation()
-        {
-            return loggedUser.Reservations;
-        }
-        public static void MakeReservation(Reservation newReservation)
-        {
-            loggedUser.Reservations.Add(newReservation);
-        }
-        public static void CancelReservation(Reservation newReservation)
-        {
-            loggedUser.Reservations.Remove(newReservation);
-        }
     }
 }

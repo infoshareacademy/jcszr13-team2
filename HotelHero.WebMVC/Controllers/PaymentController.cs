@@ -39,7 +39,7 @@ namespace HotelHero.WebMVC.Controllers
         public ActionResult Cancel()
         {
             var model = _paymentService.GetReservation();
-            UserContext.CancelReservation(model);
+            _customerDataService.CancelReservation(model);
             return RedirectToAction("Index", "Search");
         }
         public ActionResult PayConfirm(int id)

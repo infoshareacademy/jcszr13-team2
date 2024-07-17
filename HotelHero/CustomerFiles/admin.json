@@ -5,6 +5,7 @@
   "DateOfBirth": "dddd",
   "Address": "xxx",
   "Phone": "sikw",
+  "Reservations": [],
   "Favourites": [
     1
   ],

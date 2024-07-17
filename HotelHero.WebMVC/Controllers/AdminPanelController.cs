@@ -39,7 +39,7 @@ namespace HotelHero.WebMVC.Controllers
             var users = _fileOperationService.DeserializeFile();
             var index = users.FindIndex(delegate (User user) { return user.Email == email; });
             users.Remove(users[index]);
-            var editUser = new User(user.Email, user.Password, user.UserRole, new List<Reservation> ());
+            var editUser = new User(user.Email, user.Password, user.UserRole);
             users.Insert(index, editUser);
             _fileOperationService.SerializeFile(users);
             return RedirectToAction("Users");

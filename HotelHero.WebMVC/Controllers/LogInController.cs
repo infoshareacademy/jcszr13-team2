@@ -1,3 +1,4 @@
+using HotelHero.ReservationsDatabase;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Services;
@@ -31,6 +32,7 @@ namespace HotelHero.WebMVC.Controllers
                 //    return View(user);
                 //}
                 UserContext.SetUser(_logInService.LogIn(user));
+                _customerDataService.GetCustomerData();
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
             catch
@@ -56,7 +58,7 @@ namespace HotelHero.WebMVC.Controllers
                 }
                 _logInService.Register(user);
                 UserContext.SetUser(_logInService.LogIn(user));
-                var data = new Models.CustomerData(user.Email, "", "", "", "", "", new List<int>(), false, false, 0m);
+                var data = new Models.CustomerData(user.Email, "", "", "", "", "",new List<Reservation>(), new List<int>(), false, false, 0m);
                 _customerDataService.Save(data);
                 return RedirectToAction("Index","Home");
             }
