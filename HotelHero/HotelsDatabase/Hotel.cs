@@ -15,6 +15,7 @@ namespace HotelHero.HotelsDatabase
         public string Address { get; set; }
         public string City { get; set; }
         public string Description { get; set; }
+        public string Image { get; set; }
         public int Stars { get; set; }
         public float Rating { get; set; }
         public bool IsFreeWiFi { get; set; }
