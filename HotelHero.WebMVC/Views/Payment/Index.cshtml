@@ -33,6 +33,6 @@ You are about to pay for reservation:
         Status: @Model.Status
     </li>
     <a asp-action="Pay" asp-route-id="@Model.Id">Pay</a>
-    <a asp-action="Cancel">Cancel</a>
+    <a asp-action="Cancel" asp-route-id="@Model.Id">Cancel</a>
 
 </ul>

@@ -34,17 +34,14 @@ namespace HotelHero.WebMVC.Controllers
         [HttpPost]
         public IActionResult Results(SearchViewModel vm)
         {
-
-            var items = new List<Reservation>();
-             items = _reservationService.GetReservation(vm.City, vm.StartDate, vm.EndDate, vm.PeopleAmount);
-            //items.Add(reservation);
+            var items = _reservationService.GetReservation(vm.City, vm.StartDate, vm.EndDate, vm.PeopleAmount);
             return View(items);
         }
 
         public ActionResult MakeReservation(int id)
         {
             var model = _reservationService.GetReservationById(id);
-            model.UpdateReservationStatus(ReservationStatus.Reserved);
+            model.MakeReservation(UserContext.loggedUser.Email);
             _customerDataService.MakeReservation(model);
             _paymentService.ProcessPayment(model);
             return RedirectToAction("Index", "Payment");

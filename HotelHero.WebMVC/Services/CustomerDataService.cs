@@ -53,9 +53,17 @@ namespace HotelHero.WebMVC.Services
             customerData.Reservations.Add(newReservation);
             Save(customerData);
         }
-        public void CancelReservation(Reservation newReservation)
+        public void PayReservation(Reservation reservation)
         {
-            customerData.Reservations.Remove(newReservation);
+            var model= customerData.Reservations.Where(x => x.Id == reservation.Id).First();
+            model.PayReservation();
+            Save(customerData);
+        }
+        public void CancelReservation(int id)
+        {
+            var cancelReservation = customerData.Reservations.Where(x => x.Id == id).First();
+            customerData.Reservations.Remove(cancelReservation);
+            Save(customerData);
         }
     }
 }

@@ -10,6 +10,7 @@ namespace HotelHero.WebMVC.Interface
 
         public List<Reservation> GetReservation();
         public void MakeReservation(Reservation newReservation);
-        public void CancelReservation(Reservation newReservation);
+        public void CancelReservation(int id);
+        public void PayReservation(Reservation reservation);
     }
 }

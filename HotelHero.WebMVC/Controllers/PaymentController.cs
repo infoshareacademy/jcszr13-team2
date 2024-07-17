@@ -36,10 +36,11 @@ namespace HotelHero.WebMVC.Controllers
             var model = _reservationService.GetReservationById(id);
             return View(model);
         }
-        public ActionResult Cancel()
+        public ActionResult Cancel(int id)
         {
-            var model = _paymentService.GetReservation();
-            _customerDataService.CancelReservation(model);
+            _customerDataService.CancelReservation(id);
+            var reservetion = _reservationService.GetReservationById(id);
+            reservetion.CancelReservation();
             return RedirectToAction("Index", "Search");
         }
         public ActionResult PayConfirm(int id)
@@ -48,8 +49,10 @@ namespace HotelHero.WebMVC.Controllers
             var model = _reservationService.GetReservationById(id);
             var reservationCost = model.GetReservationCost();
             customerData.Balance -= reservationCost;
+            model.PayReservation();
+            _customerDataService.PayReservation(model);
             _customerDataService.Save(customerData);
-            model.UpdateReservationStatus(ReservationStatus.Paid);
+
             return RedirectToAction("Reservations", "CustomerPanel");
         }
         public ActionResult ToWallet()

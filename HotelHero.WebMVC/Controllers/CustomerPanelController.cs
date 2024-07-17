@@ -58,8 +58,7 @@ namespace HotelHero.WebMVC.Controllers
         }
         public ActionResult CancelReservation(int id)
         {
-            var model = _reservationService.GetReservationById(id);
-            _customerDataService.CancelReservation(model);
+            _customerDataService.CancelReservation(id);
             return RedirectToAction("Reservations");
         }
         public ActionResult StaysHistory()

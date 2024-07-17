@@ -19,12 +19,9 @@ namespace HotelHero.ReservationsDatabase
         public int AmountOfPeople { get; }
         public int CostPerNight { get; }
         public ReservationStatus Status { get; set; }
+        public string ReservationUser { get; set; }
 
-        //public Reservation()
-        //{
-            
-        //}
-        public Reservation(int id, Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, int costPerNight)
+        public Reservation(int id, Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, int costPerNight, ReservationStatus reservationStatus, string reservationUser)
         {
             Id = id;
             Hotel = hotel;
@@ -32,12 +29,25 @@ namespace HotelHero.ReservationsDatabase
             CheckOutDate = checkOutDate;
             AmountOfPeople = amountOfPeople;
             CostPerNight = costPerNight;
-            Status = ReservationStatus.Free;
+            Status = reservationStatus;
+            ReservationUser = reservationUser;
         }
 
-        public void UpdateReservationStatus(ReservationStatus status)
+        public void MakeReservation(string newUser)
         {
-            Status = status;
+            Status = ReservationStatus.Reserved;
+            ReservationUser = newUser;
+        }
+
+        public void PayReservation()
+        {
+            Status = ReservationStatus.Paid;
+        }
+
+        public void CancelReservation()
+        {
+            Status = ReservationStatus.Free;
+            ReservationUser = "";
         }
 
         public override string ToString()
