@@ -6,13 +6,14 @@
     <title>@ViewData["Title"] - HotelHero</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/customStyle.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HotelHero.WebMVC.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary bg-opacity-60  border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Search" asp-action="Index">H👽TEL HERO</a>
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Search" asp-action="Index">H👽TEL HERO</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -20,39 +21,39 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Search" asp-action="Index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Search" asp-action="Index">Search</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="LogIn" asp-action="LogIn">User Login</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="LogIn" asp-action="LogIn">User Login</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Hotels" asp-action="Index">Hotels Database</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Hotels" asp-action="Index">Hotels Database</a>
                         </li>
                         @if (UserContext.GetUser() != null)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="CustomerPanel" asp-action="CustomerPanel">Customer Panel</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="CustomerPanel" asp-action="CustomerPanel">Customer Panel</a>
                             </li>
                         }
 
                         @if (UserContext.GetUser()?.UserRole == HotelHero.UserPanel.Enums.UserRole.Admin)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="AdminPanel" asp-action="Index">Administrator Panel</a>
+                                <a class="nav-link text-white" asp-area="" asp-controller="AdminPanel" asp-action="Index">Administrator Panel</a>
                             </li>
                         }
                     </ul>
                 </div>
                 <div>
-                    <span>Zalogowany jako: @UserContext.GetUser()?.Email </span>
+                    <span class="text-white">Zalogowany jako: @UserContext.GetUser()?.Email </span>
                 </div>
             </div>
         </nav>
     </header>
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
     </div>
 
     <footer class="border-top footer text-muted">
