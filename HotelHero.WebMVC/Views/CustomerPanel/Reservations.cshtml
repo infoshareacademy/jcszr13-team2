@@ -3,29 +3,29 @@
     ViewData["Title"] = "Reservations";
 }
 
-<h1>Reservations</h1>
-
 <div class="container">
     <div class="row">
         <div class="col-md-auto">
-            <div class="children">
-                <a class="btn" asp-action="CustomerData">Customer Data</a>
-            </div>
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                    <a class="btn" asp-action="CustomerData">Customer Data</a>
+                </button>
 
-            <div class="children">
-                <a class="btn-dark" asp-action="Reservations">Your reservations</a>
-            </div>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info active">
+                    <a class="btn" asp-action="Reservations">Your reservations</a>
+                </button>
 
-            <div class="children">
-                <a class="btn" asp-action="StaysHistory">History of stays</a>
-            </div>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                    <a class="btn" asp-action="StaysHistory">History of stays</a>
+                </button>
 
-            <div class="children">
-                <a class="btn" asp-action="Wallet">Your wallet</a>
-            </div>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                    <a class="btn" asp-action="Wallet">Your wallet</a>
+                </button>
 
-            <div class="children">
-                <a class="btn" asp-action="Favourites">Favourites</a>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                    <a class="btn" asp-action="Favourites">Favourites</a>
+                </button>
             </div>
 
         </div>
@@ -68,7 +68,9 @@
                         </ul>
                     </td>
                     <td>
-                        <a asp-action="CancelReservation" asp-route-id="@item.Id">Cancel reservation</a>
+                        <a asp-action="CancelReservation" asp-route-id="@item.Id">
+                            <img src="<img src=" https: //t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" height="35" width="35" />"
+                        </a>
                     </td>
                 </tr>
             }

@@ -9,8 +9,8 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
-    <thead>
+<table class="table table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
             <th>
                 <label asp-for="First().Email"></label>
@@ -38,8 +38,12 @@
                     @item.UserRole
                 </td>
                 <td>
-                    <a asp-action="UserEdit" asp-route-id="@item">Edit</a>
-                    <a asp-action="Delete" asp-route-id="@item">Delete</a>
+                    <a asp-action="UserEdit" asp-route-id="@item">
+                        <img src="https://cdn.pixabay.com/photo/2022/01/11/21/48/edit-6931553_640.png" height="35" width="35"/>
+                    </a>
+                    <a asp-action="Delete" asp-route-id="@item">
+                        <img src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" height="35" width="35"/>
+                    </a>
                 </td>
             </tr>
         }

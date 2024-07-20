@@ -5,37 +5,29 @@
 }
 
 <div>
-    <h2>@Model.Name</h2>
-    <picture>
-        <img src="@Model.Image" height="200" width="200" />
-    </picture>
-
-    <dl class="row">
-        <dt class="col-sm-2">
-            <label asp-for="Address"></label>
-        </dt>
-        <dd class="col-sm-10">
-            @Model.Address, @Model.City
-        </dd>
-        <dt class="col-sm-2">
-            <label asp-for="Description"></label>
-        </dt>
+    <div class="row">
+        <div class="col">
+            <picture>
+                <img src="@Model.Image" height="200" width="200" />
+            </picture>
+        </div>
+        <div class="col" style="align-self: start">
+            <div class="row">
+                <h2>@Model.Name @Model.CreateStars()</h2>
+            </div>
+            <div class="row">
+                <label>Address: @Model.Address, @Model.City</label>
+            </div>
+            <div class="row">
+                <label>Rating: @Model.Rating</label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
         <dd class="col-sm-10">
             @Model.Description
         </dd>
-        <dt class="col-sm-2">
-            <label asp-for="Stars"></label>
-        </dt>
-        <dd class="col-sm-10">
-            @Model.CreateStars() 
-        </dd>
-        <dt class="col-sm-2">
-            <label asp-for="Rating"></label>
-        </dt>
-        <dd class="col-sm-10">
-            @Model.Rating
-        </dd>
-    </dl>
+    </div>
 </div>
 <div>
     @if (Model.IsFreeWiFi)

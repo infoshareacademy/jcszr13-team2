@@ -4,35 +4,36 @@
     ViewData["Title"] = "Favourites";
 }
 
-<h1>Favourites</h1>
-
 <div class="container">
     <div class="row">
         <div class="col-md-auto">
-            <div class="children">
-                <a class="btn" asp-action="CustomerData">Customer Data</a>
-            </div>
 
-            <div class="children">
-                <a class="btn" asp-action="Reservations">Your reservations</a>
-            </div>
+            <div class="list-group">
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                    <a class="btn" asp-action="CustomerData">Customer Data</a>
+                </button>
 
-            <div class="children">
-                <a class="btn" asp-action="StaysHistory">History of stays</a>
-            </div>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                    <a class="btn" asp-action="Reservations">Your reservations</a>
+                </button>
 
-            <div class="children">
-                <a class="btn" asp-action="Wallet">Your wallet</a>
-            </div>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                    <a class="btn" asp-action="StaysHistory">History of stays</a>
+                </button>
 
-            <div class="children">
-                <a class="btn-dark" asp-action="Favourites">Favourites</a>
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info">
+                    <a class="btn" asp-action="Wallet">Your wallet</a>
+                </button>
+
+                <button type="button" class="list-group-item list-group-item-action list-group-item-info active">
+                    <a class="btn" asp-action="Favourites">Favourites</a>
+                </button>
             </div>
 
         </div>
         <div class="col">
-            <table class="table">
-                <thead>
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
                     <tr>
                         <th>
                             <label asp-for="First().Name"></label>
@@ -78,7 +79,6 @@
                                 @item.Rating
                             </td>
                             <td>
-
                                 <a asp-action="FavouriteDetails" asp-route-id="@item.Id">Details</a>
                                 <a asp-action="Unfavourite" asp-route-id="@item.Id">Unfavourite</a>
                             </td>

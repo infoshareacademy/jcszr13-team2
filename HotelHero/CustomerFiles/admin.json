@@ -6,9 +6,7 @@
   "Address": "xxx",
   "Phone": "sikw",
   "Reservations": [],
-  "Favourites": [
-    1
-  ],
+  "Favourites": [],
   "Rodo": true,
   "Newsletter": true,
   "Balance": 78.00
