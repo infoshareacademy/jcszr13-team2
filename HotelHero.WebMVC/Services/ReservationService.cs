@@ -33,10 +33,10 @@ namespace HotelHero.WebMVC.Services
         {
             return _reservations.Where(r =>
                 (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
-                (searchCheckInDate == DateTime.MinValue || r.CheckInDate.Date >= searchCheckInDate.Value.Date) &&   //r.CheckInDate => r.CheckInDate.Date
-                (searchCheckOutDate == DateTime.MinValue || r.CheckOutDate.Date <= searchCheckOutDate.Value.Date) &&
-                (searchAmountOfPeople == 0 || r.AmountOfPeople >= searchAmountOfPeople)
-                ).ToList();
+                (!searchCheckInDate.HasValue || r.CheckInDate.Date >= searchCheckInDate.Value.Date) &&
+                (!searchCheckOutDate.HasValue || r.CheckOutDate.Date <= searchCheckOutDate.Value.Date) &&
+                (!searchAmountOfPeople.HasValue || r.AmountOfPeople >= searchAmountOfPeople.Value)
+            ).ToList();
         }
 
         public Reservation GetReservationById(int id)
