@@ -35,7 +35,8 @@ namespace HotelHero.WebMVC.Services
                 (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
                 (searchCheckInDate == DateTime.MinValue || r.CheckInDate.Date >= searchCheckInDate.Value.Date) &&   //r.CheckInDate => r.CheckInDate.Date
                 (searchCheckOutDate == DateTime.MinValue || r.CheckOutDate.Date <= searchCheckOutDate.Value.Date) &&
-                (searchAmountOfPeople == 0 || r.AmountOfPeople >= searchAmountOfPeople)
+                (searchAmountOfPeople == 0 || r.AmountOfPeople >= searchAmountOfPeople) &&
+                r.Status == ReservationStatus.Free
                 ).ToList();
         }
 

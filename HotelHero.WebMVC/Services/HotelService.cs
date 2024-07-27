@@ -45,6 +45,7 @@ namespace HotelHero.WebMVC.Services
             hotel.Address = model.Address;
             hotel.City = model.City;
             hotel.Description = model.Description;
+            hotel.Image = model.Image;
             hotel.Stars = model.Stars;
             hotel.Rating = model.Rating;
             hotel.IsFreeWiFi = model.IsFreeWiFi;
