@@ -1,38 +1,37 @@
-﻿@model HotelHero.ReservationsDatabase.Reservation
+﻿@model HotelHero.WebMVC.Models.Payment
 
 You are about to pay for reservation:
 <ul>
     <li>
-        Hotel: @Model.Hotel.Name
+        Hotel: @Model.Reservation.Hotel.Name
     </li>
     <li>
-        Stars: @Model.Hotel.CreateStars()
+        Stars: @Model.Reservation.Hotel.CreateStars()
     </li>
     <li>
-        Address: @Model.Hotel.Address
+        Address: @Model.Reservation.Hotel.Address
     </li>
     <li>
-        Description: @Model.Hotel.Description
+        Description: @Model.Reservation.Hotel.Description
     </li>
     <li>
-        Rating: @Model.Hotel.Rating
+        Rating: @Model.Reservation.Hotel.Rating
     </li>
     <li>
-        Check in: @Model.CheckInDate
+        Check in: @Model.Reservation.CheckInDate
     </li>
     <li>
-        Check out: @Model.CheckOutDate
+        Check out: @Model.Reservation.CheckOutDate
     </li>
     <li>
-        People: @Model.AmountOfPeople
+        People: @Model.Reservation.AmountOfPeople
     </li>
     <li>
-        Cost per night: @Model.CostPerNight
+        Cost per night: @Model.Reservation.CostPerNight
     </li>
-    <li>
-        Status: @Model.Status
-    </li>
-    <a asp-action="Pay" asp-route-id="@Model.Id">Pay</a>
-    <a asp-action="Cancel" asp-route-id="@Model.Id">Cancel</a>
+</ul>
+
+<a asp-action="PaymentAdditionalServices" asp-route-id="@Model.PaymentId">Select additional services</a>
+<a asp-action="CancelPayment" asp-route-id="@Model.PaymentId">Cancel</a>
 
 </ul>

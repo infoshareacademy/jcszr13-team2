@@ -37,7 +37,7 @@ namespace HotelHero.UserPanel
             Console.WriteLine("Enter password");
             var password = User.MaskedInput();
 
-            newUser = new User(email, password,UserRole.UnloggedUser, new List<Reservation>());
+            newUser = new User(email, password,UserRole.User, new List<Reservation>());
 
             users.Add(newUser);
 

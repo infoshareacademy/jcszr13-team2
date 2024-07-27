@@ -1,0 +1,32 @@
+﻿@model Payment
+
+@{
+	ViewData["Title"] = "PaymentAdditionalServices";
+}
+
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="PaymentAdditionalServices" asp-route-id="@Model.PaymentId">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+			@for (int i = 0; i < Model.AdditionalServices.Count; i++)
+			{
+				<div class="form-group">
+					@Html.HiddenFor(x => x.AdditionalServices[i].Id)
+					@Html.CheckBoxFor(x => x.AdditionalServices[i].IsSelected)
+					@Html.DisplayFor(x => x.AdditionalServices[i].Name)
+					@Html.HiddenFor(x => x.AdditionalServices[i].Name)
+					@Html.DisplayFor(x => x.AdditionalServices[i].Cost)
+					@Html.HiddenFor(x => x.AdditionalServices[i].Cost)
+				</div>
+			}
+			<div class="form-group">
+				<input type="submit" value="Summary" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
+</div>
+
+<div>
+	<a asp-action="CancelPayment">Cancel</a>
+</div>

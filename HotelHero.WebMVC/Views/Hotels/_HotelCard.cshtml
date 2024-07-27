@@ -1,65 +1,60 @@
 ﻿@using HotelHero.HotelsDatabase;
+@using HotelHero.UserPanel.Enums
 @using HotelHero.WebMVC.Interface
 @model Hotel
 @inject ICustomerDataService customerDataService;
 
 @{
-    ViewData["Title"] = "Index";
-    CustomerData customerData = new();
-    if (UserContext.GetUser() != null)
-    {
-        customerData = customerDataService.GetCustomerData();
-        if (customerData.Favourites == null)
-        {
-            customerData.Favourites = new List<int>();
-        }
-    }
+	ViewData["Title"] = "Index";
 }
 
 <div class="card mb-3" style="max-width: 540px;">
-    <div class="row g-0">
-        <div class="col-md-4">
-            <img src="@Model.Image" class="img-fluid rounded-start" alt="...">
-        </div>
-        <div class="col-md-8">
-            <div class="card-body">
-                <div class="d-inline-block p-1">
-                    <h5 class="card-title">@Model.Name</h5>
-                </div>
-                <div class="d-inline-block p-1">
-                    <p class="card-text">@Model.CreateStars()</p>
-                </div>
-                <div class="card-text">@Model.City, @Model.Address</div>
-                <div class="card-text">@Model.Description</div>
-                <a class="btnCustom btnCustom-custom" asp-action="Details" asp-route-id="@Model.Id">Details</a>
-@*                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="m12.541 21.325-9.588-10a4.923 4.923 0 1 1 6.95-6.976l1.567 1.566a.75.75 0 0 0 1.06 0l1.566-1.566a4.923 4.923 0 0 1 6.963 6.962l-9.6 10.014zm-1.082 1.038a.75.75 0 0 0 1.082 0l9.59-10.003a6.42 6.42 0 0 0-.012-9.07 6.423 6.423 0 0 0-9.083-.001L11.47 4.854h1.06l-1.566-1.566a6.423 6.423 0 1 0-9.082 9.086l9.577 9.99z" fill="red" fill-rule="nonzero">
+	<div class="row g-0">
+		<div class="col-md-4">
+			<img src="@Model.Image" class="img-fluid rounded-start" alt="...">
+		</div>
+		<div class="col-md-8">
+			<div class="card-body">
+				<div class="d-inline-block p-1">
+					<h5 class="card-title">@Model.Name</h5>
+				</div>
+				<div class="d-inline-block p-1">
+					<p class="card-text">@Model.CreateStars()</p>
+				</div>
+				<div class="card-text">@Model.City, @Model.Address</div>
+				<div class="card-text">@Model.Description</div>
+				<a class="btnCustom btnCustom-custom" asp-action="Details" asp-route-id="@Model.Id">Details</a>
+				@*                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+				<path d="m12.541 21.325-9.588-10a4.923 4.923 0 1 1 6.95-6.976l1.567 1.566a.75.75 0 0 0 1.06 0l1.566-1.566a4.923 4.923 0 0 1 6.963 6.962l-9.6 10.014zm-1.082 1.038a.75.75 0 0 0 1.082 0l9.59-10.003a6.42 6.42 0 0 0-.012-9.07 6.423 6.423 0 0 0-9.083-.001L11.47 4.854h1.06l-1.566-1.566a6.423 6.423 0 1 0-9.082 9.086l9.577 9.99z" fill="red" fill-rule="nonzero">
 
-                    </path>
-                    </svg> *@
-
-
-                @if (UserContext.GetUser()?.UserRole == HotelHero.UserPanel.Enums.UserRole.Admin)
-                {
-                    <a class="btnCustom btnCustom-custom" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-                    <a class="btnCustom btnCustom-custom" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
-                }
-                @if (UserContext.GetUser() != null)
-                {
-                    if (customerData.Favourites.Contains(Model.Id))
-                    {
-                        <a asp-action="Unfavourite" asp-route-id="@Model.Id">Unfavourite</a>
-                    }
-                    else
-                    {
-                        <a asp-action="Favourite" asp-route-id="@Model.Id">Favourite</a>
-                    }
-                }
+				</path>
+				</svg> *@
 
 
-            </div>
-        </div>
-    </div>
+				@if (UserContext.loggedUser != null)
+				{
+					var customerFavourites = customerDataService.GetCustomerData(UserContext.loggedUser.UserId).Favourites;
+					if (customerFavourites == null)
+					{
+						customerFavourites = new();
+					}
+					if (customerFavourites.Contains(Model.Id))
+					{
+						<a class="btnCustom btnCustom-custom" asp-action="Unfavourite" asp-route-id="@Model.Id">Unfavourite</a>
+					}
+					else
+					{
+						<a class="btnCustom btnCustom-custom" asp-action="Favourite" asp-route-id="@Model.Id">Favourite</a>
+					}
+				}
 
+				@if (UserContext.loggedUser != null && UserContext.loggedUser.UserRole == UserRole.Admin)
+				{
+					<a class="btnCustom btnCustom-custom" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+					<a class="btnCustom btnCustom-custom" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+				}
+			</div>
+		</div>
+	</div>
 </div>
 

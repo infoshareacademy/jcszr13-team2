@@ -17,7 +17,7 @@
                 </button>
 
                 <button type="button" class="list-group-item list-group-item-action list-group-item-info">
-                    <a class="btn" asp-action="StaysHistory">History of stays</a>
+                    <a class="btn" asp-action="PaymentsHistory">Payments history</a>
                 </button>
 
                 <button type="button" class="list-group-item list-group-item-action list-group-item-info">
@@ -28,7 +28,6 @@
                     <a class="btn" asp-action="Favourites">Favourites</a>
                 </button>
             </div>
-
         </div>
         <div class="col">
             <table class="table table-striped table-bordered">
@@ -69,7 +68,7 @@
                             @Model.FirstName
                         </td>
                         <td>
-                            @Model.DateOfBirth
+                            @Model.DateOfBirth.ToShortDateString()
                         </td>
                         <td>
                             @Model.Address
@@ -84,7 +83,7 @@
                             @Model.Newsletter
                         </td>
                         <td>
-                            <a asp-action="CustomerDataEdit" asp-route-id="@Model.Email">
+                            <a asp-action="CustomerDataEdit" asp-route-id="@Model.CustomerId">
                                 <img src="https://cdn.pixabay.com/photo/2022/01/11/21/48/edit-6931553_640.png" height="35" width="35" />
                             </a>
                         </td>

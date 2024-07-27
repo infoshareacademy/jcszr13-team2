@@ -7,11 +7,9 @@ namespace HotelHero.WebMVC.Models
 {
     public class User
     {
-        //[Required]
-        //[EmailAddress]
+        [Key]
+        public int UserId { get; set; }
         public string Email { get; set; }
-        //[Required]
-        //[PasswordPropertyText]
         public string Password { get; set; }
         public UserRole UserRole { get; set; }
 
@@ -20,8 +18,9 @@ namespace HotelHero.WebMVC.Models
         {
             
         }
-        public User(string email, string password, UserRole userRole)
+        public User(int id, string email, string password, UserRole userRole)
         {
+            UserId = id;
             Email = email;
             Password = password;
             UserRole = userRole;

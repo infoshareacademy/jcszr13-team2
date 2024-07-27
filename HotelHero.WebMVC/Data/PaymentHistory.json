@@ -1,0 +1,80 @@
+[
+  {
+    "PaymentId": 1,
+    "UserId": 1,
+    "Reservation": {
+      "Id": 1,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Hotel Scout",
+        "Address": "Mickiewicza 45",
+        "City": "Kraków",
+        "Description": "Hotel w Krakowie",
+        "Image": null,
+        "Stars": 3,
+        "Rating": 3.7,
+        "IsFreeWiFi": false,
+        "IsPrivateParking": false,
+        "IsRestaurant": true,
+        "IsBar": true
+      },
+      "CheckInDate": "2024-06-15T00:00:00",
+      "CheckOutDate": "2024-06-20T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": "admin"
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": true
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": true
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": true
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": true
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 1950.00
+  }
+]

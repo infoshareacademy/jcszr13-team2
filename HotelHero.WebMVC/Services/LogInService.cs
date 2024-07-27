@@ -7,43 +7,24 @@ namespace HotelHero.WebMVC.Services
 {
     public class LogInService : ILogInService
     {
+        private User loggedUser;
         private IFileOperationService _fileOperationService;
         public LogInService(IFileOperationService fileOperationService)
         {
             _fileOperationService = fileOperationService;   
         }
-        public User? LogIn(User logInUser)
+        public void LogIn(User logInUser)
         {
-            var users = _fileOperationService.DeserializeFile();
-               
-            User loggedUser = null;
-            foreach (User user in users)
-            {
-                if (user.Email == logInUser.Email && user.Password == logInUser.Password)
-                {
-                    loggedUser = user;
-                    break;
-                }
+            var users = _fileOperationService.GetUsers();
+            loggedUser = users.Find(x => x.Email == logInUser.Email);
+            if (loggedUser != null && loggedUser.Password == logInUser.Password) {
+                UserContext.SetUser(loggedUser);
             }
-            if (loggedUser != null)
-            {
-                Console.WriteLine("\nYou are Logged In");
-                return loggedUser;
-            }
-            else
-            {
-                Console.WriteLine("\nThe data provied is incorrect");
-                return null;
-            };
         }
 
         public void Register(User registerUser)
         {
-            var users = _fileOperationService.DeserializeFile();
-
-            var newUser = new User(registerUser.Email, registerUser.Password, UserRole.UnloggedUser);
-            users.Add(newUser);
-            _fileOperationService.SerializeFile(users);
+            _fileOperationService.CreateUser(registerUser.Email, registerUser.Password);
         }
     }
 }

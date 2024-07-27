@@ -1,0 +1,29 @@
+﻿@using HotelHero.ReservationsDatabase
+@using HotelHero.WebMVC.Interface
+@inject ICustomerDataService customerDataService
+@inject IAdminService adminService
+
+@model Payment
+
+@{
+    decimal balance = customerDataService.GetCustomerData(UserContext.loggedUser.UserId).Balance;
+    decimal reservationCost = Model.Reservation.GetReservationCost();
+    decimal additionalServicesCost = Model.GetAddiionalSevicesCost();
+    decimal totalCost = Model.GetTotalCost();
+}
+
+   Your balance: @customerDataService.GetCustomerData(UserContext.loggedUser.UserId).Balance;
+   Reservation cost: @reservationCost
+   Additional services cost: @additionalServicesCost
+   Total: @totalCost
+
+@if (totalCost > balance)
+{
+    <h4>Your balance is too low. Top up your wallet.</h4>
+    <a asp-action="ToWallet">Go to your wallet</a>
+}
+else
+{
+    <a asp-action="ConfirmPayment" asp-route-id="@Model.PaymentId">Confirm Payment</a>
+}
+

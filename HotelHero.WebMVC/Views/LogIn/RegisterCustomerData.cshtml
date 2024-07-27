@@ -1,12 +1,16 @@
-﻿@model CustomerData
+﻿@model HotelHero.WebMVC.Models.CustomerData
 
 @{
-    ViewData["Title"] = "CustomerDataEdit";
+    ViewData["Title"] = "RegisterCustomerData";
 }
 
+<h1>RegisterCustomerData</h1>
+
+<h4>CustomerData</h4>
+<hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="CustomerDataEdit">
+        <form asp-action="RegisterCustomerData">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group" hidden="hidden">
                 <label asp-for="CustomerId" class="control-label"></label>
@@ -43,37 +47,24 @@
                 <input asp-for="Phone" class="form-control" />
                 <span asp-validation-for="Phone" class="text-danger"></span>
             </div>
-            <div class="form-group" hidden="hidden">
-                <label asp-for="Reservations" class="control-label"></label>
-                <input asp-for="Reservations" class="form-control" />
-                <span asp-validation-for="Reservations" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Rodo" /> @Html.DisplayNameFor(model => model.Rodo)
+                </label>
             </div>
-            <div class="form-group" hidden="hidden">
-                <label asp-for="Favourites" class="control-label"></label>
-                <input asp-for="Favourites" class="form-control" />
-                <span asp-validation-for="Favourites" class="text-danger"></span>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" asp-for="Rodo" checked>
-                <label class="form-check-label" asp-for="Rodo">Rodo</label>
-            </div>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" asp-for="Newsletter" checked>
-                <label class="form-check-label" asp-for="Newsletter">Newsletter</label>
-            </div>
-            <div class="form-group" hidden="hidden">
-                <label asp-for="Balance" class="control-label"></label>
-                <input asp-for="Balance" class="form-control" />
-                <span asp-validation-for="Balance" class="text-danger"></span>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Newsletter" /> @Html.DisplayNameFor(model => model.Newsletter)
+                </label>
             </div>
             <div class="form-group">
-                <input class="btn btn-outline-success me-2" type="submit" value="Save"/>
+                <input type="submit" value="Register" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="CustomerData">Back to List</a>
+    <a asp-action="Index">Back to List</a>
 </div>
 

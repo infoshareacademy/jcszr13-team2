@@ -16,6 +16,8 @@ namespace HotelHero.WebMVC
             builder.Services.AddSingleton<ICustomerDataService, CustomerDataService>();
             builder.Services.AddSingleton<IFileOperationService, FileOperationService>();
             builder.Services.AddSingleton<IPaymentService, PaymentService>();
+            builder.Services.AddSingleton<IAdminService, AdminService>();
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews()

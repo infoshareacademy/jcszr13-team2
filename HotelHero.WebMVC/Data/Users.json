@@ -1,0 +1,38 @@
+[
+  {
+    "UserId": 1,
+    "Email": "admin",
+    "Password": "admin",
+    "UserRole": 0
+  },
+  {
+    "UserId": 2,
+    "Email": "user",
+    "Password": "user",
+    "UserRole": 1
+  },
+  {
+    "UserId": 3,
+    "Email": "user1@email.hotelhero",
+    "Password": "passwordValue1",
+    "UserRole": 1
+  },
+  {
+    "UserId": 4,
+    "Email": "user2@email.hotelhero",
+    "Password": "passwordValue2",
+    "UserRole": 1
+  },
+  {
+    "UserId": 5,
+    "Email": "user3@email.hotelhero",
+    "Password": "passwordValue3",
+    "UserRole": 1
+  },
+  {
+    "UserId": 6,
+    "Email": "user4@email.hotelhero",
+    "Password": "passwordValue4",
+    "UserRole": 1
+  }
+]

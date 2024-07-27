@@ -11,11 +11,16 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="UserEdit">
+        <form asp-action="EditUser">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <input asp-for="UserId" class="form-control" readonly="readonly" />
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
                 <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+                <input asp-for="Email" class="form-control" readonly="readonly" />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -26,9 +31,9 @@
             <div class="form-group">
                 <label asp-for="UserRole" class="control-label"></label>
                 <input asp-for="UserRole" class="form-control" />
-                0 - Admin, 1 - LoggedUser, 2 - UnloggedUser
-                @*Html.DropDownList("User Role", new SelectList(Enum.GetValues(typeof(UserRole))), new { @class = "form-control" })*@
-                @* <span asp-validation-for="UserRole" class="text-danger"></span> *@
+                @* @Html.DropDownList("User Role", new SelectList(Enum.GetValues(typeof(UserRole))), new { @class = "form-control" }) *@
+                <span asp-validation-for="UserRole" class="text-danger"></span>
+                0 - Admin, 1 - User
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

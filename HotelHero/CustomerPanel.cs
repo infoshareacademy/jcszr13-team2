@@ -23,7 +23,7 @@ namespace HotelHero
             switch (option)
             {
                 case 1:
-                    CustomerData.CustomerDataMenu();
+                    //CustomerData.CustomerDataMenu();
                     break;
                 case 2:
                     YourReservations();

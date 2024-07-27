@@ -10,10 +10,12 @@ namespace HotelHero.WebMVC.Models
 {
     public class CustomerData
     {
+        [Key]
+        public int CustomerId { get; set; }
         public string Email { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
         public List<Reservation> Reservations { get; set; }
@@ -29,8 +31,9 @@ namespace HotelHero.WebMVC.Models
         public CustomerData()
         {
         }
-        public CustomerData(string email, string lastName, string firstName, string dateOfBirth, string address, string phone, List<Reservation> reservations, List<int> favourites, bool rodo, bool newsletter, decimal balance)
+        public CustomerData(int id, string email, string lastName, string firstName, DateTime dateOfBirth, string address, string phone, List<Reservation> reservations, List<int> favourites, bool rodo, bool newsletter, decimal balance)
         {
+            CustomerId = id;
             Email = email;
             LastName = lastName;
             FirstName = firstName;

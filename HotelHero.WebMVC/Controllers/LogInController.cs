@@ -10,11 +10,13 @@ namespace HotelHero.WebMVC.Controllers
     {
         private readonly ILogInService _logInService;
         private readonly ICustomerDataService _customerDataService;
+        private readonly IFileOperationService _fileOperationService;
 
-        public LogInController(ILogInService logService, ICustomerDataService customerDataService)
+        public LogInController(ILogInService logService, ICustomerDataService customerDataService, IFileOperationService fileOperationService)
         {
             _logInService = logService;
             _customerDataService = customerDataService;
+            _fileOperationService = fileOperationService;
         }
         public IActionResult LogIn()
         {
@@ -31,8 +33,7 @@ namespace HotelHero.WebMVC.Controllers
                 //{
                 //    return View(user);
                 //}
-                UserContext.SetUser(_logInService.LogIn(user));
-                _customerDataService.GetCustomerData();
+                _logInService.LogIn(user);
                 return RedirectToAction(nameof(HomeController.Index), "Home");
             }
             catch
@@ -46,9 +47,10 @@ namespace HotelHero.WebMVC.Controllers
             return View();
         }
 
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(User user)
+        public IActionResult Register(User user)
         {
             try
             {
@@ -56,17 +58,40 @@ namespace HotelHero.WebMVC.Controllers
                 {
                     return View(user);
                 }
-                _logInService.Register(user);
-                UserContext.SetUser(_logInService.LogIn(user));
-                var data = new Models.CustomerData(user.Email, "", "", "", "", "",new List<Reservation>(), new List<int>(), false, false, 0m);
-                _customerDataService.Save(data);
-                return RedirectToAction("Index","Home");
+                var registeredUser = _fileOperationService.CreateUser(user.Email, user.Password);
+                _logInService.LogIn(registeredUser);
+                return RedirectToAction("RegisterCustomerData");
             }
             catch
             {
                 return View();
             }
         }
+        public IActionResult RegisterCustomerData()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult RegisterCustomerData(CustomerData customerData)
+        {
+            var data = new CustomerData(
+                UserContext.loggedUser.UserId,
+                UserContext.loggedUser.Email,
+                customerData.LastName,
+                customerData.FirstName,
+                customerData.DateOfBirth,
+                customerData.Address,
+                customerData.Phone,
+                new List<Reservation>(),
+                new List<int>(),
+                customerData.Rodo,
+                customerData.Newsletter,
+                0m
+                );
 
+            _customerDataService.CreateCustomerData(data);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

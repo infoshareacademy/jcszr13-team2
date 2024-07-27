@@ -1,13 +1,14 @@
 {
-  "Email": "admin",
-  "LastName": "aaaa",
-  "FirstName": "aaaa",
-  "DateOfBirth": "dddd",
-  "Address": "xxx",
-  "Phone": "sikw",
-  "Reservations": [],
-  "Favourites": [],
+  "CustomerId": 0,
+  "Email": null,
+  "LastName": null,
+  "FirstName": null,
+  "DateOfBirth": null,
+  "Address": null,
+  "Phone": null,
+  "Reservations": null,
+  "Favourites": null,
   "Rodo": true,
-  "Newsletter": true,
-  "Balance": 78.00
+  "Newsletter": false,
+  "Balance": 0.0
 }

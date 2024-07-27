@@ -1,5 +1,6 @@
 ﻿using HotelHero.HotelsDatabase;
 using HotelHero.WebMVC.Interface;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 using Newtonsoft.Json;
 
 

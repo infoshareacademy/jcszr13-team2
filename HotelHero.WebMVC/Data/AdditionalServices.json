@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "Name": "Safe",
+    "Cost": 30.0
+  },
+  {
+    "Id": 2,
+    "Name": "Mini Bar",
+    "Cost": 150.0
+  },
+  {
+    "Id": 3,
+    "Name": "Laundry",
+    "Cost": 60.0
+  },
+  {
+    "Id": 4,
+    "Name": "SPA & Wellness",
+    "Cost": 210.0
+  },
+  {
+    "Id": 5,
+    "Name": "Car Rent",
+    "Cost": 160.0
+  },
+  {
+    "Id": 6,
+    "Name": "Airport transport",
+    "Cost": 70.0
+  },
+  {
+    "Id": 7,
+    "Name": "Tour Guide",
+    "Cost": 130.0
+  },
+  {
+    "Id": 8,
+    "Name": "Room Service",
+    "Cost": 110.0
+  }
+]

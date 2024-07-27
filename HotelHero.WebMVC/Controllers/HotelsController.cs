@@ -34,13 +34,13 @@ namespace HotelHero.WebMVC.Controllers
         {
             try
             {
-                var customerData = _customerDataService.GetCustomerData();
+                var customerData = _customerDataService.GetCustomerData(UserContext.loggedUser.UserId);
                 if (customerData.Favourites == null)
                 {
                     customerData.Favourites = new List<int> { };
                 }
                 customerData.Favourites.Add(id);
-                _customerDataService.Save(customerData);
+                _customerDataService.EditCustomerData(customerData);
             }
             catch
             {
@@ -52,13 +52,13 @@ namespace HotelHero.WebMVC.Controllers
         {
             try
             {
-                var customerData = _customerDataService.GetCustomerData();
+                var customerData = _customerDataService.GetCustomerData(UserContext.loggedUser.UserId);
                 if (customerData.Favourites == null)
                 {
                     customerData.Favourites = new List<int> { };
                 }
                 customerData.Favourites.Remove(id);
-                _customerDataService.Save(customerData);
+                _customerDataService.EditCustomerData(customerData);
             }
             catch
             {

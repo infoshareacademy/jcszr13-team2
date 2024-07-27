@@ -17,11 +17,11 @@ namespace HotelHero.ReservationsDatabase
         public DateTime CheckInDate { get; }
         public DateTime CheckOutDate { get; }
         public int AmountOfPeople { get; }
-        public int CostPerNight { get; }
+        public decimal CostPerNight { get; }
         public ReservationStatus Status { get; set; }
         public string ReservationUser { get; set; }
 
-        public Reservation(int id, Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, int costPerNight, ReservationStatus reservationStatus, string reservationUser)
+        public Reservation(int id, Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, decimal costPerNight, ReservationStatus reservationStatus, string reservationUser)
         {
             Id = id;
             Hotel = hotel;

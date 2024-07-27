@@ -17,7 +17,7 @@
     "CheckInDate": "2024-06-15T00:00:00",
     "CheckOutDate": "2024-06-20T00:00:00",
     "AmountOfPeople": 3,
-    "CostPerNight": 300,
+    "CostPerNight": 300.00,
     "Status": 0,
     "ReservationUser": ""
   },
@@ -39,7 +39,7 @@
     "CheckInDate": "2024-06-30T00:00:00",
     "CheckOutDate": "2024-07-05T00:00:00",
     "AmountOfPeople": 2,
-    "CostPerNight": 500,
+    "CostPerNight": 500.00,
     "Status": 0,
     "ReservationUser": ""
   },
@@ -61,7 +61,7 @@
     "CheckInDate": "2024-07-10T00:00:00",
     "CheckOutDate": "2024-07-15T00:00:00",
     "AmountOfPeople": 1,
-    "CostPerNight": 400,
+    "CostPerNight": 400.00,
     "Status": 0,
     "ReservationUser": ""
   },
@@ -83,7 +83,7 @@
     "CheckInDate": "2025-02-06T00:00:00",
     "CheckOutDate": "2025-02-10T00:00:00",
     "AmountOfPeople": 3,
-    "CostPerNight": 800,
+    "CostPerNight": 800.00,
     "Status": 0,
     "ReservationUser": ""
   },
@@ -105,7 +105,7 @@
     "CheckInDate": "2025-03-05T00:00:00",
     "CheckOutDate": "2025-03-10T00:00:00",
     "AmountOfPeople": 2,
-    "CostPerNight": 600,
+    "CostPerNight": 600.00,
     "Status": 0,
     "ReservationUser": ""
   },
@@ -127,7 +127,7 @@
     "CheckInDate": "2025-03-05T00:00:00",
     "CheckOutDate": "2025-03-10T00:00:00",
     "AmountOfPeople": 2,
-    "CostPerNight": 300,
+    "CostPerNight": 300.00,
     "Status": 0,
     "ReservationUser": ""
   }
