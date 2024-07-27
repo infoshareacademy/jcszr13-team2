@@ -34,7 +34,7 @@ namespace HotelHero.WebMVC.Controllers
                 //    return View(user);
                 //}
                 _logInService.LogIn(user);
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(HomeController.Index), "Search");
             }
             catch
             {
