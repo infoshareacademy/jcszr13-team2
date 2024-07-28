@@ -34,7 +34,14 @@ namespace HotelHero.WebMVC.Controllers
         [HttpPost]
         public IActionResult Results(SearchViewModel vm)
         {
-            var items = _reservationService.GetReservation(vm.City, vm.StartDate, vm.EndDate, vm.PeopleAmount);
+            // Sprawdzenie, czy parametry są podane i ustawienie ich na null, jeśli nie
+            var city = string.IsNullOrEmpty(vm.City) ? null : vm.City;
+            var startDate = vm.StartDate == default ? null : vm.StartDate;
+            var endDate = vm.EndDate == default ? null : vm.EndDate;
+            var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
+
+            // Wywołanie usługi z potencjalnie null wartościami
+            var items = _reservationService.GetReservation(city, startDate, endDate, peopleAmount);
             return View(items);
         }
 
