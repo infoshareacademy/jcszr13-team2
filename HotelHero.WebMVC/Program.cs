@@ -1,5 +1,9 @@
+using HotelHero.Database.Context;
+using HotelHero.Database.Entities;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Services;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 namespace HotelHero.WebMVC
 {
     public class Program
@@ -7,6 +11,26 @@ namespace HotelHero.WebMVC
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddDbContext<HotelHeroDbContext>(options => options.UseSqlServer("Server=KJKD\\MYDATABASE;Database=HotelHero;Trusted_Connection=True;TrustServerCertificate=True"));
+
+
+            builder.Services.AddIdentity<HotelUser, IdentityRole>().AddEntityFrameworkStores<HotelHeroDbContext>().AddDefaultTokenProviders();
+
+            builder.Services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = true;
+                options.Password.RequiredLength = 6;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireLowercase = false;
+                options.SignIn.RequireConfirmedEmail = false;
+
+                //options.SignIn.RequireConfirmedAccount = false;
+            });
+
+
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
