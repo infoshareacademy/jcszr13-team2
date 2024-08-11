@@ -1,5 +1,7 @@
+using AutoMapper;
 using HotelHero.Database.Context;
 using HotelHero.Database.Entities;
+using HotelHero.WebMVC.Configuration;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Services;
 using Microsoft.AspNetCore.Identity;
@@ -29,7 +31,14 @@ namespace HotelHero.WebMVC
                 //options.SignIn.RequireConfirmedAccount = false;
             });
 
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MappingProfile());
+            });
 
+            IMapper mapper = mapperConfig.CreateMapper();
+
+            mapper.ConfigurationProvider.AssertConfigurationIsValid();
 
 
             // Add services to the container.
