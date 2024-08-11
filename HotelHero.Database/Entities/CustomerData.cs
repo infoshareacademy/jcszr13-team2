@@ -19,7 +19,7 @@ namespace HotelHero.Database.Entities
         public string Phone { get; set; }
         public List<Payment> Payments { get; set; }
         public List<Reservation> Reservations { get; set; }
-        public List<int> Favourites { get; set; }
+        public ICollection<CustomerDataHotel> CustomerDataHotel { get; set; }
         public bool Rodo { get; set; }
         public bool Newsletter { get; set; }
 
@@ -28,7 +28,6 @@ namespace HotelHero.Database.Entities
         public CustomerData()
         {
             Reservations = new List<Reservation>();
-            Favourites = new List<int>();
             Payments = new List<Payment>();
         }
     }

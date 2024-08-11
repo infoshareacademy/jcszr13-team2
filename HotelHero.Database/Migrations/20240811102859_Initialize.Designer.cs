@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HotelHero.Database.Migrations
 {
     [DbContext(typeof(HotelHeroDbContext))]
-    [Migration("20240811094304_CusomerData")]
-    partial class CusomerData
+    [Migration("20240811102859_Initialize")]
+    partial class Initialize
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -226,19 +226,15 @@ namespace HotelHero.Database.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("PaymentId"));
 
-                    b.Property<int>("ReservationId")
+                    b.Property<int>("CustomerDataId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("TotalCost")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("PaymentId");
 
-                    b.HasIndex("ReservationId")
-                        .IsUnique();
+                    b.HasIndex("CustomerDataId");
 
                     b.ToTable("Payment");
                 });
@@ -286,24 +282,27 @@ namespace HotelHero.Database.Migrations
                     b.Property<decimal>("CostPerNight")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int?>("CustomerDataCustomerId")
+                    b.Property<int>("CustomerDataId")
                         .HasColumnType("int");
 
                     b.Property<int>("HotelId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ReservationUser")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int?>("PaymentId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Status")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerDataCustomerId");
+                    b.HasIndex("CustomerDataId");
 
                     b.HasIndex("HotelId");
+
+                    b.HasIndex("PaymentId")
+                        .IsUnique()
+                        .HasFilter("[PaymentId] IS NOT NULL");
 
                     b.ToTable("Reservation");
                 });
@@ -454,13 +453,13 @@ namespace HotelHero.Database.Migrations
 
             modelBuilder.Entity("HotelHero.Database.Entities.Payment", b =>
                 {
-                    b.HasOne("HotelHero.Database.Entities.Reservation", "Reservation")
-                        .WithOne("Payment")
-                        .HasForeignKey("HotelHero.Database.Entities.Payment", "ReservationId")
+                    b.HasOne("HotelHero.Database.Entities.CustomerData", "CustomerData")
+                        .WithMany("Payments")
+                        .HasForeignKey("CustomerDataId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Reservation");
+                    b.Navigation("CustomerData");
                 });
 
             modelBuilder.Entity("HotelHero.Database.Entities.PaymentAdditionalService", b =>
@@ -484,9 +483,11 @@ namespace HotelHero.Database.Migrations
 
             modelBuilder.Entity("HotelHero.Database.Entities.Reservation", b =>
                 {
-                    b.HasOne("HotelHero.Database.Entities.CustomerData", null)
+                    b.HasOne("HotelHero.Database.Entities.CustomerData", "CustomerData")
                         .WithMany("Reservations")
-                        .HasForeignKey("CustomerDataCustomerId");
+                        .HasForeignKey("CustomerDataId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("HotelHero.Database.Entities.Hotel", "Hotel")
                         .WithMany()
@@ -494,7 +495,15 @@ namespace HotelHero.Database.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("HotelHero.Database.Entities.Payment", "Payment")
+                        .WithOne("Reservation")
+                        .HasForeignKey("HotelHero.Database.Entities.Reservation", "PaymentId");
+
+                    b.Navigation("CustomerData");
+
                     b.Navigation("Hotel");
+
+                    b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -550,17 +559,17 @@ namespace HotelHero.Database.Migrations
 
             modelBuilder.Entity("HotelHero.Database.Entities.CustomerData", b =>
                 {
+                    b.Navigation("Payments");
+
                     b.Navigation("Reservations");
                 });
 
             modelBuilder.Entity("HotelHero.Database.Entities.Payment", b =>
                 {
                     b.Navigation("PaymentAdditionalServices");
-                });
 
-            modelBuilder.Entity("HotelHero.Database.Entities.Reservation", b =>
-                {
-                    b.Navigation("Payment");
+                    b.Navigation("Reservation")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

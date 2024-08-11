@@ -24,6 +24,8 @@ namespace HotelHero.Database.Entities
         [ForeignKey(nameof(CustomerData))]
         public int CustomerDataId { get; set; }
         public CustomerData CustomerData{ get; set; }
-        public Payment? Payment { get; set; }
+
+        public int? PaymentId { get; set; }
+        public Payment Payment { get; set; }
     }
 }

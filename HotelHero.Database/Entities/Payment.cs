@@ -17,9 +17,9 @@ namespace HotelHero.Database.Entities
         public int CustomerDataId { get; set; }
         public CustomerData CustomerData { get; set; }
 
-        [ForeignKey(nameof(Reservation))]
-        [Required]
-        public int ReservationId { get; set; }
+        //[ForeignKey(nameof(Reservation))]
+        //[Required]
+        //public int ReservationId { get; set; }
         public Reservation Reservation { get; set; }
         public ICollection<PaymentAdditionalService> PaymentAdditionalServices { get; set; }
         public decimal TotalCost { get; set; }
