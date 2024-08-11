@@ -17,11 +17,19 @@ namespace HotelHero.Database.Entities
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
+        public List<Payment> Payments { get; set; }
         public List<Reservation> Reservations { get; set; }
         public List<int> Favourites { get; set; }
         public bool Rodo { get; set; }
         public bool Newsletter { get; set; }
 
         public decimal Balance { get; set; }
+
+        public CustomerData()
+        {
+            Reservations = new List<Reservation>();
+            Favourites = new List<int>();
+            Payments = new List<Payment>();
+        }
     }
 }

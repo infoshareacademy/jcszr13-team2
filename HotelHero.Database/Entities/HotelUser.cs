@@ -9,7 +9,9 @@ namespace HotelHero.Database.Entities
 {
     public class HotelUser : IdentityUser
     {
-        //public CustomerData CustomerData { get; set; }
+        
+        public int CustomerDataId { get; set; }
+        public CustomerData CustomerData { get; set; }
     }
 
 }

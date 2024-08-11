@@ -12,7 +12,10 @@ namespace HotelHero.Database.Entities
     {
         [Key]
         public int PaymentId { get; set; }
-        public int UserId { get; set; }
+
+        [ForeignKey(nameof(CustomerData))]
+        public int CustomerDataId { get; set; }
+        public CustomerData CustomerData { get; set; }
 
         [ForeignKey(nameof(Reservation))]
         [Required]

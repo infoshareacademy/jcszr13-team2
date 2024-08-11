@@ -16,7 +16,7 @@ namespace HotelHero.Database.Context
             
         }
         //public DbSet<AdditionalService> Services { get; set; }
-        //public DbSet<CustomerData> CustomerDatas { get; set; }
+        public DbSet<CustomerData> CustomerDatas { get; set; }
         //public DbSet<CustomerDataHotel> CustomerDataHotels { get; set; }
         //public DbSet<Hotel> Hotels { get; set; }
         //public DbSet<HotelUser> HotelUsers { get; set; }

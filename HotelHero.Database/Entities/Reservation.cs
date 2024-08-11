@@ -10,17 +10,20 @@ namespace HotelHero.Database.Entities
 {
     public class Reservation
     {
-        public int Id { get; }
+        public int Id { get; set; }
         [ForeignKey(nameof(Hotel))]
         [Required]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; }
-        public DateTime CheckInDate { get; }
-        public DateTime CheckOutDate { get; }
-        public int AmountOfPeople { get; }
-        public decimal CostPerNight { get; }
+        public Hotel Hotel { get; set; }
+        public DateTime CheckInDate { get; set; }
+        public DateTime CheckOutDate { get; set; }
+        public int AmountOfPeople { get; set; }
+        public decimal CostPerNight { get; set; }
         public int Status { get; set; }
-        public string ReservationUser { get; set; }
+
+        [ForeignKey(nameof(CustomerData))]
+        public int CustomerDataId { get; set; }
+        public CustomerData CustomerData{ get; set; }
         public Payment? Payment { get; set; }
     }
 }
