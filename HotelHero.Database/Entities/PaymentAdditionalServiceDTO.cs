@@ -8,17 +8,17 @@ using System.Threading.Tasks;
 
 namespace HotelHero.Database.Entities
 {
-    public class PaymentAdditionalService
+    public class PaymentAdditionalServiceDTO
     {
         [Key]
         public int PaymentAdditionalServiceId { get; set; }
 
         [ForeignKey(nameof(Payment))]
         public int PaymentId { get; set; }
-        public Payment Payment { get; set; }
+        public PaymentDTO Payment { get; set; }
 
         [ForeignKey(nameof(AdditionalService))]
         public int AdditionalServiceId { get; set; }
-        public AdditionalService AdditionalService { get; set; }
+        public AdditionalServiceDTO AdditionalService { get; set; }
     }
 }

@@ -9,16 +9,16 @@ using System.Threading.Tasks;
 
 namespace HotelHero.Database.Context
 {
-    public class HotelHeroDbContext : IdentityDbContext<HotelUser>
+    public class HotelHeroDbContext : IdentityDbContext<HotelUserDTO>
     {
         public HotelHeroDbContext(DbContextOptions<HotelHeroDbContext> options) : base(options)
         {
             
         }
         //public DbSet<AdditionalService> Services { get; set; }
-        public DbSet<CustomerData> CustomerDatas { get; set; }
+        public DbSet<CustomerDataDTO> CustomerDatas { get; set; }
         //public DbSet<CustomerDataHotel> CustomerDataHotels { get; set; }
-        //public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<HotelDTO> Hotels { get; set; }
         //public DbSet<HotelUser> HotelUsers { get; set; }
         //public DbSet<Payment> Payments { get; set; }
         //public DbSet<PaymentAdditionalService> PaymentAdditionalServices { get; set; }

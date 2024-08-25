@@ -2,6 +2,7 @@
 using HotelHero.HotelsDatabase;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
+using Hotel = HotelHero.WebMVC.Models.Hotel;
 
 namespace HotelHero.WebMVC.Controllers
 {

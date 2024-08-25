@@ -8,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace HotelHero.Database.Entities
 {
-    public class CustomerDataHotel
+    public class CustomerDataHotelDTO
     {
         [Key]
         public int CustomerDataHotelId { get; set; }
         [ForeignKey(nameof(CustomerData))]
         public int CustomerDataId { get; set; }
-        public CustomerData CustomerData { get; set; }
+        public CustomerDataDTO CustomerData { get; set; }
         [ForeignKey(nameof(Hotel))]
         public int HotelId { get; set; }
-        public Hotel Hotel { get; set; }
+        public HotelDTO Hotel { get; set; }
     }
 }

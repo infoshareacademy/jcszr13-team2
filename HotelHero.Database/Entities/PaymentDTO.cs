@@ -8,20 +8,20 @@ using System.Threading.Tasks;
 
 namespace HotelHero.Database.Entities
 {
-    public class Payment
+    public class PaymentDTO
     {
         [Key]
         public int PaymentId { get; set; }
 
         [ForeignKey(nameof(CustomerData))]
         public int CustomerDataId { get; set; }
-        public CustomerData CustomerData { get; set; }
+        public CustomerDataDTO CustomerData { get; set; }
 
         //[ForeignKey(nameof(Reservation))]
         //[Required]
         //public int ReservationId { get; set; }
-        public Reservation Reservation { get; set; }
-        public ICollection<PaymentAdditionalService> PaymentAdditionalServices { get; set; }
+        public ReservationDTO Reservation { get; set; }
+        public ICollection<PaymentAdditionalServiceDTO> PaymentAdditionalServices { get; set; }
         public decimal TotalCost { get; set; }
     }
 }

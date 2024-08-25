@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace HotelHero.Database.Entities
 {
-    public class HotelUser : IdentityUser
+    public class HotelUserDTO : IdentityUser
     {
         
         public int CustomerDataId { get; set; }
-        public CustomerData CustomerData { get; set; }
+        public CustomerDataDTO CustomerData { get; set; }
     }
 
 }

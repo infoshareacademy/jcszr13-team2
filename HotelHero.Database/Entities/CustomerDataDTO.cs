@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelHero.Database.Entities
 {
-    public class CustomerData
+    public class CustomerDataDTO
     {
         [Key]
         public int CustomerId { get; set; }
@@ -17,18 +17,18 @@ namespace HotelHero.Database.Entities
         public DateTime DateOfBirth { get; set; }
         public string Address { get; set; }
         public string Phone { get; set; }
-        public List<Payment> Payments { get; set; }
-        public List<Reservation> Reservations { get; set; }
-        public ICollection<CustomerDataHotel> CustomerDataHotel { get; set; }
+        public List<PaymentDTO> Payments { get; set; }
+        public List<ReservationDTO> Reservations { get; set; }
+        public ICollection<CustomerDataHotelDTO> CustomerDataHotel { get; set; }
         public bool Rodo { get; set; }
         public bool Newsletter { get; set; }
 
         public decimal Balance { get; set; }
 
-        public CustomerData()
+        public CustomerDataDTO()
         {
-            Reservations = new List<Reservation>();
-            Payments = new List<Payment>();
+            Reservations = new List<ReservationDTO>();
+            Payments = new List<PaymentDTO>();
         }
     }
 }

@@ -1,6 +1,7 @@
 using AutoMapper;
 using HotelHero.Database.Context;
 using HotelHero.Database.Entities;
+using HotelHero.Database.Repositiories.Hotels;
 using HotelHero.WebMVC.Configuration;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Services;
@@ -17,7 +18,7 @@ namespace HotelHero.WebMVC
             builder.Services.AddDbContext<HotelHeroDbContext>(options => options.UseSqlServer("Server=KJKD\\MYDATABASE;Database=HotelHero;Trusted_Connection=True;TrustServerCertificate=True"));
 
 
-            builder.Services.AddIdentity<HotelUser, IdentityRole>().AddEntityFrameworkStores<HotelHeroDbContext>().AddDefaultTokenProviders();
+            builder.Services.AddIdentity<HotelUserDTO, IdentityRole>().AddEntityFrameworkStores<HotelHeroDbContext>().AddDefaultTokenProviders();
 
             builder.Services.Configure<IdentityOptions>(options =>
             {
@@ -40,16 +41,20 @@ namespace HotelHero.WebMVC
 
             mapper.ConfigurationProvider.AssertConfigurationIsValid();
 
+            builder.Services.AddSingleton(mapper);
+
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            builder.Services.AddTransient<ILogInService, LogInService>();
-            builder.Services.AddSingleton<IHotelService, HotelService>();
-            builder.Services.AddSingleton<IReservationService, ReservationService>();
-            builder.Services.AddSingleton<ICustomerDataService, CustomerDataService>();
-            builder.Services.AddSingleton<IFileOperationService, FileOperationService>();
-            builder.Services.AddSingleton<IPaymentService, PaymentService>();
-            builder.Services.AddSingleton<IAdminService, AdminService>();
+            builder.Services.AddTransient<ILogInService, LogInService>(); //Zmieniæ na transient
+            builder.Services.AddTransient<IHotelService, HotelService>();
+            builder.Services.AddTransient<IReservationService, ReservationService>();
+            builder.Services.AddTransient<ICustomerDataService, CustomerDataService>();
+            builder.Services.AddTransient<IFileOperationService, FileOperationService>();
+            builder.Services.AddTransient<IPaymentService, PaymentService>();
+            builder.Services.AddTransient<IAdminService, AdminService>();
+
+            builder.Services.AddTransient<IHotelRepository, HotelRepository>();
 
 
             // Add services to the container.

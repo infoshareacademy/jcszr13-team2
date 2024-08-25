@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HotelHero.Database.Entities
 {
-    public class Hotel
+    public class HotelDTO
     {
         [Key]
         public int Id { get; set; }

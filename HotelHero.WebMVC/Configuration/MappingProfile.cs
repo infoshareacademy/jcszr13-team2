@@ -10,17 +10,18 @@ namespace HotelHero.WebMVC.Configuration
     {
         public MappingProfile() 
         {
-            CreateMap<Database.Entities.AdditionalService, Models.AdditionalService>()
-                .ForMember(x => x.Id, y => y.Ignore());
-            CreateMap<Database.Entities.HotelUser, Models.User>()
-                    .ForMember(x =>x.Password, y=>y.MapFrom(x=>x.PasswordHash))
-                    .
-                .ForMember(x => x.Email, y => y.MapFrom(x => x.Email));
-            CreateMap<Database.Entities.CustomerData, Models.CustomerData>().ReverseMap();
-            CreateMap<Database.Entities.Payment, Models.Payment>()
-                .ForMember(x => x.UserId, y => y.Ignore());
+            //CreateMap<Database.Entities.AdditionalServiceDTO, Models.AdditionalService>()
+            //    .ForMember(x => x.Id, y => y.Ignore());
+            //CreateMap<Database.Entities.HotelUserDTO, Models.User>()
+            //        .ForMember(x =>x.Password, y=>y.MapFrom(x=>x.PasswordHash))
+            //        .
+            //    .ForMember(x => x.Email, y => y.MapFrom(x => x.Email));
+            //CreateMap<Database.Entities.CustomerDataDTO, Models.CustomerData>().ReverseMap();
+            //CreateMap<Database.Entities.PaymentDTO, Models.Payment>()
+            //    .ForMember(x => x.UserId, y => y.Ignore());
 
-        n
+            CreateMap<HotelDTO, Hotel>();
+            CreateMap<Hotel, HotelDTO>();  
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using HotelHero.HotelsDatabase;
+﻿using HotelHero.WebMVC.Models;
 
 namespace HotelHero.WebMVC.Interface
 {
