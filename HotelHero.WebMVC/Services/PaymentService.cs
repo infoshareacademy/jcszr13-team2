@@ -1,14 +1,10 @@
-﻿using HotelHero.ReservationsDatabase;
-using HotelHero.WebMVC.Interface;
+﻿using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
-using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
-using NuGet.Protocol.Core.Types;
-using System.Linq.Expressions;
 
 namespace HotelHero.WebMVC.Services
 {
-	public class PaymentService : IPaymentService
+    public class PaymentService : IPaymentService
 	{
 		private readonly IAdminService _adminService;
 

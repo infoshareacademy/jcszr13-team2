@@ -23,7 +23,7 @@ namespace HotelHero.Database.Repositiories.Hotels
             _context.SaveChanges();
         }
 
-        public List<HotelDTO> GetAllHotel()
+        public List<HotelDTO> GetAllHotels()
         {
             return _context.Hotels.ToList();
         }
@@ -42,7 +42,20 @@ namespace HotelHero.Database.Repositiories.Hotels
 
         public void UpdateHotel(HotelDTO hotelDTO)
         {
-            _context.Update(hotelDTO);
+            var hotel = GetHotel(hotelDTO.Id);
+
+            hotel.Name = hotelDTO.Name;
+            hotel.Address = hotelDTO.Address;
+            hotel.City = hotelDTO.City;
+            hotel.Description = hotelDTO.Description;
+            hotel.Image = hotelDTO.Image;
+            hotel.Stars = hotelDTO.Stars;
+            hotel.Rating = hotelDTO.Rating;
+            hotel.IsFreeWiFi = hotelDTO.IsFreeWiFi;
+            hotel.IsPrivateParking = hotelDTO.IsPrivateParking;
+            hotel.IsRestaurant = hotelDTO.IsRestaurant;
+            hotel.IsBar = hotelDTO.IsBar;
+
             _context.SaveChanges();
         }
 

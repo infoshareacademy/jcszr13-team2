@@ -10,6 +10,7 @@ namespace HotelHero.Database.Entities
 {
     public class ReservationDTO
     {
+        [Key]
         public int Id { get; set; }
         [ForeignKey(nameof(Hotel))]
         [Required]
@@ -22,7 +23,7 @@ namespace HotelHero.Database.Entities
         public int Status { get; set; }
 
         [ForeignKey(nameof(CustomerData))]
-        public int CustomerDataId { get; set; }
+        public int? CustomerDataId { get; set; }
         public CustomerDataDTO CustomerData{ get; set; }
 
         public int? PaymentId { get; set; }

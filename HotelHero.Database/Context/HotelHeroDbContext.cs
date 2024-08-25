@@ -22,7 +22,7 @@ namespace HotelHero.Database.Context
         //public DbSet<HotelUser> HotelUsers { get; set; }
         //public DbSet<Payment> Payments { get; set; }
         //public DbSet<PaymentAdditionalService> PaymentAdditionalServices { get; set; }
-        //public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<ReservationDTO> Reservations { get; set; }
 
     }
 }

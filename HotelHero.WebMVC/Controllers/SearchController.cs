@@ -41,7 +41,7 @@ namespace HotelHero.WebMVC.Controllers
             var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
 
             // Wywołanie usługi z potencjalnie null wartościami
-            var items = _reservationService.GetReservation(city, startDate, endDate, peopleAmount);
+            var items = _reservationService.SearchForReservations(city, startDate, endDate, peopleAmount);
             return View(items);
         }
 

@@ -2,6 +2,7 @@ using AutoMapper;
 using HotelHero.Database.Context;
 using HotelHero.Database.Entities;
 using HotelHero.Database.Repositiories.Hotels;
+using HotelHero.Database.Repositiories.Reservations;
 using HotelHero.WebMVC.Configuration;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Services;
@@ -55,7 +56,7 @@ namespace HotelHero.WebMVC
             builder.Services.AddTransient<IAdminService, AdminService>();
 
             builder.Services.AddTransient<IHotelRepository, HotelRepository>();
-
+            builder.Services.AddTransient<IReservationRepository, ReservationRepository>();
 
             // Add services to the container.
             builder.Services.AddControllersWithViews()

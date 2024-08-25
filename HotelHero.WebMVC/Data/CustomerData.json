@@ -7,32 +7,10 @@
     "DateOfBirth": "0001-01-01T00:00:00",
     "Address": "adres",
     "Phone": "number",
-    "Reservations": [
-      {
-        "Id": 1,
-        "Hotel": {
-          "Id": 3,
-          "Name": "Hotel Scout",
-          "Address": "Mickiewicza 45",
-          "City": "Kraków",
-          "Description": "Hotel w Krakowie",
-          "Image": null,
-          "Stars": 3,
-          "Rating": 3.7,
-          "IsFreeWiFi": false,
-          "IsPrivateParking": false,
-          "IsRestaurant": true,
-          "IsBar": true
-        },
-        "CheckInDate": "2024-06-15T00:00:00",
-        "CheckOutDate": "2024-06-20T00:00:00",
-        "AmountOfPeople": 3,
-        "CostPerNight": 300.00,
-        "Status": 1,
-        "ReservationUser": "admin"
-      }
+    "Reservations": [],
+    "Favourites": [
+      2
     ],
-    "Favourites": [],
     "Rodo": false,
     "Newsletter": false,
     "Balance": 15930609.00

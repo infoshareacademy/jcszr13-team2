@@ -1,14 +1,5 @@
-﻿using HotelHero.HotelsDatabase;
-using HotelHero.ReservationsDatabase;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Http.HttpResults;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Routing;
-using Microsoft.Extensions.Hosting;
-using System.Net;
-using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using HotelHero.WebMVC.Interface;
-using HotelHero.ReservationsDatabase.Enums;
 using HotelHero.WebMVC.Models;
 
 namespace HotelHero.WebMVC.Controllers
@@ -19,7 +10,6 @@ namespace HotelHero.WebMVC.Controllers
         private readonly IReservationService _reservationService;
         private readonly IPaymentService _paymentService;
         private readonly IAdminService _adminService;
-        private Reservation _reservation;
         public PaymentController(ICustomerDataService customerDataService, IReservationService reservationService, IPaymentService paymentService, IAdminService adminService)
         {
             _customerDataService = customerDataService;

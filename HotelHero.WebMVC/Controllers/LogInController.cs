@@ -1,4 +1,4 @@
-using HotelHero.ReservationsDatabase;
+using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Services;
