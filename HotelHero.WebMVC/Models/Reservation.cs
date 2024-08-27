@@ -13,19 +13,19 @@ namespace HotelHero.WebMVC.Models
         public ReservationStatus Status { get; set; }
         public string ReservationUser { get; set; }
 
-        public Reservation(int id, Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, decimal costPerNight, ReservationStatus reservationStatus, string reservationUser)
-        {
-            Id = id;
-            Hotel = hotel;
-            CheckInDate = checkInDate;
-            CheckOutDate = checkOutDate;
-            AmountOfPeople = amountOfPeople;
-            CostPerNight = costPerNight;
-            Status = reservationStatus;
-            ReservationUser = reservationUser;
-        }
+        //public Reservation(int id, Hotel hotel, DateTime checkInDate, DateTime checkOutDate, int amountOfPeople, decimal costPerNight, ReservationStatus reservationStatus, string reservationUser)
+        //{
+        //    Id = id;
+        //    Hotel = hotel;
+        //    CheckInDate = checkInDate;
+        //    CheckOutDate = checkOutDate;
+        //    AmountOfPeople = amountOfPeople;
+        //    CostPerNight = costPerNight;
+        //    Status = reservationStatus;
+        //    ReservationUser = reservationUser;
+        //}
 
-        public Reservation() 
+        public Reservation()
         {
             Hotel = new Hotel();
         }

@@ -24,6 +24,7 @@ namespace HotelHero.WebMVC.Configuration
             CreateMap<Hotel, HotelDTO>();  
 
             CreateMap<ReservationDTO, Reservation>()
+                .ForMember(x => x.Hotel, y => y.MapFrom(z => z.Hotel))
                 .ForMember(x => x.ReservationUser, y => y.Ignore());
             CreateMap<Reservation, ReservationDTO>()
                 .ForMember(x => x.CustomerDataId, y => y.Ignore())
