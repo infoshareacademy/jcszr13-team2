@@ -17,7 +17,7 @@ namespace HotelHero.WebMVC.Controllers
         private readonly ICustomerDataService _customerDataService;
         private readonly IPaymentService _paymentService;
 
-        public SearchController(IReservationService reservationService, ICustomerDataService customerDataService,IPaymentService paymentService)
+        public SearchController(IReservationService reservationService, ICustomerDataService customerDataService, IPaymentService paymentService)
         {
             _reservationService = reservationService;
             _customerDataService = customerDataService;
@@ -47,11 +47,20 @@ namespace HotelHero.WebMVC.Controllers
 
         public ActionResult MakeReservation(int id)
         {
+            if(UserContext.loggedUser == null)
+            {
+
+            };
             var model = _reservationService.GetReservationById(id);
             model.MakeReservation(UserContext.loggedUser.Email);
             _customerDataService.MakeReservation(UserContext.loggedUser.UserId, model);
             var payment = _paymentService.CreatePayment(UserContext.loggedUser.UserId, model);
             return RedirectToAction("Index", new RouteValueDictionary(new { controller = "Payment", action = "Index", Id = payment.PaymentId }));
-		}
+        }
+        public ActionResult RedirectToLogin()
+        { 
+            return RedirectToAction("LogIn", "LogIn");
+        }
+
     }
 }

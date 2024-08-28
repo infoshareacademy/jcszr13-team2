@@ -38,9 +38,19 @@
             <li>
                 Cost per night: @result.CostPerNight
             </li>
-
-            <a asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a>
-
-
+        @if (UserContext.GetUser() != null)
+        {
+            <a class="btnCustom btnCustom-custom" asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a>
+        }
+        else
+        {
+            <div id="popover2" popover="manual">
+                <p>Nie jesteś zalogowany!</p>
+                <p>Aby kontynuować zaloguj się !</p>
+                <a class="btnCustom btnCustom-custom" asp-action="RedirectToLogin">Zaloguj się!</a>
+                <button class="btnCustom btnCustom-custom" popovertarget="popover2" popovertargetaction="hide">Zamknij</button>
+            </div>
+            <button class="btnCustom btnCustom-custom" popovertarget="popover2" popovertargetaction="show">Make reservation</button>
+        }
     }
 </ul>

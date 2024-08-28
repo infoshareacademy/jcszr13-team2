@@ -50,5 +50,89 @@
     "Rodo": true,
     "Newsletter": true,
     "Balance": 0.0
+  },
+  {
+    "CustomerId": 2,
+    "Email": "user",
+    "LastName": null,
+    "FirstName": null,
+    "DateOfBirth": "2024-07-29T00:00:00",
+    "Address": null,
+    "Phone": null,
+    "Reservations": [
+      {
+        "Id": 2,
+        "Hotel": {
+          "Id": 2,
+          "Name": "Hotel Kamil",
+          "Address": "Sienkiewicza 3",
+          "City": "Warszawa",
+          "Description": "Najlepszy hotel w Warszawie",
+          "Image": null,
+          "Stars": 5,
+          "Rating": 5.0,
+          "IsFreeWiFi": false,
+          "IsPrivateParking": true,
+          "IsRestaurant": true,
+          "IsBar": false
+        },
+        "CheckInDate": "2024-06-30T00:00:00",
+        "CheckOutDate": "2024-07-05T00:00:00",
+        "AmountOfPeople": 2,
+        "CostPerNight": 500.00,
+        "Status": 1,
+        "ReservationUser": "user"
+      },
+      {
+        "Id": 1,
+        "Hotel": {
+          "Id": 3,
+          "Name": "Hotel Scout",
+          "Address": "Mickiewicza 45",
+          "City": "Kraków",
+          "Description": "Hotel w Krakowie",
+          "Image": null,
+          "Stars": 3,
+          "Rating": 3.7,
+          "IsFreeWiFi": false,
+          "IsPrivateParking": false,
+          "IsRestaurant": true,
+          "IsBar": true
+        },
+        "CheckInDate": "2024-06-15T00:00:00",
+        "CheckOutDate": "2024-06-20T00:00:00",
+        "AmountOfPeople": 3,
+        "CostPerNight": 300.00,
+        "Status": 1,
+        "ReservationUser": "user"
+      },
+      {
+        "Id": 1,
+        "Hotel": {
+          "Id": 3,
+          "Name": "Hotel Scout",
+          "Address": "Mickiewicza 45",
+          "City": "Kraków",
+          "Description": "Hotel w Krakowie",
+          "Image": null,
+          "Stars": 3,
+          "Rating": 3.7,
+          "IsFreeWiFi": false,
+          "IsPrivateParking": false,
+          "IsRestaurant": true,
+          "IsBar": true
+        },
+        "CheckInDate": "2024-06-15T00:00:00",
+        "CheckOutDate": "2024-06-20T00:00:00",
+        "AmountOfPeople": 3,
+        "CostPerNight": 300.00,
+        "Status": 1,
+        "ReservationUser": "user"
+      }
+    ],
+    "Favourites": [],
+    "Rodo": true,
+    "Newsletter": true,
+    "Balance": 27.27
   }
 ]

@@ -76,5 +76,239 @@
       }
     ],
     "TotalCost": 1950.00
+  },
+  {
+    "PaymentId": 2,
+    "UserId": 2,
+    "Reservation": {
+      "Id": 2,
+      "Hotel": {
+        "Id": 2,
+        "Name": "Hotel Kamil",
+        "Address": "Sienkiewicza 3",
+        "City": "Warszawa",
+        "Description": "Najlepszy hotel w Warszawie",
+        "Image": null,
+        "Stars": 5,
+        "Rating": 5.0,
+        "IsFreeWiFi": false,
+        "IsPrivateParking": true,
+        "IsRestaurant": true,
+        "IsBar": false
+      },
+      "CheckInDate": "2024-06-30T00:00:00",
+      "CheckOutDate": "2024-07-05T00:00:00",
+      "AmountOfPeople": 2,
+      "CostPerNight": 500.00,
+      "Status": 1,
+      "ReservationUser": "user"
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 0.0
+  },
+  {
+    "PaymentId": 3,
+    "UserId": 2,
+    "Reservation": {
+      "Id": 1,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Hotel Scout",
+        "Address": "Mickiewicza 45",
+        "City": "Kraków",
+        "Description": "Hotel w Krakowie",
+        "Image": null,
+        "Stars": 3,
+        "Rating": 3.7,
+        "IsFreeWiFi": false,
+        "IsPrivateParking": false,
+        "IsRestaurant": true,
+        "IsBar": true
+      },
+      "CheckInDate": "2024-06-15T00:00:00",
+      "CheckOutDate": "2024-06-20T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": "user"
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 0.0
+  },
+  {
+    "PaymentId": 4,
+    "UserId": 2,
+    "Reservation": {
+      "Id": 1,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Hotel Scout",
+        "Address": "Mickiewicza 45",
+        "City": "Kraków",
+        "Description": "Hotel w Krakowie",
+        "Image": null,
+        "Stars": 3,
+        "Rating": 3.7,
+        "IsFreeWiFi": false,
+        "IsPrivateParking": false,
+        "IsRestaurant": true,
+        "IsBar": true
+      },
+      "CheckInDate": "2024-06-15T00:00:00",
+      "CheckOutDate": "2024-06-20T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": "user"
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 0.0
   }
 ]
