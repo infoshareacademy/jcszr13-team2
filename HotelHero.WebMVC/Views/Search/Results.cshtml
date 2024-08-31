@@ -81,7 +81,8 @@
                     <div class="form-group">
                         @foreach (var result in Model.Reservations)
                         {
-        <li>
+                            <partial name="_SearchReservationCard", model="result"/>
+@*         <li>
             Hotel: @result.Hotel.Name
         </li>
         <li>
@@ -109,7 +110,7 @@
             Cost per night: @result.CostPerNight
         </li>
 
-        <a asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a>
+        <a asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a> *@
                         }
     </div>
     </td>
