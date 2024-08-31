@@ -45,7 +45,7 @@ namespace HotelHero.Database.Repositiories.Reservations
                 ).ToList();
         }
 
-        public List<ReservationDTO> SearchWithFiltersForReservations(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople, decimal? costPerNight)
+        public List<ReservationDTO> SearchWithFiltersForReservations(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople, decimal? costPerNight, int? stars, float? rating, bool isFreeWiFi, bool isPrivateParking, bool isRestaurant, bool isBar)
         {
             return _context.Reservations
                 .Include(x => x.Hotel)
@@ -55,6 +55,12 @@ namespace HotelHero.Database.Repositiories.Reservations
                 (!searchCheckOutDate.HasValue || r.CheckOutDate.Date <= searchCheckOutDate.Value.Date) &&
                 (!searchAmountOfPeople.HasValue || r.AmountOfPeople >= searchAmountOfPeople.Value) &&
                 (!costPerNight.HasValue || r.CostPerNight <= costPerNight.Value) &&
+                (!stars.HasValue || r.Hotel.Stars >= stars.Value) &&
+                (!rating.HasValue || r.Hotel.Rating >= rating.Value) &&
+                (!isFreeWiFi || r.Hotel.IsFreeWiFi == isFreeWiFi) &&
+                (!isPrivateParking || r.Hotel.IsPrivateParking == isPrivateParking) &&
+                (!isRestaurant || r.Hotel.IsRestaurant == isRestaurant) &&
+                (!isBar || r.Hotel.IsBar == isBar) &&
                 r.Status == 0
                 ).ToList();
         }

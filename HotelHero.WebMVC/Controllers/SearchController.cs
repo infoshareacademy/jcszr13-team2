@@ -51,9 +51,7 @@ namespace HotelHero.WebMVC.Controllers
             results.StartDate = startDate;
             results.EndDate = endDate;
             results.PeopleAmount = peopleAmount;
-            results.CostPerNight = 0;
             results.Reservations = items;
-
 
             return View(results);
         }
@@ -67,9 +65,11 @@ namespace HotelHero.WebMVC.Controllers
             var endDate = vm.EndDate == default ? null : vm.EndDate;
             var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
             var costPerNight = vm.CostPerNight > 0 ? vm.CostPerNight : (decimal?)null;
+            var stars = vm.Stars > 0 && vm.Stars < 6 ? vm.Stars : (int?)null;
+            var rating = vm.Rating > 0 && vm.Rating < 6 ? vm.Rating : (int?)null;
 
             // Wywołanie usługi z potencjalnie null wartościami
-            var items = _reservationService.SearchWithFiltersForReservations(city, startDate, endDate, peopleAmount, costPerNight);
+            var items = _reservationService.SearchWithFiltersForReservations(city, startDate, endDate, peopleAmount, costPerNight, stars, rating, vm.IsFreeWiFi, vm.IsPrivateParking, vm.IsRestaurant, vm.IsBar);
 
             SearchResultsViewModel results = new SearchResultsViewModel();
 
