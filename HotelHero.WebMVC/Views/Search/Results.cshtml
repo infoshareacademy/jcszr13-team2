@@ -82,35 +82,6 @@
                         @foreach (var result in Model.Reservations)
                         {
                             <partial name="_SearchReservationCard", model="result"/>
-@*         <li>
-            Hotel: @result.Hotel.Name
-        </li>
-        <li>
-            Stars: @result.Hotel.CreateStars()
-        </li>
-        <li>
-            Address: @result.Hotel.Address
-        </li>
-        <li>
-            Description: @result.Hotel.Description.Substring(0, 100)...
-        </li>
-        <li>
-            Rating: @result.Hotel.Rating
-        </li>
-        <li>
-            Check in: @result.CheckInDate
-        </li>
-        <li>
-            Check out: @result.CheckOutDate
-        </li>
-        <li>
-            People: @result.AmountOfPeople
-        </li>
-        <li>
-            Cost per night: @result.CostPerNight
-        </li>
-
-        <a asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a> *@
                         }
     </div>
     </td>

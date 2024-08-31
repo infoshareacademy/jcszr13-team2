@@ -34,7 +34,8 @@
 					<div class="card-text">@Model.CheckInDate - @Model.CheckOutDate</div>
 					<div class="card-text">People: @Model.AmountOfPeople</div>
 					<div class="card-text">Cost per night: @Model.CostPerNight</div>
-				<a asp-action="MakeReservation" asp-route-id="@Model.Id">Make reservation</a>
+
+				<a class="btnCustom btnCustom-custom" asp-action="MakeReservation" asp-route-id="@Model.Id">Make reservation</a>
 
 			</div>
 		</div>
