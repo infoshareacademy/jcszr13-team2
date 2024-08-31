@@ -45,6 +45,21 @@ namespace HotelHero.Database.Repositiories.Reservations
                 ).ToList();
         }
 
+        public List<ReservationDTO> SearchWithFiltersForReservations(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople, decimal? costPerNight)
+        {
+            return _context.Reservations
+                .Include(x => x.Hotel)
+                .Where(r =>
+                (string.IsNullOrEmpty(searchCity) || r.Hotel.City == searchCity) &&
+                (!searchCheckInDate.HasValue || r.CheckInDate.Date >= searchCheckInDate.Value.Date) &&
+                (!searchCheckOutDate.HasValue || r.CheckOutDate.Date <= searchCheckOutDate.Value.Date) &&
+                (!searchAmountOfPeople.HasValue || r.AmountOfPeople >= searchAmountOfPeople.Value) &&
+                (!costPerNight.HasValue || r.CostPerNight <= costPerNight.Value) &&
+                r.Status == 0
+                ).ToList();
+        }
+
+
         public void RemoveHotel(int id)
         {
             ReservationDTO reservationDTO = GetReservation(id);

@@ -31,6 +31,13 @@ namespace HotelHero.WebMVC.Services
             return reservations;
         }
 
+        public List<Reservation> SearchWithFiltersForReservations(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople, decimal? costPerNight)
+        {
+            List<ReservationDTO> reservationDTO = _reservationRepository.SearchWithFiltersForReservations(searchCity, searchCheckInDate, searchCheckOutDate, searchAmountOfPeople, costPerNight);
+            List<Reservation> reservations = _mapper.Map<List<Reservation>>(reservationDTO);
+            return reservations;
+        }
+
         public Reservation GetReservationById(int id)
         {
             ReservationDTO reservationDTO = _reservationRepository.GetReservation(id);

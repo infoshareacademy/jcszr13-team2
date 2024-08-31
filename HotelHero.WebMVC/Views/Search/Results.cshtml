@@ -1,6 +1,6 @@
-﻿@using HotelHero.WebMVC.Models
+﻿@using HotelHero.WebMVC.ViewModels
 
-@model IEnumerable<Reservation>
+@model SearchResultsViewModel
 
 @{
     ViewData["Title"] = "Search results";
@@ -9,38 +9,84 @@
 <h1>Search results</h1>
 
 <ul>
-    @foreach (var result in Model)
-    {
-            <li>
-                Hotel: @result.Hotel.Name
-            </li>
-            <li>
-                Stars: @result.Hotel.CreateStars()
-            </li>
-            <li>
-                Address: @result.Hotel.Address
-            </li>
-            <li>
-                Description: @result.Hotel.Description
-            </li>
-            <li>
-                Rating: @result.Hotel.Rating
-            </li>
-            <li>
-                Check in: @result.CheckInDate
-            </li>
-            <li>
-                Check out: @result.CheckOutDate
-            </li>
-            <li>
-                People: @result.AmountOfPeople
-            </li>
-            <li>
-                Cost per night: @result.CostPerNight
-            </li>
 
-            <a asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a>
+    <form method="post" asp-action="ResultsWithFilters">
+        <div class="d-flex">
+            <div class="form-group me-2">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control me-2" type="search" placeholder="City" aria-label="City" />
+            </div>
+            <div class="form-group me-2">
+                <label asp-for="StartDate" class="control-label"></label>
+                <input asp-for="StartDate" class="form-control" />
+            </div>
+            <div class="form-group me-2">
+                <label asp-for="EndDate" class="control-label"></label>
+                <input asp-for="EndDate" class="form-control" />
+            </div>
+            <div class="form-group me-2">
+                <label asp-for="PeopleAmount" class="control-label"></label>
+                <input asp-for="PeopleAmount" class="form-control me-2" type="search" placeholder="Amount of people" aria-label="Amount of people" />
+            </div>
+
+            <div>
+                <button class="btn btn-outline-success me-2 align-baseline" type="submit">Search</button>
+            </div>
+        </div>
 
 
-    }
+        <table>
+            <tr>
+                <th>Filters</th>
+                <th>Results</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-group me-2">
+                        <label asp-for="CostPerNight" class="control-label"></label>
+                        <input asp-for="CostPerNight" class="form-control me-2" type="search" placeholder="Cost per night" aria-label="Cost per night" />
+                    </div>
+                </td>
+                <td>
+                    <div class="form-group">
+                        @foreach (var result in Model.Reservations)
+                        {
+        <li>
+            Hotel: @result.Hotel.Name
+        </li>
+        <li>
+            Stars: @result.Hotel.CreateStars()
+        </li>
+        <li>
+            Address: @result.Hotel.Address
+        </li>
+        <li>
+            Description: @result.Hotel.Description.Substring(0, 100)...
+        </li>
+        <li>
+            Rating: @result.Hotel.Rating
+        </li>
+        <li>
+            Check in: @result.CheckInDate
+        </li>
+        <li>
+            Check out: @result.CheckOutDate
+        </li>
+        <li>
+            People: @result.AmountOfPeople
+        </li>
+        <li>
+            Cost per night: @result.CostPerNight
+        </li>
+
+        <a asp-action="MakeReservation" asp-route-id="@result.Id">Make reservation</a>
+                        }
+    </div>
+                </td>
+            </tr>
+        </table>
+
+
+
+    </form>
 </ul>

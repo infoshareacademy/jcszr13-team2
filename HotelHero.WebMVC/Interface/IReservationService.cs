@@ -8,5 +8,6 @@ namespace HotelHero.WebMVC.Interface
         List<Reservation> GetReservations();
 
         Reservation GetReservationById(int id);
+        List<Reservation> SearchWithFiltersForReservations(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople, decimal? costPerNight);
     }
 }

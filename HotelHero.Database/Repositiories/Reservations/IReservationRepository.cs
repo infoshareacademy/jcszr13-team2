@@ -9,6 +9,7 @@ namespace HotelHero.Database.Repositiories.Reservations
         ReservationDTO GetReservation(int id);
         void RemoveHotel(int id);
         List<ReservationDTO> SearchForReservations(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople);
+        List<ReservationDTO> SearchWithFiltersForReservations(string searchCity, DateTime? searchCheckInDate, DateTime? searchCheckOutDate, int? searchAmountOfPeople, decimal? costPerNight);
         void UpdateHotel(ReservationDTO reservationDTO);
     }
 }

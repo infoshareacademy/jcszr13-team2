@@ -6,6 +6,7 @@ using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Services;
 using HotelHero.WebMVC.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System.Collections.Generic;
 
 namespace HotelHero.WebMVC.Controllers
@@ -39,10 +40,48 @@ namespace HotelHero.WebMVC.Controllers
             var startDate = vm.StartDate == default ? null : vm.StartDate;
             var endDate = vm.EndDate == default ? null : vm.EndDate;
             var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
+            
 
             // Wywołanie usługi z potencjalnie null wartościami
             var items = _reservationService.SearchForReservations(city, startDate, endDate, peopleAmount);
-            return View(items);
+            
+            SearchResultsViewModel results = new SearchResultsViewModel();
+
+            results.City = city;
+            results.StartDate = startDate;
+            results.EndDate = endDate;
+            results.PeopleAmount = peopleAmount;
+            results.CostPerNight = 0;
+            results.Reservations = items;
+
+
+            return View(results);
+        }
+
+        [HttpPost]
+        public IActionResult ResultsWithFilters(SearchResultsViewModel vm)
+        {
+            // Sprawdzenie, czy parametry są podane i ustawienie ich na null, jeśli nie
+            var city = string.IsNullOrEmpty(vm.City) ? null : vm.City;
+            var startDate = vm.StartDate == default ? null : vm.StartDate;
+            var endDate = vm.EndDate == default ? null : vm.EndDate;
+            var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
+            var costPerNight = vm.CostPerNight > 0 ? vm.CostPerNight : (decimal?)null;
+
+            // Wywołanie usługi z potencjalnie null wartościami
+            var items = _reservationService.SearchWithFiltersForReservations(city, startDate, endDate, peopleAmount, costPerNight);
+
+            SearchResultsViewModel results = new SearchResultsViewModel();
+
+            results.City = city;
+            results.StartDate = startDate;
+            results.EndDate = endDate;
+            results.PeopleAmount = peopleAmount;
+            results.CostPerNight = costPerNight;
+            results.Reservations = items;
+
+
+            return View("Results", results);
         }
 
         public ActionResult MakeReservation(int id)
