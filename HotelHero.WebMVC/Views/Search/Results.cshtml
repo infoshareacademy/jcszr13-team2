@@ -13,19 +13,19 @@
     <form method="post" asp-action="ResultsWithFilters">
         <div class="d-flex">
             <div class="form-group me-2">
-                <label asp-for="City" class="control-label"></label>
+                <label asp-for="City" class="control-label">City</label>
                 <input asp-for="City" class="form-control me-2" type="" pattern="[a-zA-Z]*" placeholder="City" aria-label="City" />
             </div>
             <div class="form-group me-2">
-                <label asp-for="StartDate" class="control-label"></label>
+                <label asp-for="StartDate" class="control-label">Start date</label>
                 <input asp-for="StartDate" class="form-control" type="date" />
             </div>
             <div class="form-group me-2">
-                <label asp-for="EndDate" class="control-label"></label>
+                <label asp-for="EndDate" class="control-label">End date</label>
                 <input asp-for="EndDate" class="form-control" type="date" />
             </div>
             <div class="form-group me-2">
-                <label asp-for="PeopleAmount" class="control-label"></label>
+                <label asp-for="PeopleAmount" class="control-label"> Amount of people</label>
                 <input asp-for="PeopleAmount" class="form-control me-2" type="number" placeholder="Amount of people" aria-label="Amount of people" min="1" />
             </div>
 
@@ -44,35 +44,35 @@
             <tr>
                 <td style="vertical-align:top">
                     <div class="form-group me-2">
-                        <label asp-for="CostPerNight" class="control-label"></label>
+                        <label asp-for="CostPerNight" class="control-label"> Max cost per night</label>
                         <input asp-for="CostPerNight" class="form-control me-2" type="search" placeholder="Cost per night" aria-label="Cost per night" />
                     </div>
                     <div class="form-group me-2">
-                        <label asp-for="Stars" class="control-label"></label>
+                        <label asp-for="Stars" class="control-label">Min stars</label>
                         <input asp-for="Stars" class="form-control me-2" type="number" placeholder="Stars" aria-label="Stars" />
                     </div>
                     <div class="form-group me-2">
-                        <label asp-for="Rating" class="control-label"></label>
+                        <label asp-for="Rating" class="control-label">Min rating</label>
                         <input asp-for="Rating" class="form-control me-2" type="number" placeholder="Rating" aria-label="Rating" />
                     </div>
                     <div class="form-group form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" asp-for="IsFreeWiFi" /> @Html.DisplayNameFor(model => model.IsFreeWiFi)
+                            <input class="form-check-input" asp-for="IsFreeWiFi" /> Free Wifi
                         </label>
                     </div>
                     <div class="form-group form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" asp-for="IsPrivateParking" /> @Html.DisplayNameFor(model => model.IsPrivateParking)
+                            <input class="form-check-input" asp-for="IsPrivateParking" /> Free parking
                         </label>
                     </div>
                     <div class="form-group form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" asp-for="IsRestaurant" /> @Html.DisplayNameFor(model => model.IsRestaurant)
+                            <input class="form-check-input" asp-for="IsRestaurant" /> Restaurant
                         </label>
                     </div>
                     <div class="form-group form-check">
                         <label class="form-check-label">
-                            <input class="form-check-input" asp-for="IsBar" /> @Html.DisplayNameFor(model => model.IsBar)
+                            <input class="form-check-input" asp-for="IsBar" /> Bar
                         </label>
                     </div>
                 </td>

@@ -35,7 +35,18 @@
 					<div class="card-text">People: @Model.AmountOfPeople</div>
 					<div class="card-text">Cost per night: @Model.CostPerNight</div>
 
-				<a class="btnCustom btnCustom-custom" asp-action="MakeReservation" asp-route-id="@Model.Id">Make reservation</a>
+				@if (UserContext.GetUser() != null)
+				{
+					<a class="btnCustom btnCustom-custom" asp-action="MakeReservation" asp-route-id="@Model.Id">Make reservation</a>
+				}
+				else
+				{
+
+						<a class="btnCustom btnCustom-custom" asp-action="RedirectToLogin">Log in to make resevation!</a>
+
+				}
+
+
 
 			</div>
 		</div>
