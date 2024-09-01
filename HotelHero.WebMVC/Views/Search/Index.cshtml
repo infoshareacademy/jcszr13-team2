@@ -9,23 +9,25 @@
 
 <form class="d-flex" method="post" asp-action="Results">
     <div class="form-group me-2">
-        <label asp-for="City" class="control-label"></label>
-        <input asp-for="City" class="form-control me-2" type="search" placeholder="City" aria-label="City" />
+        <label asp-for="City" class="control-label">City</label>
+        <input asp-for="City" class="form-control me-2" type="" pattern="[a-zA-Z]*" placeholder="City" aria-label="City" />
     </div>
     <div class="form-group me-2">
-        <label asp-for="StartDate" class="control-label"></label>
-        <input asp-for="StartDate" class="form-control" />
+        <label asp-for="StartDate" class="control-label">Start date</label>
+        <input asp-for="StartDate" class="form-control" type="date" />
     </div>
     <div class="form-group me-2">
-        <label asp-for="EndDate" class="control-label"></label>
-        <input asp-for="EndDate" class="form-control" />
+        <label asp-for="EndDate" class="control-label">End date</label>
+        <input asp-for="EndDate" class="form-control" type="date" />
     </div>
     <div class="form-group me-2">
-        <label asp-for="PeopleAmount" class="control-label"></label>
-        <input asp-for="PeopleAmount" class="form-control me-2" type="search" placeholder="Amount of people" aria-label="Amount of people" />
+        <label asp-for="PeopleAmount" class="control-label">Amount of people</label>
+        <input asp-for="PeopleAmount" class="form-control me-2" type="number" placeholder="Amount of people" aria-label="Amount of people" min="1" />
     </div>
-    <div>
+    <div style="align-content:end">
         <button class="btn btn-outline-success me-2 align-baseline" type="submit">Search</button>
     </div>
 
 </form>
+
+
