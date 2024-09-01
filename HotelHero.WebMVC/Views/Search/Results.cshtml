@@ -79,6 +79,12 @@
                 <td/>
                 <td style="vertical-align:top">
                     <div class="form-group">
+                        <div id="popover2" popover="manual">
+                            <p>You're not logged!</p>
+                            <p>Login!</p>
+                            <a class="btnCustom btnCustom-custom" asp-action="RedirectToLogin">Login!</a>
+                            <button class="btnCustom btnCustom-custom" popovertarget="popover2" popovertargetaction="hide">Close</button>
+                        </div>
                         @foreach (var result in Model.Reservations)
                         {
                             <partial name="_SearchReservationCard", model="result"/>
