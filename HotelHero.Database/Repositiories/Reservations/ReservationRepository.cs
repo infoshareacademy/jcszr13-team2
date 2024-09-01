@@ -78,5 +78,37 @@ namespace HotelHero.Database.Repositiories.Reservations
             _context.Update(reservationDTO);
             _context.SaveChanges();
         }
+
+        public void MakeReservation(int reservationId, string userEmail)
+        {
+            var reservationDTO = GetReservation(reservationId);
+
+            reservationDTO.Status = 1;
+           //reservationDTO.CustomerData = new CustomerDataDTO();
+            //reservationDTO.CustomerData.Email = userEmail;
+
+            _context.SaveChanges();
+        }
+
+        public void PayReservation(int reservationId)
+        {
+            var reservationDTO = GetReservation(reservationId);
+
+            reservationDTO.Status = 2;
+
+            _context.SaveChanges();
+        }
+
+        public void CancelReservation(int reservationId)
+        {
+            var reservationDTO = GetReservation(reservationId);
+
+            reservationDTO.Status = 0;
+            //reservationDTO.CustomerData = null;
+
+            _context.SaveChanges();
+        }
+
+
     }
 }

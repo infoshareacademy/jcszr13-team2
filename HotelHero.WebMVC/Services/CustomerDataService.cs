@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Interface;
+using HotelHero.WebMVC.Models.Enums;
 
 namespace HotelHero.WebMVC.Services
 {
@@ -68,14 +69,13 @@ namespace HotelHero.WebMVC.Services
             {
                 customerData.Reservations = new List<Reservation>();
             }
+            newReservation.Status = ReservationStatus.Reserved;
             customerData.Reservations.Add(newReservation);
             EditCustomerData(customerData);
         }
         public void PayReservation(Reservation reservation)
         {
             var customerData = GetCustomerData(UserContext.loggedUser.UserId);
-            var model = customerData.Reservations.Where(x => x.Id == reservation.Id).First();
-            model.PayReservation();
             EditCustomerData(customerData);
         }
         public void CancelReservation(int reservationId)

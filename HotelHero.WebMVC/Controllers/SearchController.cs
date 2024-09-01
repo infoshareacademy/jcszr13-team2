@@ -91,7 +91,8 @@ namespace HotelHero.WebMVC.Controllers
 
             };
             var model = _reservationService.GetReservationById(id);
-            model.MakeReservation(UserContext.loggedUser.Email);
+            _reservationService.MakeReservation(id, UserContext.loggedUser.Email);
+            //model.MakeReservation(UserContext.loggedUser.Email);
             _customerDataService.MakeReservation(UserContext.loggedUser.UserId, model);
             var payment = _paymentService.CreatePayment(UserContext.loggedUser.UserId, model);
             return RedirectToAction("Index", new RouteValueDictionary(new { controller = "Payment", action = "Index", Id = payment.PaymentId }));

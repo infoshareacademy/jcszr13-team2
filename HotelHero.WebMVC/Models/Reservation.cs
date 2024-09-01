@@ -30,23 +30,6 @@ namespace HotelHero.WebMVC.Models
             Hotel = new Hotel();
         }
 
-        public void MakeReservation(string newUser)
-        {
-            Status = ReservationStatus.Reserved;
-            ReservationUser = newUser;
-        }
-
-        public void PayReservation()
-        {
-            Status = ReservationStatus.Paid;
-        }
-
-        public void CancelReservation()
-        {
-            Status = ReservationStatus.Free;
-            ReservationUser = "";
-        }
-
         public override string ToString()
         {
             string result = "";

@@ -44,5 +44,20 @@ namespace HotelHero.WebMVC.Services
             Reservation reservation = _mapper.Map<Reservation>(reservationDTO);
             return reservation;
         }
+
+        public void MakeReservation(int reservationId, string userEmail)
+        {
+            _reservationRepository.MakeReservation(reservationId, userEmail);   
+        }
+
+        public void PayReservation(int reservationId)
+        {
+            _reservationRepository.PayReservation(reservationId);
+        }
+
+        public void CancelReservation(int reservationId)
+        {
+            _reservationRepository.CancelReservation(reservationId);
+        }
     }
 }
