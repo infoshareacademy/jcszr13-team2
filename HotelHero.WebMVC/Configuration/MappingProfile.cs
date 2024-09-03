@@ -31,7 +31,9 @@ namespace HotelHero.WebMVC.Configuration
                 .ForMember(x => x.CustomerData, y => y.Ignore())
                 .ForMember(x => x.PaymentId, y => y.Ignore())
                 .ForMember(x => x.Payment, y => y.Ignore());
-                
+
+
+            CreateMap<ReservationDTO, ReservationData>();
         }
     }
 }

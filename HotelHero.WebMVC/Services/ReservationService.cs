@@ -59,5 +59,11 @@ namespace HotelHero.WebMVC.Services
         {
             _reservationRepository.CancelReservation(reservationId);
         }
+
+        public List<ReservationData> GetReservationForHotel(int hotelId)
+        {
+            List<ReservationDTO> reservationDTO = _reservationRepository.GetReservationForHotel(hotelId);
+            return _mapper.Map<List<ReservationData>>(reservationDTO);
+        }
     }
 }

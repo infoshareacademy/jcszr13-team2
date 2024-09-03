@@ -8,6 +8,7 @@ namespace HotelHero.Database.Repositiories.Reservations
         void CancelReservation(int reservationId);
         List<ReservationDTO> GetAllReservations();
         ReservationDTO GetReservation(int id);
+        List<ReservationDTO> GetReservationForHotel(int hotelId);
         void MakeReservation(int reservationId, string userEmail);
         void PayReservation(int reservationId);
         void RemoveHotel(int id);

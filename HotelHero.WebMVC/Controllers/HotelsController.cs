@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using HotelHero.HotelsDatabase;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
-using Hotel = HotelHero.WebMVC.Models.Hotel;
 
 namespace HotelHero.WebMVC.Controllers
 {
     public class HotelsController : Controller
     {
         private readonly IHotelService _hotelsRepository;
+        private readonly IReservationService _reservationService;
         private readonly ICustomerDataService _customerDataService;
 
-        public HotelsController(IHotelService hotelsRepository, ICustomerDataService customerData)
+        public HotelsController(IHotelService hotelsRepository, ICustomerDataService customerData, IReservationService reservationService)
         {
             _hotelsRepository = hotelsRepository;
             _customerDataService = customerData;
+            _reservationService = reservationService;
         }
 
 
@@ -28,6 +28,7 @@ namespace HotelHero.WebMVC.Controllers
         public ActionResult Details(int id)
         {
             var model = _hotelsRepository.GetHotel(id);
+            var newModel = _reservationService.GetReservationForHotel(id);
             return View(model);
         }
 

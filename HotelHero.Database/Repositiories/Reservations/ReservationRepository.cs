@@ -109,6 +109,11 @@ namespace HotelHero.Database.Repositiories.Reservations
             _context.SaveChanges();
         }
 
+        public List<ReservationDTO> GetReservationForHotel(int hotelId)
+        {
+            return _context.Reservations.Where(r => r.HotelId == hotelId).ToList();
+        }
+
 
     }
 }
