@@ -95,7 +95,15 @@
                         @item.CostPerNight
                     </td>
                     <td>
-                        <a class="btn btn-outline-success me-2" asp-action="MakeReservation" asp-route-id="@item.Id">Make reservation</a>
+
+                        @if (UserContext.GetUser() != null)
+                        {
+                            <a class="btn btn-outline-success me-2" asp-action="MakeReservation" asp-route-id="@item.Id">Make reservation</a>
+                        }
+                        else
+                        {
+                            <a class="btn btn-outline-success me-2" asp-controller="LogIn" asp-action="LogIn">Log in to make resevation!</a>
+                        }
                     </td>
                 </tr>
             }
