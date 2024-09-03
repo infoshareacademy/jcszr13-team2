@@ -73,6 +73,9 @@
                 <th>
                     <label>Cost per night</label>
                 </th>
+                <th>
+                    <label>Reservation</label>
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -90,6 +93,9 @@
                     </td>
                     <td>
                         @item.CostPerNight
+                    </td>
+                    <td>
+                        <a class="btn btn-outline-success me-2" asp-action="MakeReservation" asp-route-id="@item.Id">Make reservation</a>
                     </td>
                 </tr>
             }

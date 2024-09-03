@@ -7,13 +7,37 @@
     "DateOfBirth": "0001-01-01T00:00:00",
     "Address": "adres",
     "Phone": "number",
-    "Reservations": [],
+    "Reservations": [
+      {
+        "Id": 15,
+        "Hotel": {
+          "Id": 3,
+          "Name": "Marriott Hotel",
+          "Address": "Słowackiego 1",
+          "City": "Warszawa",
+          "Description": "Featuring free bikes, a fitness centre as well as a bar, Warsaw Marriott Hotel is located in the centre of Warsaw, 400 metres from Warsaw Central Railway Station. With free WiFi, this 5-star hotel offers room service and a 24-hour front desk. The accommodation provides nightclub and an ATM.\\nAll units at the hotel come with air conditioning, a seating area, a flat-screen TV with satellite channels, a safety deposit box and a private bathroom with a bath, free toiletries and a hairdryer. Every room comes with a kettle, while some rooms here will provide you with a kitchenette with a fridge, a dishwasher and a stovetop. At Warsaw Marriott Hotel the rooms have bed linen and towels.\\nA buffet, continental or American breakfast is available daily at the property. At the accommodation you will find a restaurant serving Italian, Mediterranean and Polish cuisine. Vegetarian, dairy-free and vegan options can also be requested.\\nThere is an on-site snack bar and guests can also make use of the business area.\\n\\nPopular points of interest near Warsaw Marriott Hotel include Złote Tarasy Shopping Centre, Palace of Culture and Science and Centrum Subway Station. The nearest airport is Warsaw Frederic Chopin Airport, 7 km from the hotel.",
+          "Image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/535588825.jpg?k=76cb301cab7051d4eb6b0c293ea0c9a594f6496b497f0f140dbd36d1c2fc133a&o=&hp=1",
+          "Stars": 4,
+          "Rating": 5.0,
+          "IsFreeWiFi": true,
+          "IsPrivateParking": true,
+          "IsRestaurant": false,
+          "IsBar": false
+        },
+        "CheckInDate": "2024-07-20T00:00:00",
+        "CheckOutDate": "2024-07-23T00:00:00",
+        "AmountOfPeople": 3,
+        "CostPerNight": 300.00,
+        "Status": 1,
+        "ReservationUser": null
+      }
+    ],
     "Favourites": [
       2
     ],
     "Rodo": false,
     "Newsletter": false,
-    "Balance": 15930609.00
+    "Balance": 15928209.00
   },
   {
     "CustomerId": 6,
@@ -112,5 +136,19 @@
     "Rodo": true,
     "Newsletter": true,
     "Balance": 45.45
+  },
+  {
+    "CustomerId": 3,
+    "Email": "user1@email.hotelhero",
+    "LastName": null,
+    "FirstName": null,
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "Address": null,
+    "Phone": null,
+    "Reservations": [],
+    "Favourites": [],
+    "Rodo": false,
+    "Newsletter": false,
+    "Balance": 9996700.00
   }
 ]

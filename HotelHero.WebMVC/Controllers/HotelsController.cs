@@ -147,5 +147,10 @@ namespace HotelHero.WebMVC.Controllers
                 return View();
             }
         }
+
+        public ActionResult MakeReservation(int id)
+        {
+            return RedirectToAction("MakeReservation", "Search", new { id = id});
+        }
     }
 }

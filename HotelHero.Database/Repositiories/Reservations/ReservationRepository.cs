@@ -111,7 +111,7 @@ namespace HotelHero.Database.Repositiories.Reservations
 
         public List<ReservationDTO> GetReservationForHotel(int hotelId)
         {
-            return _context.Reservations.Where(r => r.HotelId == hotelId).ToList();
+            return _context.Reservations.Where(r => r.HotelId == hotelId && r.Status == 0).ToList();
         }
 
 

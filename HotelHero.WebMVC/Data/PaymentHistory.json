@@ -310,5 +310,551 @@
       }
     ],
     "TotalCost": 0.0
+  },
+  {
+    "PaymentId": 5,
+    "UserId": 3,
+    "Reservation": {
+      "Id": 15,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Marriott Hotel",
+        "Address": "Słowackiego 1",
+        "City": "Warszawa",
+        "Description": "Featuring free bikes, a fitness centre as well as a bar, Warsaw Marriott Hotel is located in the centre of Warsaw, 400 metres from Warsaw Central Railway Station. With free WiFi, this 5-star hotel offers room service and a 24-hour front desk. The accommodation provides nightclub and an ATM.\\nAll units at the hotel come with air conditioning, a seating area, a flat-screen TV with satellite channels, a safety deposit box and a private bathroom with a bath, free toiletries and a hairdryer. Every room comes with a kettle, while some rooms here will provide you with a kitchenette with a fridge, a dishwasher and a stovetop. At Warsaw Marriott Hotel the rooms have bed linen and towels.\\nA buffet, continental or American breakfast is available daily at the property. At the accommodation you will find a restaurant serving Italian, Mediterranean and Polish cuisine. Vegetarian, dairy-free and vegan options can also be requested.\\nThere is an on-site snack bar and guests can also make use of the business area.\\n\\nPopular points of interest near Warsaw Marriott Hotel include Złote Tarasy Shopping Centre, Palace of Culture and Science and Centrum Subway Station. The nearest airport is Warsaw Frederic Chopin Airport, 7 km from the hotel.",
+        "Image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/535588825.jpg?k=76cb301cab7051d4eb6b0c293ea0c9a594f6496b497f0f140dbd36d1c2fc133a&o=&hp=1",
+        "Stars": 4,
+        "Rating": 5.0,
+        "IsFreeWiFi": true,
+        "IsPrivateParking": true,
+        "IsRestaurant": false,
+        "IsBar": false
+      },
+      "CheckInDate": "2024-07-20T00:00:00",
+      "CheckOutDate": "2024-07-23T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": null
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 0.0
+  },
+  {
+    "PaymentId": 6,
+    "UserId": 1,
+    "Reservation": {
+      "Id": 7,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Marriott Hotel",
+        "Address": "Słowackiego 1",
+        "City": "Warszawa",
+        "Description": "Featuring free bikes, a fitness centre as well as a bar, Warsaw Marriott Hotel is located in the centre of Warsaw, 400 metres from Warsaw Central Railway Station. With free WiFi, this 5-star hotel offers room service and a 24-hour front desk. The accommodation provides nightclub and an ATM.\\nAll units at the hotel come with air conditioning, a seating area, a flat-screen TV with satellite channels, a safety deposit box and a private bathroom with a bath, free toiletries and a hairdryer. Every room comes with a kettle, while some rooms here will provide you with a kitchenette with a fridge, a dishwasher and a stovetop. At Warsaw Marriott Hotel the rooms have bed linen and towels.\\nA buffet, continental or American breakfast is available daily at the property. At the accommodation you will find a restaurant serving Italian, Mediterranean and Polish cuisine. Vegetarian, dairy-free and vegan options can also be requested.\\nThere is an on-site snack bar and guests can also make use of the business area.\\n\\nPopular points of interest near Warsaw Marriott Hotel include Złote Tarasy Shopping Centre, Palace of Culture and Science and Centrum Subway Station. The nearest airport is Warsaw Frederic Chopin Airport, 7 km from the hotel.",
+        "Image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/535588825.jpg?k=76cb301cab7051d4eb6b0c293ea0c9a594f6496b497f0f140dbd36d1c2fc133a&o=&hp=1",
+        "Stars": 4,
+        "Rating": 5.0,
+        "IsFreeWiFi": true,
+        "IsPrivateParking": true,
+        "IsRestaurant": false,
+        "IsBar": false
+      },
+      "CheckInDate": "2024-06-15T00:00:00",
+      "CheckOutDate": "2024-06-20T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": null
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 1500.00
+  },
+  {
+    "PaymentId": 7,
+    "UserId": 1,
+    "Reservation": {
+      "Id": 15,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Marriott Hotel",
+        "Address": "Słowackiego 1",
+        "City": "Warszawa",
+        "Description": "Featuring free bikes, a fitness centre as well as a bar, Warsaw Marriott Hotel is located in the centre of Warsaw, 400 metres from Warsaw Central Railway Station. With free WiFi, this 5-star hotel offers room service and a 24-hour front desk. The accommodation provides nightclub and an ATM.\\nAll units at the hotel come with air conditioning, a seating area, a flat-screen TV with satellite channels, a safety deposit box and a private bathroom with a bath, free toiletries and a hairdryer. Every room comes with a kettle, while some rooms here will provide you with a kitchenette with a fridge, a dishwasher and a stovetop. At Warsaw Marriott Hotel the rooms have bed linen and towels.\\nA buffet, continental or American breakfast is available daily at the property. At the accommodation you will find a restaurant serving Italian, Mediterranean and Polish cuisine. Vegetarian, dairy-free and vegan options can also be requested.\\nThere is an on-site snack bar and guests can also make use of the business area.\\n\\nPopular points of interest near Warsaw Marriott Hotel include Złote Tarasy Shopping Centre, Palace of Culture and Science and Centrum Subway Station. The nearest airport is Warsaw Frederic Chopin Airport, 7 km from the hotel.",
+        "Image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/535588825.jpg?k=76cb301cab7051d4eb6b0c293ea0c9a594f6496b497f0f140dbd36d1c2fc133a&o=&hp=1",
+        "Stars": 4,
+        "Rating": 5.0,
+        "IsFreeWiFi": true,
+        "IsPrivateParking": true,
+        "IsRestaurant": false,
+        "IsBar": false
+      },
+      "CheckInDate": "2024-07-20T00:00:00",
+      "CheckOutDate": "2024-07-23T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": null
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 900.00
+  },
+  {
+    "PaymentId": 8,
+    "UserId": 3,
+    "Reservation": {
+      "Id": 7,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Marriott Hotel",
+        "Address": "Słowackiego 1",
+        "City": "Warszawa",
+        "Description": "Featuring free bikes, a fitness centre as well as a bar, Warsaw Marriott Hotel is located in the centre of Warsaw, 400 metres from Warsaw Central Railway Station. With free WiFi, this 5-star hotel offers room service and a 24-hour front desk. The accommodation provides nightclub and an ATM.\\nAll units at the hotel come with air conditioning, a seating area, a flat-screen TV with satellite channels, a safety deposit box and a private bathroom with a bath, free toiletries and a hairdryer. Every room comes with a kettle, while some rooms here will provide you with a kitchenette with a fridge, a dishwasher and a stovetop. At Warsaw Marriott Hotel the rooms have bed linen and towels.\\nA buffet, continental or American breakfast is available daily at the property. At the accommodation you will find a restaurant serving Italian, Mediterranean and Polish cuisine. Vegetarian, dairy-free and vegan options can also be requested.\\nThere is an on-site snack bar and guests can also make use of the business area.\\n\\nPopular points of interest near Warsaw Marriott Hotel include Złote Tarasy Shopping Centre, Palace of Culture and Science and Centrum Subway Station. The nearest airport is Warsaw Frederic Chopin Airport, 7 km from the hotel.",
+        "Image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/535588825.jpg?k=76cb301cab7051d4eb6b0c293ea0c9a594f6496b497f0f140dbd36d1c2fc133a&o=&hp=1",
+        "Stars": 4,
+        "Rating": 5.0,
+        "IsFreeWiFi": true,
+        "IsPrivateParking": true,
+        "IsRestaurant": false,
+        "IsBar": false
+      },
+      "CheckInDate": "2024-06-15T00:00:00",
+      "CheckOutDate": "2024-06-20T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": null
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 0.0
+  },
+  {
+    "PaymentId": 9,
+    "UserId": 3,
+    "Reservation": {
+      "Id": 15,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Marriott Hotel",
+        "Address": "Słowackiego 1",
+        "City": "Warszawa",
+        "Description": "Featuring free bikes, a fitness centre as well as a bar, Warsaw Marriott Hotel is located in the centre of Warsaw, 400 metres from Warsaw Central Railway Station. With free WiFi, this 5-star hotel offers room service and a 24-hour front desk. The accommodation provides nightclub and an ATM.\\nAll units at the hotel come with air conditioning, a seating area, a flat-screen TV with satellite channels, a safety deposit box and a private bathroom with a bath, free toiletries and a hairdryer. Every room comes with a kettle, while some rooms here will provide you with a kitchenette with a fridge, a dishwasher and a stovetop. At Warsaw Marriott Hotel the rooms have bed linen and towels.\\nA buffet, continental or American breakfast is available daily at the property. At the accommodation you will find a restaurant serving Italian, Mediterranean and Polish cuisine. Vegetarian, dairy-free and vegan options can also be requested.\\nThere is an on-site snack bar and guests can also make use of the business area.\\n\\nPopular points of interest near Warsaw Marriott Hotel include Złote Tarasy Shopping Centre, Palace of Culture and Science and Centrum Subway Station. The nearest airport is Warsaw Frederic Chopin Airport, 7 km from the hotel.",
+        "Image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/535588825.jpg?k=76cb301cab7051d4eb6b0c293ea0c9a594f6496b497f0f140dbd36d1c2fc133a&o=&hp=1",
+        "Stars": 4,
+        "Rating": 5.0,
+        "IsFreeWiFi": true,
+        "IsPrivateParking": true,
+        "IsRestaurant": false,
+        "IsBar": false
+      },
+      "CheckInDate": "2024-07-20T00:00:00",
+      "CheckOutDate": "2024-07-23T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": null
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 900.00
+  },
+  {
+    "PaymentId": 10,
+    "UserId": 3,
+    "Reservation": {
+      "Id": 7,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Marriott Hotel",
+        "Address": "Słowackiego 1",
+        "City": "Warszawa",
+        "Description": "Featuring free bikes, a fitness centre as well as a bar, Warsaw Marriott Hotel is located in the centre of Warsaw, 400 metres from Warsaw Central Railway Station. With free WiFi, this 5-star hotel offers room service and a 24-hour front desk. The accommodation provides nightclub and an ATM.\\nAll units at the hotel come with air conditioning, a seating area, a flat-screen TV with satellite channels, a safety deposit box and a private bathroom with a bath, free toiletries and a hairdryer. Every room comes with a kettle, while some rooms here will provide you with a kitchenette with a fridge, a dishwasher and a stovetop. At Warsaw Marriott Hotel the rooms have bed linen and towels.\\nA buffet, continental or American breakfast is available daily at the property. At the accommodation you will find a restaurant serving Italian, Mediterranean and Polish cuisine. Vegetarian, dairy-free and vegan options can also be requested.\\nThere is an on-site snack bar and guests can also make use of the business area.\\n\\nPopular points of interest near Warsaw Marriott Hotel include Złote Tarasy Shopping Centre, Palace of Culture and Science and Centrum Subway Station. The nearest airport is Warsaw Frederic Chopin Airport, 7 km from the hotel.",
+        "Image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/535588825.jpg?k=76cb301cab7051d4eb6b0c293ea0c9a594f6496b497f0f140dbd36d1c2fc133a&o=&hp=1",
+        "Stars": 4,
+        "Rating": 5.0,
+        "IsFreeWiFi": true,
+        "IsPrivateParking": true,
+        "IsRestaurant": false,
+        "IsBar": false
+      },
+      "CheckInDate": "2024-06-15T00:00:00",
+      "CheckOutDate": "2024-06-20T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": null
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 1500.00
+  },
+  {
+    "PaymentId": 11,
+    "UserId": 3,
+    "Reservation": {
+      "Id": 15,
+      "Hotel": {
+        "Id": 3,
+        "Name": "Marriott Hotel",
+        "Address": "Słowackiego 1",
+        "City": "Warszawa",
+        "Description": "Featuring free bikes, a fitness centre as well as a bar, Warsaw Marriott Hotel is located in the centre of Warsaw, 400 metres from Warsaw Central Railway Station. With free WiFi, this 5-star hotel offers room service and a 24-hour front desk. The accommodation provides nightclub and an ATM.\\nAll units at the hotel come with air conditioning, a seating area, a flat-screen TV with satellite channels, a safety deposit box and a private bathroom with a bath, free toiletries and a hairdryer. Every room comes with a kettle, while some rooms here will provide you with a kitchenette with a fridge, a dishwasher and a stovetop. At Warsaw Marriott Hotel the rooms have bed linen and towels.\\nA buffet, continental or American breakfast is available daily at the property. At the accommodation you will find a restaurant serving Italian, Mediterranean and Polish cuisine. Vegetarian, dairy-free and vegan options can also be requested.\\nThere is an on-site snack bar and guests can also make use of the business area.\\n\\nPopular points of interest near Warsaw Marriott Hotel include Złote Tarasy Shopping Centre, Palace of Culture and Science and Centrum Subway Station. The nearest airport is Warsaw Frederic Chopin Airport, 7 km from the hotel.",
+        "Image": "https://cf.bstatic.com/xdata/images/hotel/max1280x900/535588825.jpg?k=76cb301cab7051d4eb6b0c293ea0c9a594f6496b497f0f140dbd36d1c2fc133a&o=&hp=1",
+        "Stars": 4,
+        "Rating": 5.0,
+        "IsFreeWiFi": true,
+        "IsPrivateParking": true,
+        "IsRestaurant": false,
+        "IsBar": false
+      },
+      "CheckInDate": "2024-07-20T00:00:00",
+      "CheckOutDate": "2024-07-23T00:00:00",
+      "AmountOfPeople": 3,
+      "CostPerNight": 300.00,
+      "Status": 1,
+      "ReservationUser": null
+    },
+    "AdditionalServices": [
+      {
+        "Id": 1,
+        "Name": "Safe",
+        "Cost": 30.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 2,
+        "Name": "Mini Bar",
+        "Cost": 150.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 3,
+        "Name": "Laundry",
+        "Cost": 60.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 4,
+        "Name": "SPA & Wellness",
+        "Cost": 210.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 5,
+        "Name": "Car Rent",
+        "Cost": 160.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 6,
+        "Name": "Airport transport",
+        "Cost": 70.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 7,
+        "Name": "Tour Guide",
+        "Cost": 130.0,
+        "IsSelected": false
+      },
+      {
+        "Id": 8,
+        "Name": "Room Service",
+        "Cost": 110.0,
+        "IsSelected": false
+      }
+    ],
+    "TotalCost": 900.00
   }
 ]
