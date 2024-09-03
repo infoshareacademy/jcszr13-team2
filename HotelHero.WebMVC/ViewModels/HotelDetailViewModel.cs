@@ -5,6 +5,6 @@ namespace HotelHero.WebMVC.ViewModels
     public class HotelDetailViewModel
     {
         public Hotel Hotel { get; set; }
-        public List<ReservationData> reservationDatas { get; set; }
+        public List<ReservationData> ReservationDatas { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model HotelHero.WebMVC.Models.Hotel;
+﻿@model HotelHero.WebMVC.ViewModels.HotelDetailViewModel;
 
 @{
     ViewData["Title"] = "Details";
@@ -8,53 +8,99 @@
     <div class="row">
         <div class="col">
             <picture>
-                <img src="@Model.Image" height="200" width="200" />
+                <img src="@Model.Hotel.Image" height="200" width="200" />
             </picture>
         </div>
         <div class="col" style="align-self: start">
             <div class="row">
-                <h2>@Model.Name @Model.CreateStars()</h2>
+                <h2>@Model.Hotel.Name @Model.Hotel.CreateStars()</h2>
             </div>
             <div class="row">
-                <label>Address: @Model.Address, @Model.City</label>
+                <label>Address: @Model.Hotel.Address, @Model.Hotel.City</label>
             </div>
             <div class="row">
-                <label>Rating: @Model.Rating</label>
+                <label>Rating: @Model.Hotel.Rating</label>
             </div>
         </div>
     </div>
     <div class="row">
         <dd class="col-sm-10">
-            @Model.Description
+            @Model.Hotel.Description
         </dd>
     </div>
 </div>
 <div>
-    @if (Model.IsFreeWiFi)
+    @if (Model.Hotel.IsFreeWiFi)
     {
         <dd class="col-sm-2">
             Free Wifi
         </dd>
     }
-    @if (Model.IsPrivateParking)
+    @if (Model.Hotel.IsPrivateParking)
     {
         <dd class="col-sm-2">
             Private parking
         </dd>
     }
-    @if (Model.IsRestaurant)
+    @if (Model.Hotel.IsRestaurant)
     {
         <dd class="col-sm-2">
             Restaurant open: 8.00 - 22.00
         </dd>
     }
-    @if (Model.IsBar)
+    @if (Model.Hotel.IsBar)
     {
         <dd class="col-sm-2">
             Bar 24/7
         </dd>
     }
 </div>
+
+
+<div>
+    <table class="table table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>
+                    <label>Check in date</label>
+                </th>
+                <th>
+                    <label>Check out date</label>
+                </th>
+                <th>
+                    <label>Amount of people</label>
+                </th>
+                <th>
+                    <label>Cost per night</label>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.ReservationDatas)
+            {
+                <tr>
+                    <td>
+                        @item.CheckInDate
+                    </td>
+                    <td>
+                        @item.CheckOutDate
+                    </td>
+                    <td>
+                        @item.AmountOfPeople
+                    </td>
+                    <td>
+                        @item.CostPerNight
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
 <div>
     <a asp-action="Index">Back to List</a>
 </div>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
+using HotelHero.WebMVC.ViewModels;
 
 namespace HotelHero.WebMVC.Controllers
 {
@@ -27,8 +28,9 @@ namespace HotelHero.WebMVC.Controllers
         // GET: HotelsController/Details/5
         public ActionResult Details(int id)
         {
-            var model = _hotelsRepository.GetHotel(id);
-            var newModel = _reservationService.GetReservationForHotel(id);
+            var model = new HotelDetailViewModel();
+            model.Hotel = _hotelsRepository.GetHotel(id);
+            model.ReservationDatas = _reservationService.GetReservationForHotel(id);
             return View(model);
         }
 
