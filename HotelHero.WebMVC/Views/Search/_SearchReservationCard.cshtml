@@ -37,13 +37,11 @@
 
 				@if (UserContext.GetUser() != null)
 				{
-					<a class="btnCustom btnCustom-custom" asp-action="MakeReservation" asp-route-id="@Model.Id">Make reservation</a>
+					<a class="btn btn-outline-success me2" asp-action="MakeReservation" asp-route-id="@Model.Id">Make reservation</a>
 				}
 				else
 				{
-
-						<a class="btnCustom btnCustom-custom" asp-action="RedirectToLogin">Log in to make resevation!</a>
-
+					<a class="btn btn-outline-success me2" asp-action="RedirectToLogin">Log in to make resevation!</a>
 				}
 
 

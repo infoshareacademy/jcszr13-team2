@@ -4,40 +4,49 @@
     ViewData["Title"] = "AdditionalServicesList";
 }
 
-<h1>AdditionalServicesList</h1>
+<div class="container">
+    <div class="row">
+        <aside class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 200px">
+            <a class="d-flex flex-column align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <span class="fs-5">Menu</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li>
+                    <a class="btn text-decoration-none" asp-controller="AdminPanel" asp-action="Users">Users</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-decoration-none" asp-controller="AdminPanel" asp-action="AdditionalServicesList">Additional services</a>
+                </li>
+            </ul>
+        </aside>
+        <div class="col">
+            <h1>Additional services list</h1>
 
-<p>
-    @* <a asp-action="CreateAdditionalService">Create New</a> *@
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                <label asp-for="First().Name"></label>
-            </th>
-            <th>
-                <label asp-for="First().Cost"></label>
-            </th>
-            <th>
-
-            </th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @item.Name
-                </td>
-                <td>
-                    @item.Cost
-                </td>
-                <td>
-                    @* <a asp-action="EditAdditionalService" asp-route-id="@item.Id">Edit</a>
-                    <a asp-action="DeleteAdditionalService" asp-route-id="@item.Id">Delete</a> *@
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>
+                            <label asp-for="First().Name"></label>
+                        </th>
+                        <th>
+                            <label asp-for="First().Cost"></label>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.Name
+                            </td>
+                            <td>
+                                @item.Cost
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

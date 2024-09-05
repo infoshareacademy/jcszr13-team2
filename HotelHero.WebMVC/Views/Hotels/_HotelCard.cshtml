@@ -32,7 +32,7 @@
 						<label>@Model.Description.Substring(0, 100)...</label>
 					}
 					</div>
-				<a class="btnCustom btnCustom-custom" asp-action="Details" asp-route-id="@Model.Id">Details</a>
+				<a class="btn btn-outline-primary me2" asp-action="Details" asp-route-id="@Model.Id">Details</a>
 
 				@if (UserContext.loggedUser != null)
 				{
@@ -43,18 +43,18 @@
 					}
 					if (customerFavourites.Contains(Model.Id))
 					{
-						<a class="btnCustom btnCustom-custom" asp-action="Unfavourite" asp-route-id="@Model.Id">Unfavourite</a>
+						<a class="btn btn-outline-primary me2" asp-action="Unfavourite" asp-route-id="@Model.Id">Unfavourite</a>
 					}
 					else
 					{
-						<a class="btnCustom btnCustom-custom" asp-action="Favourite" asp-route-id="@Model.Id">Favourite</a>
+						<a class="btn btn-outline-primary me2" asp-action="Favourite" asp-route-id="@Model.Id">Favourite</a>
 					}
 				}
 
 				@if (UserContext.loggedUser != null && UserContext.loggedUser.UserRole == UserRole.Admin)
 				{
-					<a class="btnCustom btnCustom-custom" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
-					<a class="btnCustom btnCustom-custom" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
+					<a class="btn btn-outline-primary me2" asp-action="Edit" asp-route-id="@Model.Id">Edit</a>
+					<a class="btn btn-outline-danger me2" asp-action="Delete" asp-route-id="@Model.Id">Delete</a>
 				}
 			</div>
 		</div>

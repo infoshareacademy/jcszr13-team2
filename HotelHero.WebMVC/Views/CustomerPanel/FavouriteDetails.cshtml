@@ -4,90 +4,91 @@
     ViewData["Title"] = "Favourites";
 }
 
-<h1>Favourites</h1>
-
 <div class="container">
     <div class="row">
-        <div class="col-md-auto">
-            <div class="children">
-                <a class="btn" asp-action="CustomerData">Customer Data</a>
-            </div>
-
-            <div class="children">
-                <a class="btn" asp-action="Reservations">Your reservations</a>
-            </div>
-
-            <div class="children">
-                <a class="btn" asp-action="StaysHistory">History of stays</a>
-            </div>
-
-            <div class="children">
-                <a class="btn" asp-action="Wallet">Your wallet</a>
-            </div>
-
-            <div class="children">
-                <a class="btn-dark" asp-action="Favourites">Favourites</a>
-            </div>
-
-        </div>
+        <aside class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 200px">
+            <a class="d-flex flex-column align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <span class="fs-5">Menu</span>
+            </a>
+            <ul class="list-unstyled ps-0">
+                <li>
+                    <a class="btn text-decoration-none" asp-action="CustomerData">Customer data</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-decoration-none" asp-action="Reservations">Your reservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-decoration-none" asp-action="PaymentsHistory">Payments history</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-decoration-none" asp-action="Wallet">Your wallet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn text-decoration-none" asp-action="Favourites">Favourites</a>
+                </li>
+            </ul>
+        </aside>
         <div class="col">
-            <div>
-                <h2>@Model.Name</h2>
-                <dl class="row">
-                    <dt class="col-sm-2">
-                        <label asp-for="Address"></label>
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Model.Address, @Model.City
-                    </dd>
-                    <dt class="col-sm-2">
-                        <label asp-for="Description"></label>
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Model.Description
-                    </dd>
-                    <dt class="col-sm-2">
-                        <label asp-for="Stars"></label>
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Model.CreateStars()
-                    </dd>
-                    <dt class="col-sm-2">
-                        <label asp-for="Rating"></label>
-                    </dt>
-                    <dd class="col-sm-10">
-                        @Model.Rating
-                    </dd>
-                </dl>
-            </div>
-            <div>
-                @if (Model.IsFreeWiFi)
-                {
-                    <dd class="col-sm-2">
-                        Darmowe Wifi
-                    </dd>
-                }
-                @if (Model.IsPrivateParking)
-                {
-                    <dd class="col-sm-2">
-                        Prywatny parking
-                    </dd>
-                }
-                @if (Model.IsRestaurant)
-                {
-                    <dd class="col-sm-2">
-                        Restauracja czynna od 8.00 do 22.00
-                    </dd>
-                }
-                @if (Model.IsBar)
-                {
-                    <dd class="col-sm-2">
-                        Bar otwarty całą dobę
-                    </dd>
-                }
-            </div>
-            <div>
-                <a asp-action="Favourites">Back to List</a>
+            <h1>Hotel detail</h1>
+            <div class="col">
+                <div>
+                    <h2>@Model.Name</h2>
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            <label asp-for="Address"></label>
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Model.Address, @Model.City
+                        </dd>
+                        <dt class="col-sm-2">
+                            <label asp-for="Description"></label>
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Model.Description
+                        </dd>
+                        <dt class="col-sm-2">
+                            <label asp-for="Stars"></label>
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Model.CreateStars()
+                        </dd>
+                        <dt class="col-sm-2">
+                            <label asp-for="Rating"></label>
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Model.Rating
+                        </dd>
+                    </dl>
+                </div>
+                <div>
+                    @if (Model.IsFreeWiFi)
+                    {
+                        <dd class="col-sm-2">
+                            Darmowe Wifi
+                        </dd>
+                    }
+                    @if (Model.IsPrivateParking)
+                    {
+                        <dd class="col-sm-2">
+                            Prywatny parking
+                        </dd>
+                    }
+                    @if (Model.IsRestaurant)
+                    {
+                        <dd class="col-sm-2">
+                            Restauracja czynna od 8.00 do 22.00
+                        </dd>
+                    }
+                    @if (Model.IsBar)
+                    {
+                        <dd class="col-sm-2">
+                            Bar otwarty całą dobę
+                        </dd>
+                    }
+                </div>
+                <div>
+                    <a class="btn btn-outline-danger me-2" asp-action="Favourites">Back to List</a>
+                </div>
             </div>
         </div>
     </div>

@@ -12,9 +12,6 @@ You are about to pay for reservation:
         Address: @Model.Reservation.Hotel.Address
     </li>
     <li>
-        Description: @Model.Reservation.Hotel.Description
-    </li>
-    <li>
         Rating: @Model.Reservation.Hotel.Rating
     </li>
     <li>
@@ -31,7 +28,7 @@ You are about to pay for reservation:
     </li>
 </ul>
 
-<a asp-action="PaymentAdditionalServices" asp-route-id="@Model.PaymentId">Select additional services</a>
-<a asp-action="CancelPayment" asp-route-id="@Model.PaymentId">Cancel</a>
+<a class="btn btn-outline-success me-2" asp-action="PaymentAdditionalServices" asp-route-id="@Model.PaymentId">Select additional services</a>
+<a class="btn btn-outline-danger me-2" asp-action="CancelPayment" asp-route-id="@Model.PaymentId">Cancel</a>
 
 </ul>

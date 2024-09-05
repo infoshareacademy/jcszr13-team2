@@ -3,7 +3,7 @@
 @{
 	ViewData["Title"] = "PaymentAdditionalServices";
 }
-
+<h1>Choose additional services</h1>
 <div class="row">
 	<div class="col-md-4">
 		<form asp-action="PaymentAdditionalServices" asp-route-id="@Model.PaymentId">
@@ -21,12 +21,9 @@
 				</div>
 			}
 			<div class="form-group">
-				<input type="submit" value="Summary" class="btn btn-primary" />
+				<input type="submit" value="Summary" class="btn btn-outline-success me-2" />
+				<a class="btn btn-outline-danger me-2" asp-action="CancelPayment">Cancel</a>
 			</div>
 		</form>
 	</div>
-</div>
-
-<div>
-	<a asp-action="CancelPayment">Cancel</a>
 </div>

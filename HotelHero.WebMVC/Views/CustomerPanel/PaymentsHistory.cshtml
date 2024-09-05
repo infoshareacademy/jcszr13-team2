@@ -4,39 +4,35 @@
 	ViewData["Title"] = "Payments history";
 }
 
-<table>
-	<tbody>
-		<tr>
-			<td style="vertical-align:top">
-				<div class="list-group">
-					<button type="button" class="list-group-item list-group-item-action list-group-item-info">
-						<a class="btn" asp-action="CustomerData">Customer Data</a>
-					</button>
-
-					<button type="button" class="list-group-item list-group-item-action list-group-item-info">
-						<a class="btn" asp-action="Reservations">Your reservations</a>
-					</button>
-
-					<button type="button" class="list-group-item list-group-item-action list-group-item-info active">
-						<a class="btn" asp-action="PaymentsHistory">Payments history</a>
-					</button>
-
-					<button type="button" class="list-group-item list-group-item-action list-group-item-info">
-						<a class="btn" asp-action="Wallet">Your wallet</a>
-					</button>
-
-					<button type="button" class="list-group-item list-group-item-action list-group-item-info">
-						<a class="btn" asp-action="Favourites">Favourites</a>
-					</button>
-				</div>
-			</td>
-			<td>
+<div class="container">
+	<div class="row">
+		<aside class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 200px">
+			<a class="d-flex flex-column align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+				<span class="fs-5">Menu</span>
+			</a>
+			<ul class="list-unstyled ps-0">
+				<li>
+					<a class="btn text-decoration-none" asp-action="CustomerData">Customer data</a>
+				</li>
+				<li class="nav-item">
+					<a class="btn text-decoration-none" asp-action="Reservations">Your reservations</a>
+				</li>
+				<li class="nav-item">
+					<a class="btn text-decoration-none" asp-action="PaymentsHistory">Payments history</a>
+				</li>
+				<li class="nav-item">
+					<a class="btn text-decoration-none" asp-action="Wallet">Your wallet</a>
+				</li>
+				<li class="nav-item">
+					<a class="btn text-decoration-none" asp-action="Favourites">Favourites</a>
+				</li>
+			</ul>
+		</aside>
+		<div class="col">
+			<h1>Payments history</h1>
 				<table class="table table-striped table-bordered">
 					<thead class="table-dark">
 						<tr>
-							<th>
-								<label asp-for="First().PaymentId">Payment ID</label>
-							</th>
 							<th>
 								<label asp-for="First().Reservation">Reservation</label>
 							</th>
@@ -53,10 +49,14 @@
 						{
 							<tr>
 								<td>
-									@payment.PaymentId
-								</td>
-								<td>
-									@payment.Reservation
+									Hotel: @payment.Reservation.Hotel.Name
+									@payment.Reservation.Hotel.CreateStars()
+									<br/>
+									Address: @payment.Reservation.Hotel.Address, @payment.Reservation.Hotel.City
+									<br />
+
+									Period of stay: @payment.Reservation.CheckInDate.ToShortDateString() - @payment.Reservation.CheckOutDate.ToShortDateString()
+									 for @payment.Reservation.AmountOfPeople people
 								</td>
 								<td>
 									<ul>
@@ -80,7 +80,6 @@
 						}
 					</tbody>
 				</table>
-			</td>
-		</tr>
-	</tbody>
-</table>
+		</div>
+	</div>
+</div>
