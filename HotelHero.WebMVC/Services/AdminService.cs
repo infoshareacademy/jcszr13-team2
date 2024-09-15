@@ -9,22 +9,6 @@ namespace HotelHero.WebMVC.Services
     public class AdminService : IAdminService
     {
         private readonly string _filePath = @$"{AppDomain.CurrentDomain.BaseDirectory}/../../../Data/AdditionalServices.json";
-        //public AdminService()
-        //{
-        //    _additionalServices = new List<AdditionalService>()
-        //        {
-        //        new AdditionalService(1, "Safe", 30m),
-        //        new AdditionalService(2, "Mini Bar", 150m),
-        //        new AdditionalService(3, "Laundry", 60m),
-        //        new AdditionalService(4, "SPA & Wellness", 210m),
-        //        new AdditionalService(5, "Car Rent", 160m),
-        //        new AdditionalService(6, "Airport transport", 70m),
-        //        new AdditionalService(7, "Tour Guide", 130m),
-        //        new AdditionalService(8, "Room Service", 110m)
-        //        };
-        //    var listJson = JsonConvert.SerializeObject(_additionalServices, Formatting.Indented);
-        //    File.WriteAllText(_filePath, listJson);
-        //}
 
         public List<AdditionalService> GetAdditionalServicesList()
         {
@@ -49,8 +33,9 @@ namespace HotelHero.WebMVC.Services
 
         public void SaveAdditionalServiceToList(AdditionalService additionalService)
         {
+            var newAdditionalService = new AdditionalService(GetNewAdditionalServicesId(), additionalService.Name, additionalService.Cost);
             var list = GetAdditionalServicesList();
-            list.Add(additionalService);
+            list.Add(newAdditionalService);
             var listJson = JsonConvert.SerializeObject(list, Formatting.Indented);
             File.WriteAllText(_filePath, listJson);
         }
@@ -59,6 +44,25 @@ namespace HotelHero.WebMVC.Services
             var list = GetAdditionalServicesList();
             var service = list.Find(x => x.Id == id);
             return service;
+        }
+        public void EditAdditionalService(AdditionalService additionalService)
+        {
+            var list = GetAdditionalServicesList();
+            var additionalServiceIndex = list.FindIndex(x => x.Id == additionalService.Id);
+            list[additionalServiceIndex] = additionalService;
+            SaveAdditionalServicesList(list);
+        }
+        public void DeleteAdditionalService(int id)
+        {
+            var list = GetAdditionalServicesList();
+            var additionalService = list.Find(x => x.Id == id);
+            list.Remove(additionalService);
+            SaveAdditionalServicesList(list);
+        }
+        private int GetNewAdditionalServicesId()
+        {
+            var id = GetAdditionalServicesList().Last().Id + 1;
+            return id;
         }
     }
 }

@@ -67,9 +67,15 @@
                         </ul>
                     </td>
                     <td>
-                        <a asp-action="CancelReservation" asp-route-id="@item.Id">
+                        <div id="popover2" popover="manual">
+                            <p>Do you want to cancel reservation?</p>
+                            <a class="btn btn-outline-success me2" asp-action="CancelReservation" asp-route-id="@item.Id">Yes</a>
+                            <button class="btn btn-outline-success me2" popovertarget="popover2" popovertargetaction="hide">Cancel</button>
+                        </div>
+                        <button class="btn btn-outline-success me2" popovertarget="popover2" popovertargetaction="show">
                             <img src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" height="35" width="35" />
-                        </a>
+                        </button>
+
                     </td>
                 </tr>
             }

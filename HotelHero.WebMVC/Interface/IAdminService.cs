@@ -8,5 +8,7 @@ namespace HotelHero.WebMVC.Interface
         void SaveAdditionalServicesList(List<AdditionalService> additionalServicesList);
         void SaveAdditionalServiceToList(AdditionalService additionalService);
         AdditionalService GetAdditionalService(int id);
+        void EditAdditionalService(AdditionalService additionalService);
+        void DeleteAdditionalService(int id);
     }
 }

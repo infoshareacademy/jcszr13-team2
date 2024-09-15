@@ -41,7 +41,7 @@
                             <label asp-for="First().UserRole">User role</label>
                         </th>
                         <th>
-                            <label>Acions</label>
+                            <label>Actions</label>
                         </th>
                     </tr>
                 </thead>
@@ -62,12 +62,18 @@
                                 @item.UserRole
                             </td>
                             <td>
+                                <div id="@item.UserId" popover="manual">
+                                    <p>Do you want to remove user?</p>
+                                    <a class="btn btn-outline-success me2" asp-action="DeleteUser" asp-route-id="@item.UserId">Confirm</a>
+                                    <button class="btn btn-outline-success me2" popovertarget="@item.UserId" popovertargetaction="hide">Cancel</button>
+                                </div>
+
                                 <a asp-action="EditUser" asp-route-id="@item.UserId">
                                     <img src="https://cdn.pixabay.com/photo/2022/01/11/21/48/edit-6931553_640.png" height="35" width="35" />
                                 </a>
-                                <a asp-action="DeleteUser" asp-route-id="@item.UserId">
+                                <button class="border-0" popovertarget="@item.UserId" popovertargetaction="show">
                                     <img src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" height="35" width="35" />
-                                </a>
+                                </button>
                             </td>
                         </tr>
                     }

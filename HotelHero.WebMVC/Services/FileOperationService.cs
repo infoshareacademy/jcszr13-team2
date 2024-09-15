@@ -66,7 +66,7 @@ namespace HotelHero.WebMVC.Services
         }
         private int GetNewUserId()
         {
-            var userId = GetUsers().Count + 1;
+            var userId = GetUsers().Last().UserId + 1;
             return userId;
         }
 

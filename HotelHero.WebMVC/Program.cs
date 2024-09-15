@@ -16,7 +16,7 @@ namespace HotelHero.WebMVC
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            builder.Services.AddDbContext<HotelHeroDbContext>(options => options.UseSqlServer("Server=KJKD\\MYDATABASE;Database=HotelHero;Trusted_Connection=True;TrustServerCertificate=True"));
+            builder.Services.AddDbContext<HotelHeroDbContext>(options => options.UseSqlServer("Server=localhost;Database=HotelHero;Trusted_Connection=True;TrustServerCertificate=True"));
 
 
             builder.Services.AddIdentity<HotelUserDTO, IdentityRole>().AddEntityFrameworkStores<HotelHeroDbContext>().AddDefaultTokenProviders();
