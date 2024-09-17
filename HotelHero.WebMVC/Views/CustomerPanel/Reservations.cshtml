@@ -28,57 +28,51 @@
             </ul>
         </aside>
         <div class="col">
-            <h1>Your reservations</h1>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        <ul>
-                            <li>
+            <h1>Payments history</h1>
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>
+                            <label asp-for="First().Hotel">Reservation</label>
+                        </th>
+                        <th>
+                            <label asp-for="First().Status">Status</label>
+                        </th>
+                        <th>
+                            <label>Actions</label>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
                                 Hotel: @item.Hotel.Name
-                            </li>
-                            <li>
-                                Stars: @item.Hotel.CreateStars()
-                            </li>
-                            <li>
-                                Address: @item.Hotel.Address
-                            </li>
-                            <li>
-                                Description: @item.Hotel.Description
-                            </li>
-                            <li>
-                                Rating: @item.Hotel.Rating
-                            </li>
-                            <li>
-                                Check in: @item.CheckInDate
-                            </li>
-                            <li>
-                                Check out: @item.CheckOutDate
-                            </li>
-                            <li>
-                                People: @item.AmountOfPeople
-                            </li>
-                            <li>
-                                Cost per night: @item.CostPerNight
-                            </li>
-                            <li>
-                                Status: @item.Status
-                            </li>
-                        </ul>
-                    </td>
-                    <td>
-                        <div id="popover2" popover="manual">
-                            <p>Do you want to cancel reservation?</p>
-                            <a class="btn btn-outline-success me2" asp-action="CancelReservation" asp-route-id="@item.Id">Yes</a>
-                            <button class="btn btn-outline-success me2" popovertarget="popover2" popovertargetaction="hide">Cancel</button>
-                        </div>
-                        <button class="btn btn-outline-success me2" popovertarget="popover2" popovertargetaction="show">
-                            <img src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" height="35" width="35" />
-                        </button>
+                                @item.Hotel.CreateStars()
+                                <br />
+                                Address: @item.Hotel.Address, @item.Hotel.City
+                                <br />
 
-                    </td>
-                </tr>
-            }
+                                Period of stay: @item.CheckInDate.ToShortDateString() - @item.CheckOutDate.ToShortDateString()
+                                for @item.AmountOfPeople people
+                            </td>
+                            <td>
+                                Status: @item.Status
+                            </td>
+                            <td>
+                                <div id="popover2" popover="manual">
+                                    <p>Do you want to cancel reservation?</p>
+                                    <a class="btn btn-outline-success me2" asp-action="CancelReservation" asp-route-id="@item.Id">Yes</a>
+                                    <button class="btn btn-outline-success me2" popovertarget="popover2" popovertargetaction="hide">Cancel</button>
+                                </div>
+                                <button class="btn btn-outline-danger me2" popovertarget="popover2" popovertargetaction="show">
+                                    Delete
+                                </button>
+
+                            </td>
+                        </tr>
+                    }
         </div>
     </div>
 </div>

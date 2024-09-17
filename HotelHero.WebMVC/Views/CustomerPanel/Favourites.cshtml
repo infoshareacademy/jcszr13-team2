@@ -56,10 +56,10 @@
                                 <a class="btn btn-outline-primary me-2" asp-action="FavouriteDetails" asp-route-id="@item.Id">Details</a>
                                 <div id="@item.Id" popover="manual">
                                     <p>Do you want to remove the Hotel from your favorites?</p>
-                                    <a class="btnCustom btnCustom-custom" asp-action="Unfavourite" asp-route-id="@item.Id">Yes, I'm removing it</a>
-                                    <button class="btnCustom btnCustom-custom" popovertarget="@item.Id" popovertargetaction="hide">I changed my mind</button>
+                                    <a class="btn btn-outline-primary me-2" asp-action="Unfavourite" asp-route-id="@item.Id">Yes, I'm removing it</a>
+                                    <button class="btn btn-outline-primary me-2" popovertarget="@item.Id" popovertargetaction="hide">I changed my mind</button>
                                 </div>
-                                <button class="btnCustom btnCustom-custom" popovertarget="@item.Id" popovertargetaction="show">Unfavourite</button>
+                                <button class="btn btn-outline-primary me-2" popovertarget="@item.Id" popovertargetaction="show">Unfavourite</button>
                             </td>
                         </tr>
                     }

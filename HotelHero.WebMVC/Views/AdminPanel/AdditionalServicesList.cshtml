@@ -22,7 +22,7 @@
         <div class="col">
             <h1>Additional services list</h1>
             <p>
-                <a asp-action="CreateAdditionalService">Add new service</a>
+                <a class="btn btn-outline-success me2" asp-action="CreateAdditionalService">Add new service</a>
             </p>
             <table class="table table-striped table-bordered">
                 <thead class="table-dark">
@@ -53,11 +53,11 @@
                                     <button class="btn btn-outline-success me2" popovertarget="@item.Id" popovertargetaction="hide">Cancel</button>
                                 </div>
 
-                                <a asp-action="EditAdditionalService" asp-route-id="@item.Id">
-                                    <img src="https://cdn.pixabay.com/photo/2022/01/11/21/48/edit-6931553_640.png" height="35" width="35" />
+                                <a class="btn btn-outline-primary me2" asp-action="EditAdditionalService" asp-route-id="@item.Id">
+                                    Edit
                                 </a>
-                                <button class="border-0" popovertarget="@item.Id" popovertargetaction="show">
-                                    <img src="https://t4.ftcdn.net/jpg/03/46/38/39/360_F_346383913_JQecl2DhpHy2YakDz1t3h0Tk3Ov8hikq.jpg" height="35" width="35" />
+                                <button class="btn btn-outline-danger me2" popovertarget="@item.Id" popovertargetaction="show">
+                                    Delete
                                 </button>
                             </td>
                         </tr>
