@@ -42,6 +42,12 @@ namespace HotelHero.WebMVC.Controllers
             }
         }
 
+        public ActionResult LogOut()
+        {
+            _logInService.LogOut();
+			return RedirectToAction(nameof(HomeController.Index), "Search");
+		}
+
         public IActionResult Register()
         {
             return View();

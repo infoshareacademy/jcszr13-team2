@@ -5,7 +5,8 @@ namespace HotelHero.WebMVC.Interface
     public interface ILogInService
     {
         void LogIn(User logInUser);
-        void Register(User registerUser);
+		void LogOut();
+		void Register(User registerUser);
 
     }
 }

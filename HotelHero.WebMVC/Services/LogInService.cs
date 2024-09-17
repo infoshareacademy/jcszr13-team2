@@ -22,7 +22,12 @@ namespace HotelHero.WebMVC.Services
             }
         }
 
-        public void Register(User registerUser)
+		public void LogOut()
+		{
+            UserContext.SetUser(null);
+		}
+
+		public void Register(User registerUser)
         {
             _fileOperationService.CreateUser(registerUser.Email, registerUser.Password);
         }
