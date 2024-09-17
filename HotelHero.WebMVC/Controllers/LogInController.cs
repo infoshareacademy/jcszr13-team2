@@ -3,6 +3,7 @@ using HotelHero.WebMVC.Interface;
 using HotelHero.WebMVC.Models;
 using HotelHero.WebMVC.Services;
 using Microsoft.AspNetCore.Mvc;
+using HotelHero.WebMVC.ViewModels;
 
 namespace HotelHero.WebMVC.Controllers
 {
@@ -56,7 +57,7 @@ namespace HotelHero.WebMVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Register(User user)
+        public IActionResult Register(RegisterUserViewModel user)
         {
             try
             {
@@ -65,7 +66,6 @@ namespace HotelHero.WebMVC.Controllers
                     return View(user);
                 }
                 var registeredUser = _fileOperationService.CreateUser(user.Email, user.Password);
-                _logInService.LogIn(registeredUser);
                 return RedirectToAction("RegisterCustomerData");
             }
             catch
