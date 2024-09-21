@@ -30,6 +30,29 @@
         "CostPerNight": 300.00,
         "Status": 1,
         "ReservationUser": null
+      },
+      {
+        "Id": 12,
+        "Hotel": {
+          "Id": 5,
+          "Name": "Hotel Scout",
+          "Address": "Mickiewicza 45",
+          "City": "Kraków",
+          "Description": "All air-conditioned rooms at the Scout are classically furnished and decorated with warm colours. Each comes with work space, a seating area and private bathroom with a shower and a hairdryer.\\nThe hotel features the Squash Club with 6 squash courts, a climbing wall, tennis courts and a free sauna and gym. An automated bowling alley is also available and it comes with a pub. A roller skating area is also on-site.\\nA buffet breakfast is served every morning in the hotel’s modern restaurant. The buffet includes cold as well as hot appetizers and meals.\\nAfter a long day, guests can relax in the sauna. Front desk staff is available 24 hours a day and can assist with luggage storage.",
+          "Image": "https://cf2.bstatic.com/xdata/images/hotel/square600/13125860.webp?k=35b70a7e8a17a71896996cd55d84f742cd15724c3aebaed0d9b5ba19c53c430b&amp;o=",
+          "Stars": 3,
+          "Rating": 3.0,
+          "IsFreeWiFi": false,
+          "IsPrivateParking": false,
+          "IsRestaurant": true,
+          "IsBar": true
+        },
+        "CheckInDate": "2024-07-10T00:00:00",
+        "CheckOutDate": "2024-07-15T00:00:00",
+        "AmountOfPeople": 1,
+        "CostPerNight": 400.00,
+        "Status": 1,
+        "ReservationUser": null
       }
     ],
     "Favourites": [
@@ -59,84 +82,42 @@
     "Email": "user",
     "LastName": null,
     "FirstName": null,
-    "DateOfBirth": "2024-07-29T00:00:00",
+    "DateOfBirth": "0001-01-01T00:00:00",
     "Address": null,
     "Phone": null,
     "Reservations": [
       {
-        "Id": 2,
+        "Id": 14,
         "Hotel": {
-          "Id": 2,
-          "Name": "Hotel Kamil",
-          "Address": "Sienkiewicza 3",
-          "City": "Warszawa",
-          "Description": "Najlepszy hotel w Warszawie",
-          "Image": null,
+          "Id": 6,
+          "Name": "Hotel Gromada Poznań",
+          "Address": "Fredry 36",
+          "City": "Poznań",
+          "Description": "Located in Poznań, 1.3 km from Poznan Stadium, Hotel Gromada Poznań provides accommodation with a garden, private parking, a restaurant and a bar. With free WiFi, this 3-star hotel offers room service and a 24-hour front desk. The property is non-smoking and is situated 4.4 km from Poznań Palm House.\\nAt the hotel, every room comes with a desk, a flat-screen TV, a private bathroom, bed linen and towels. All units will provide guests with a wardrobe and a kettle.\\nGuests at Hotel Gromada Poznań can enjoy a buffet breakfast.\\nThe accommodation offers a barbecue. You can play billiards at Hotel Gromada Poznań.\\nPoznan International Fair is 5 km from the hotel, while Central Railway Station Poznan is 5.4 km away. The nearest airport is Poznań-Ławica Henryk Wieniawski Airport, 5 km from Hotel Gromada Poznań.",
+          "Image": "https://cf2.bstatic.com/xdata/images/hotel/square600/352170812.webp?k=4ff5e29f3ad72c2c9f7170f60a043f01a158f26b38c55e9676439c18f3804179&amp;o=",
           "Stars": 5,
-          "Rating": 5.0,
+          "Rating": 2.0,
           "IsFreeWiFi": false,
           "IsPrivateParking": true,
-          "IsRestaurant": true,
-          "IsBar": false
-        },
-        "CheckInDate": "2024-06-30T00:00:00",
-        "CheckOutDate": "2024-07-05T00:00:00",
-        "AmountOfPeople": 2,
-        "CostPerNight": 500.00,
-        "Status": 1,
-        "ReservationUser": "user"
-      },
-      {
-        "Id": 1,
-        "Hotel": {
-          "Id": 3,
-          "Name": "Hotel Scout",
-          "Address": "Mickiewicza 45",
-          "City": "Kraków",
-          "Description": "Hotel w Krakowie",
-          "Image": null,
-          "Stars": 3,
-          "Rating": 3.7,
-          "IsFreeWiFi": false,
-          "IsPrivateParking": false,
-          "IsRestaurant": true,
+          "IsRestaurant": false,
           "IsBar": true
         },
-        "CheckInDate": "2024-06-15T00:00:00",
-        "CheckOutDate": "2024-06-20T00:00:00",
+        "CheckInDate": "2025-02-06T00:00:00",
+        "CheckOutDate": "2025-02-10T00:00:00",
         "AmountOfPeople": 3,
-        "CostPerNight": 300.00,
+        "CostPerNight": 800.00,
         "Status": 1,
-        "ReservationUser": "user"
-      },
-      {
-        "Id": 1,
-        "Hotel": {
-          "Id": 3,
-          "Name": "Hotel Scout",
-          "Address": "Mickiewicza 45",
-          "City": "Kraków",
-          "Description": "Hotel w Krakowie",
-          "Image": null,
-          "Stars": 3,
-          "Rating": 3.7,
-          "IsFreeWiFi": false,
-          "IsPrivateParking": false,
-          "IsRestaurant": true,
-          "IsBar": true
-        },
-        "CheckInDate": "2024-06-15T00:00:00",
-        "CheckOutDate": "2024-06-20T00:00:00",
-        "AmountOfPeople": 3,
-        "CostPerNight": 300.00,
-        "Status": 1,
-        "ReservationUser": "user"
+        "ReservationUser": null
       }
     ],
-    "Favourites": [],
-    "Rodo": true,
-    "Newsletter": true,
-    "Balance": 45.45
+    "Favourites": [
+      3,
+      4,
+      5
+    ],
+    "Rodo": false,
+    "Newsletter": false,
+    "Balance": 12327428.44
   },
   {
     "CustomerId": 3,
@@ -151,5 +132,19 @@
     "Rodo": false,
     "Newsletter": false,
     "Balance": 111121101581.00
+  },
+  {
+    "CustomerId": 2,
+    "Email": "user",
+    "LastName": null,
+    "FirstName": null,
+    "DateOfBirth": "0001-01-01T00:00:00",
+    "Address": null,
+    "Phone": null,
+    "Reservations": [],
+    "Favourites": [],
+    "Rodo": false,
+    "Newsletter": false,
+    "Balance": 0.0
   }
 ]

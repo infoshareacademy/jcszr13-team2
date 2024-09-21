@@ -2,41 +2,49 @@
   {
     "Id": 1,
     "Name": "Safe",
-    "Cost": 30.0
+    "Cost": 30.00,
+    "IsSelected": false
   },
   {
     "Id": 2,
     "Name": "Mini Bar",
-    "Cost": 150.0
+    "Cost": 150.0,
+    "IsSelected": false
   },
   {
     "Id": 3,
     "Name": "Laundry",
-    "Cost": 60.0
+    "Cost": 60.0,
+    "IsSelected": false
   },
   {
     "Id": 4,
     "Name": "SPA & Wellness",
-    "Cost": 210.0
+    "Cost": 210.0,
+    "IsSelected": false
   },
   {
     "Id": 5,
     "Name": "Car Rent",
-    "Cost": 160.0
+    "Cost": 160.0,
+    "IsSelected": false
   },
   {
     "Id": 6,
     "Name": "Airport transport",
-    "Cost": 70.0
+    "Cost": 70.0,
+    "IsSelected": false
   },
   {
     "Id": 7,
     "Name": "Tour Guide",
-    "Cost": 130.0
+    "Cost": 130.0,
+    "IsSelected": false
   },
   {
     "Id": 8,
     "Name": "Room Service",
-    "Cost": 110.0
+    "Cost": 110.0,
+    "IsSelected": false
   }
 ]

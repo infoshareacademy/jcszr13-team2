@@ -102,5 +102,98 @@ namespace HotelHero.WebMVC.Controllers
             return RedirectToAction("LogIn", "LogIn");
         }
 
+        public IActionResult WarsawResults(SearchViewModel vm)
+        {
+            // Sprawdzenie, czy parametry są podane i ustawienie ich na null, jeśli nie
+            var city = "Warszawa";
+            var startDate = vm.StartDate == default ? null : vm.StartDate;
+            var endDate = vm.EndDate == default ? null : vm.EndDate;
+            var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
+
+
+            // Wywołanie usługi z potencjalnie null wartościami
+            var items = _reservationService.SearchForReservations(city, startDate, endDate, peopleAmount);
+
+            SearchResultsViewModel results = new SearchResultsViewModel();
+
+            results.City = city;
+            results.StartDate = startDate;
+            results.EndDate = endDate;
+            results.PeopleAmount = peopleAmount;
+            results.Reservations = items;
+
+            return View("Results", results);
+        }
+
+        public IActionResult CracowResults(SearchViewModel vm)
+        {
+            // Sprawdzenie, czy parametry są podane i ustawienie ich na null, jeśli nie
+            var city = "Kraków";
+            var startDate = vm.StartDate == default ? null : vm.StartDate;
+            var endDate = vm.EndDate == default ? null : vm.EndDate;
+            var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
+
+
+            // Wywołanie usługi z potencjalnie null wartościami
+            var items = _reservationService.SearchForReservations(city, startDate, endDate, peopleAmount);
+
+            SearchResultsViewModel results = new SearchResultsViewModel();
+
+            results.City = city;
+            results.StartDate = startDate;
+            results.EndDate = endDate;
+            results.PeopleAmount = peopleAmount;
+            results.Reservations = items;
+
+            return View("Results", results);
+        }
+
+        public IActionResult GdanskResults(SearchViewModel vm)
+        {
+            // Sprawdzenie, czy parametry są podane i ustawienie ich na null, jeśli nie
+            var city = "Gdańsk";
+            var startDate = vm.StartDate == default ? null : vm.StartDate;
+            var endDate = vm.EndDate == default ? null : vm.EndDate;
+            var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
+
+
+            // Wywołanie usługi z potencjalnie null wartościami
+            var items = _reservationService.SearchForReservations(city, startDate, endDate, peopleAmount);
+
+            SearchResultsViewModel results = new SearchResultsViewModel();
+
+            results.City = city;
+            results.StartDate = startDate;
+            results.EndDate = endDate;
+            results.PeopleAmount = peopleAmount;
+            results.Reservations = items;
+
+            return View("Results", results);
+        }
+
+        public IActionResult PoznanResults(SearchViewModel vm)
+        {
+            // Sprawdzenie, czy parametry są podane i ustawienie ich na null, jeśli nie
+            var city = "Poznań";
+            var startDate = vm.StartDate == default ? null : vm.StartDate;
+            var endDate = vm.EndDate == default ? null : vm.EndDate;
+            var peopleAmount = vm.PeopleAmount > 0 ? vm.PeopleAmount : (int?)null;
+
+
+            // Wywołanie usługi z potencjalnie null wartościami
+            var items = _reservationService.SearchForReservations(city, startDate, endDate, peopleAmount);
+
+            SearchResultsViewModel results = new SearchResultsViewModel();
+
+            results.City = city;
+            results.StartDate = startDate;
+            results.EndDate = endDate;
+            results.PeopleAmount = peopleAmount;
+            results.Reservations = items;
+
+            return View("Results", results);
+        }
+
+
     }
 }

@@ -47,7 +47,15 @@
     </dl>
     
     <form asp-action="Delete">
-        <input type="submit" value="Delete" class="btn btn-outline-danger me-2" />
+        <div id="popover2" popover="manual" style="background: linear-gradient(to top right, #66ff99 0%, #0000ff 100%);">
+            <p style="color: white">Are you sure you want to delete the hotel?</p>
+            <input type="submit" value="Confirm" style="color: white; border-color:white; border-width:2px" class="btn btn-outline-success me-2" />
+            <button class="btn btn-outline-success me2" style="color: white; border-color:white; border-width:2px" popovertarget="popover2" popovertargetaction="hide">Cancel</button>
+        </div>
+        <input type="button" value="Delete" class="btn btn-outline-danger me-2" popovertarget="popover2" popovertargetaction="show" />
+        
+        <div class="form-group p-2">
         <a class="btn btn-outline-danger me-2" asp-action="Index">Back to List</a>
+        </div>
     </form>
 </div>

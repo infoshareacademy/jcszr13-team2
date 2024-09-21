@@ -47,10 +47,10 @@
                                 @item.Cost
                             </td>
                             <td>
-                                <div id="@item.Id" popover="manual">
-                                    <p>Do you want to remove service?</p>
-                                    <a class="btn btn-outline-success me2" asp-action="DeleteAdditionalService" asp-route-id="@item.Id">Confirm</a>
-                                    <button class="btn btn-outline-success me2" popovertarget="@item.Id" popovertargetaction="hide">Cancel</button>
+                                <div id="@item.Id" popover="manual" style="background: linear-gradient(to top right, #66ff99 0%, #0000ff 100%);">
+                                    <p style="color: white">Do you want to remove service?</p>
+                                    <a class="btn btn-outline-success me2" style="color: white; border-color:white; border-width:2px" asp-action="DeleteAdditionalService" asp-route-id="@item.Id">Confirm</a>
+                                    <button class="btn btn-outline-success me2" style="color: white; border-color:white; border-width:2px" popovertarget="@item.Id" popovertargetaction="hide">Cancel</button>
                                 </div>
 
                                 <a class="btn btn-outline-primary me2" asp-action="EditAdditionalService" asp-route-id="@item.Id">

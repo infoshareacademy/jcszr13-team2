@@ -28,13 +28,13 @@
                 CVC (np.123)
                 <input type="text" name="CVC" inputmode="numeric" pattern="[0-9]{1}[0-9]{1}[0-9]{1}" class="form-control" />
             </div>
-            <div id="popover2" popover="manual">
-                <p>Do you add balance?</p>
-                <input type="submit" value="Saveinput" class="btn btn-outline-success me-2" />
-                <button class="btnCustom btnCustom-custom" popovertarget="popover2" popovertargetaction="hide">Cancel</button>
+            <div id="popover2" popover="manual" style="background: linear-gradient(to top right, #66ff99 0%, #0000ff 100%);">
+                <p style="color: white">Do you add balance?</p>
+                <input type="submit" value="Confirm" style="color: white; border-color:white; border-width:2px" class="btn btn-outline-success me-2" />
+                <button class="btn btn-outline-success me2" style="color: white; border-color:white; border-width:2px" popovertarget="popover2" popovertargetaction="hide">Cancel</button>
             </div>
             <div class="form-group p-2">
-                <button class="btnCustom btnCustom-custom" popovertarget="popover2" popovertargetaction="show">Savebutton</button>
+                <button class="btnCustom btnCustom-custom" type="button" popovertarget="popover2" popovertargetaction="show">Add</button>
                 <a class="btn btn-outline-danger me-2" asp-action="Wallet">Back to List</a>
             </div>
         </form>

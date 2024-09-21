@@ -7,11 +7,14 @@
 <br />
 <br />
 <br />
+@* link na baner
+ *@
+<img src="~/images/banner.png">
 
 <form class="d-flex" method="post" asp-action="Results">
     <div class="form-group me-2">
         <label asp-for="City" class="control-label">City</label>
-        <input asp-for="City" class="form-control me-2" type="" pattern="[a-zA-Z]*" placeholder="City" aria-label="City" />
+        <input asp-for="City" id="cityInput" class="form-control me-2" type="" pattern="[a-zA-Z]*" placeholder="City" aria-label="City" />
     </div>
     <div class="form-group me-2">
         <label asp-for="StartDate" class="control-label">Start date</label>
@@ -25,7 +28,42 @@
         <label asp-for="PeopleAmount" class="control-label">Amount of people</label>
         <input asp-for="PeopleAmount" class="form-control me-2" type="number" placeholder="Amount of people" aria-label="Amount of people" min="1" />
     </div>
-    <div style="align-content:end">
+    <div>
         <button class="btn btn-outline-success me-2 align-baseline" type="submit">Search</button>
     </div>
 </form>
+
+<table style="width:100%">
+    <tbody>
+        <tr>
+            @* Warszawa *@
+            <td>
+                <a asp-action="WarsawResults" class="btn btn-outline-success me-2 align-baseline" style="border-width:0px">
+                    <b style="font-size: 20px">Warsaw</b>
+                    <img width="300" height="200" src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRt5rI-NEkjW57uZL8aj9aMbuN2wMJfkj82mo4yzTnOYkDRicReQrS_l-LkAwVrU2j7kTh5Hvn0S1cCucmyhEcMai3QSI25rRxI8Y37kw">
+                </a>
+            </td>
+            @*   krakow *@
+            <td>
+                <a asp-action="CracowResults" class="btn btn-outline-success me-2 align-baseline" style="border-width:0px">
+                    <b style="font-size: 20px">Cracow</b>
+                    <img width="300" height="200" src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcTpc6vOiRNnM-znfc181u-G2i_kUUlG-8IUNfyGrb7Zu4J6VAujhhgJYK1nB-XaltHA8czV9fBqwPymWf1RiAtPgWlqwp7DRLL_6AOJXQ">
+                </a>
+            </td>
+            @* gdansk *@
+            <td>
+                <a asp-action="GdanskResults" class="btn btn-outline-success me-2 align-baseline" style="border-width:0px">
+                    <b style="font-size: 20px">Gdansk</b>
+                    <img width="300" height="200" src="https://encrypted-tbn3.gstatic.com/licensed-image?q=tbn:ANd9GcRGOJfEpVvplXOvr3g4vl8pdmLbmLc8GclK4b5Chsr4m9BeTtALrZE9E1hdsl5-bKQpPC1VnrIdKHXNpdss3BvcdyBT26uojonYUS2GFA">
+                </a>
+            </td>
+            @* poznan *@
+            <td>
+                <a asp-action="PoznanResults" class="btn btn-outline-success me-2 align-baseline" style="border-width:0px">
+                    <b style="font-size: 20px">Poznan</b>
+                    <img width="300" height="200" src="https://sm.poznan.pl/mim/straz/pictures/obrazek,pic1,1016,128681,221029,with-ratio,16_9.jpg">
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
