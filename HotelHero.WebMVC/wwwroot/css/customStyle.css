@@ -117,3 +117,11 @@
         color: #fff;
         background-color: rgba(255, 255, 255, 0.2);
     }
+
+body {
+    background-image: url('/images/hero_bg_3.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
