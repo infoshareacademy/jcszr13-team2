@@ -119,9 +119,51 @@
     }
 
 body {
-    background-image: url('/images/hero_bg_3.jpg');
+    background-image: url('/images/img/hero_bg_3.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.search-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 1200px;
+}
+
+form.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+    form.d-flex .form-group {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        min-width: 200px;
+    }
+
+    form.d-flex button {
+        align-self: flex-start;
+        padding: 10px 20px;
+        margin-top: 32px;
+    }
+
+
+
 
